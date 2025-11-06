@@ -1,0 +1,147 @@
+/* -----------------------------------------------------------------------------
+ * FONTS
+ */
+
+
+// @font-face {
+//   font-family: 'fontname';
+//   src: url('#{$s-config-path-fonts}fontfile.woff2') format('woff2'),
+//        url('#{$s-config-path-fonts}fontfile.woff') format('woff');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+@font-face {
+  font-family: "Font Awesome 5 Brands";
+  font-style: normal;
+  font-weight: normal;
+  src: url(#{$s-config-path-fonts}fa-brands-400.eot);
+  src: url(#{$s-config-path-fonts}fa-brands-400.eot?#iefix) format("embedded-opentype"),url(#{$s-config-path-fonts}fa-brands-400.woff2) format("woff2"),url(#{$s-config-path-fonts}fa-brands-400.woff) format("woff"),url(#{$s-config-path-fonts}fa-brands-400.ttf) format("truetype"),url(#{$s-config-path-fonts}fa-brands-400.svg#fontawesome) format("svg")
+}
+
+.fab {
+  font-family: "Font Awesome 5 Brands"
+}
+
+
+.far {
+  font-weight: 400
+}
+
+@font-face {
+  font-family: "Font Awesome 5 Pro";
+  font-style: normal;
+  font-weight: 900;
+  src: url(#{$s-config-path-fonts}fa-solid-900.eot);
+  src: url(#{$s-config-path-fonts}fa-solid-900.eot?#iefix) format("embedded-opentype"),url(#{$s-config-path-fonts}fa-solid-900.woff2) format("woff2"),url(#{$s-config-path-fonts}fa-solid-900.woff) format("woff"),url(#{$s-config-path-fonts}fa-solid-900.ttf) format("truetype"),url(#{$s-config-path-fonts}fa-solid-900.svg#fontawesome) format("svg")
+}
+
+.fa,.fas {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900
+}
+
+
+@font-face {
+  font-family: "Font Awesome 5 Pro";
+  font-style: normal;
+  font-weight: 300;
+  src: url(#{$s-config-path-fonts}fa-light-300.eot);
+  src: url(#{$s-config-path-fonts}fa-light-300.eot?#iefix) format("embedded-opentype"),url(#{$s-config-path-fonts}fa-light-300.woff2) format("woff2"),url(#{$s-config-path-fonts}fa-light-300.woff) format("woff"),url(#{$s-config-path-fonts}fa-light-300.ttf) format("truetype"),url(#{$s-config-path-fonts}fa-light-300.svg#fontawesome) format("svg")
+}
+
+.fal {
+  font-weight: 300
+}
+
+@font-face {
+  font-family: "Font Awesome 5 Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: url(#{$s-config-path-fonts}fa-regular-400.eot);
+  src: url(#{$s-config-path-fonts}fa-regular-400.eot?#iefix) format("embedded-opentype"),url(#{$s-config-path-fonts}fa-regular-400.woff2) format("woff2"),url(#{$s-config-path-fonts}fa-regular-400.woff) format("woff"),url(#{$s-config-path-fonts}fa-regular-400.ttf) format("truetype"),url(#{$s-config-path-fonts}fa-regular-400.svg#fontawesome) format("svg")
+}
+
+.fal,.far {
+  font-family: "Font Awesome 5 Pro"
+}
+.fa,
+.fab,
+.fal,
+.far,
+.fas {
+  font-style: normal;
+}
+
+
+
+
+
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('#{$s-config-path-fonts}HelveticaNeue-CondensedBlack.woff2') format('woff2'),
+  url('#{$s-config-path-fonts}HelveticaNeue-CondensedBlack.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('#{$s-config-path-fonts}HelveticaNeue-Light.woff2') format('woff2'),
+  url('#{$s-config-path-fonts}HelveticaNeue-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('#{$s-config-path-fonts}HelveticaNeue-CondensedBold.woff2') format('woff2'),
+  url('#{$s-config-path-fonts}HelveticaNeue-CondensedBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('#{$s-config-path-fonts}HelveticaNeue-Thin.woff2') format('woff2'),
+  url('#{$s-config-path-fonts}HelveticaNeue-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('#{$s-config-path-fonts}HelveticaNeue-UltraLight.woff2') format('woff2'),
+  url('#{$s-config-path-fonts}HelveticaNeue-UltraLight.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('#{$s-config-path-fonts}HelveticaNeue-Medium.woff2') format('woff2'),
+  url('#{$s-config-path-fonts}HelveticaNeue-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('#{$s-config-path-fonts}HelveticaNeue.woff2') format('woff2'),
+  url('#{$s-config-path-fonts}HelveticaNeue.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('#{$s-config-path-fonts}HelveticaNeue-Bold.woff2') format('woff2'),
+  url('#{$s-config-path-fonts}HelveticaNeue-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+

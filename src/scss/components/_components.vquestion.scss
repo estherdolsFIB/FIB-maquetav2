@@ -1,0 +1,150 @@
+// Variables
+$cq-number-w:   110px;
+$cq-gap-between: 12px; // espai entre número i pregunta
+
+.c-vquestion { counter-reset: vq; }
+
+.c-vquestion__item {
+  counter-increment: vq;
+  margin-bottom: var(--space-s);
+  overflow: hidden;
+  background: transparent;
+
+  .c-vquestion__trigger {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    font-size: var(--font-size-l);
+    line-height: var(--line-height-l);
+
+    width: 100%;
+    text-align: left;
+    border: 0;
+    cursor: pointer;
+
+    background: var(--color-primary);
+    color: var(--color-shade-0);
+    font-weight: 500;
+    line-height: 1.3;
+
+    /* padding-left = ample número + gap + 1rem */
+    padding: 1.5rem 1.5rem 1.5rem calc(#{$cq-number-w} + #{$cq-gap-between} + 1.5rem);
+    min-height: 110px;
+
+    /* Bloc NUMERO (esquerra) */
+    &::before {
+      content: counter(vq);
+      position: absolute;
+      inset: 0 auto 0 0;   /* left:0; top:0; bottom:0 */
+      width: $cq-number-w;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--color-text);     /* fons del bloc del número */
+      color: transparent;                 /* número buit */
+      font-family: 'Oswald Stencil', sans-serif; 
+      -webkit-text-stroke: 1px var(--color-shade-0);
+      font-size: clamp(4rem, 5vw, 4.5rem);
+      font-weight: 800;
+
+    }
+
+    /* ESPAI real entre número i pregunta */
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0;
+      left: $cq-number-w;
+      width: var(--space-s);
+      background: var(--color-shade-0); /* color del buit (normalment blanc) */
+      /* si vols que sigui transparent i es vegi el fons de la pàgina:
+         background: transparent; */
+    }
+
+    .c-vquestion__icon {
+      margin-left: auto;
+      font-size: 2rem;
+      line-height: 1;
+      transform-origin: center;
+      transition: transform .2s ease;
+    }
+
+    &:focus-visible { outline: 2px solid rgba(255,255,255,.8); outline-offset: 2px; }
+  }
+
+  /* COS */
+  .c-vquestion__content {
+    display: none;
+    background: var(--color-shade-200);
+    border-top: 0;
+    padding: 1.25rem;
+      font-size: var(--font-size-m);
+      color: var(--color-text);
+      line-height: var(--line-height-m);
+    /* alinear amb la capçalera: número + gap */
+    margin-left: calc(#{$cq-number-w} + var(--space-s));
+    p {
+      margin-bottom: 10px;
+    }
+  }
+
+  &.is-open {
+    .c-vquestion__content { display: block; }
+    .c-vquestion__icon { transform: rotate(45deg); } // + → ×
+  }
+
+  &.is-download {
+    /* que no compti el número */
+    counter-increment: none;
+
+    .c-vquestion__trigger {
+      background: var(--color-secondary);
+    }
+
+    .c-vquestion__trigger::before {
+      content: "+";         
+      background: var(--color-text);     /* fons del bloc del número */
+      color: transparent;                 /* número buit */
+      font-family: 'Oswald Stencil', sans-serif; 
+      -webkit-text-stroke: 1px var(--color-shade-0);
+      font-size: clamp(4rem, 5vw, 4.5rem);
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  $cq-number-w-sm: 56px; /* ample del bloc del número a mòbil */
+
+  .c-vquestion__item {
+    .c-vquestion__trigger {
+      min-height: 84px;
+      font-size: var(--font-size-m);
+      /* espai només pel número; eliminam la franja */
+      padding: 1rem 1rem 1rem calc(#{$cq-number-w-sm} + 1rem);
+
+      /* bloc del número més estret i número més petit */
+      &::before {
+        width: $cq-number-w-sm;
+        font-size: clamp(2.4rem, 9vw, 3rem);
+      }
+
+      /* FRANJA BLANCA fora a mòbil */
+      &::after { display: none; }
+
+      .c-vquestion__icon {
+        font-size: 1.6rem;
+      }
+    }
+
+    /* el cos comença just després del número (sense gap) */
+    .c-vquestion__content {
+      margin-left: $cq-number-w-sm; /* abans era número + gap */
+      padding: 1rem;
+      font-size: var(--font-size-s);
+    }
+  }
+}

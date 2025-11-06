@@ -1,0 +1,54 @@
+.c-info-banner {
+  background-color: #F2F1F0;
+  &__title {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0;
+    color: var(--color-primary);
+    @include breakpoint(m) {
+      font-size: 24px;
+    }
+  }
+  &__links {
+    color: var(--color-primary);
+    font-size: 14px;
+    @include breakpoint(m down) {
+      font-size: 12px;
+    }
+    a {
+      transition: 0.4s all;
+        display: block;
+    }
+
+  }
+  &__description {
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 1.4em;
+    @include breakpoint(m down) {
+      font-size: 14px;
+    }
+    a {
+      line-height: initial;
+      display: flex;
+      align-items: center;
+      img {
+        margin-right: 2px;
+      }
+    }
+  }
+  &__phone {
+    padding-bottom: 6px;
+  }
+  &__mail {
+    color: var(--color-primary);
+    transition: 0.4s all;
+    img {
+      width: 19px;
+      height: 19px;
+    }
+  }
+  .c-btn--primary {
+    padding-top: 1px;
+  }
+}

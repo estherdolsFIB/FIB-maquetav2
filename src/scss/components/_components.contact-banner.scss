@@ -1,0 +1,111 @@
+.c-contact-banner {
+  $this:&;
+  overflow: hidden;
+  @include breakpoint(m) {
+    margin-top: 4px;
+  }
+  &--no-margin {
+    @include breakpoint(m) {
+      margin-top: -4px;
+    }
+  }
+  overflow: hidden;
+  background-color: var(--color-secondary);
+  @include breakpoint(m down) {
+    text-align: center;
+  }
+  &__container {
+    z-index: 1;
+    position: relative;
+    @include breakpoint(m) {
+      min-height: 300px;
+    }
+  }
+  &__title {
+    font-size: 48px;
+    position: relative;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 1.1em;
+    color: var(--color-shade-0);
+
+    &.footer {
+      font-size: 40px;
+    }
+
+    @include breakpoint(m xl) {
+      font-size: 30px !important;
+      line-height: 1.2em;
+    }
+    @include breakpoint(m down) {
+      font-size: 25px !important;
+      line-height: 1.3em;
+      br {
+        display: none;
+      }
+    }
+  }
+  &__quotes {
+    &::before {
+      content: '"';
+      font-size: 160px;
+      position: absolute;
+      left: -30px;
+      top: -4px;
+      font-weight: bold;
+      font-family: 'News Cycle';
+      transform: scale(-1);
+      @include breakpoint(l down) {
+        display: none;
+      }
+    }
+  }
+  &__subtitle {
+    font-size: 18px;
+    color: #FFFFFE;
+    line-height: 25px;
+  }
+  @include breakpoint(s m) {
+    .c-grid-items__patron--right {
+      right: -151px;
+      bottom: 7.5% !important;
+      svg {
+        width: 273px !important;
+      }
+    }
+    .c-grid-items__patron {
+      left: -167px;
+      bottom: 4%;
+      svg {
+        width: 275px;
+      }
+    }
+  }
+  &--slider {
+    #{$this} {
+      &__subtitle {
+        &:not(.u-font-size-xl) {
+          @include breakpoint(m down) {
+            display: none;
+          }
+        }
+      }
+      &__title {
+        @include breakpoint(m down) {
+          font-size: 18px !important;
+        }
+      }
+    }
+  }
+}
+
+.c-contact-banner-grey {
+  @include breakpoint(m) {
+    margin-top: 4px;
+  }
+  overflow: hidden;
+  background-color: #5f6360;
+  @include breakpoint(m down) {
+    text-align: center;
+  }
+}

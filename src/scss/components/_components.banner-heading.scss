@@ -1,0 +1,160 @@
+.c-banner-heading {
+    height: 80vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    @include breakpoint(s m, portrait) {
+      height: 45vh;
+    }
+    &__title {
+        font-size: 60px;
+        font-weight: bold;
+        letter-spacing: 0;
+        &-short {
+          @include breakpoint(xl) {
+            width: 75%;
+          }
+          @include breakpoint(m xl) {
+            width: 50%;
+          }
+        }
+        @include breakpoint(xl down) {
+          font-size: 35px;
+        }
+        @include breakpoint(m down) {
+          br {
+            display: none;
+          }
+        }
+    }
+    &__subtitle {
+        font-size: 35px;
+        letter-spacing: 0;
+        &-short {
+          @include breakpoint(xl) {
+            width: 75%;
+          }
+          @include breakpoint(m xl) {
+            width: 50%;
+          }
+        }
+        @include breakpoint(xl down) {
+          font-size: 25px;
+        }
+        @include breakpoint(m down) {
+          br {
+            display: none;
+          }
+        }
+    }
+    &__subitems {
+        color: #FFFFFE;
+        font-size: 21px;
+        @include breakpoint(xl down) {
+          font-size: 17px;
+        }
+        &--border {
+            border-left: 1px solid #FFFFFE;
+            &:first-child {
+              border-left: none;
+            }
+            @include breakpoint(s m, portrait) {
+              width: 50%;
+            }
+            @include breakpoint(m down) {
+              border-left: none;
+              border-bottom: 1px solid #FFFFFE;
+              padding: 10px 0px !important;
+            }
+        }
+    }
+    &__bars {
+        top: 25%;
+        svg path {
+            opacity: 0.7;
+        }
+        @include breakpoint(s m) {
+          top: auto;
+          bottom: 10% !important;
+        }
+    }
+
+    .c-grid-items__patron--right  {
+      @include breakpoint(s l) {
+        bottom: 3% !important;
+        top: auto !important;
+      }
+    }
+}
+
+.c-banner-heading-small {
+  height: auto;
+  padding-top: 80px;
+}
+
+.c-banner-memories {
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  @include breakpoint(s m, portrait) {
+    height: 45vh;
+  }
+  &__title {
+      font-size: 60px;
+      font-weight: bold;
+      letter-spacing: 0;
+      &-short {
+        @include breakpoint(xl) {
+          width: 75%;
+        }
+        @include breakpoint(m xl) {
+          width: 50%;
+        }
+      }
+      @include breakpoint(xl down) {
+        font-size: 35px;
+      }
+      @include breakpoint(m down) {
+        br {
+          display: none;
+        }
+      }
+  }
+  &__subitems {
+      color: #FFFFFE;
+      font-size: 21px;
+      @include breakpoint(xl down) {
+        font-size: 17px;
+      }
+      &--border {
+          border-left: 1px solid #FFFFFE;
+          &:first-child {
+            border-left: none;
+          }
+          @include breakpoint(s m, portrait) {
+            width: 50%;
+          }
+          @include breakpoint(m down) {
+            border-left: none;
+            border-bottom: 1px solid #FFFFFE;
+            padding: 10px 0px !important;
+          }
+      }
+  }
+  &__bars {
+      top: 25%;
+      svg path {
+          opacity: 0.7;
+      }
+      @include breakpoint(s m) {
+        top: auto;
+        bottom: 10% !important;
+      }
+  }
+
+  .c-grid-items__patron--right  {
+    @include breakpoint(s l) {
+      bottom: 3% !important;
+      top: auto !important;
+    }
+  }
+}

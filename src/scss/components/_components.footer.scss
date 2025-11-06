@@ -1,0 +1,48 @@
+.c-footer {
+  background: linear-gradient(90deg, #383A39 0%, #5E6360 100%);
+  color: var(--color-shade-0);
+  font-size: 14px;
+  letter-spacing: 0;
+  @include breakpoint(m down) {
+    font-size: 13px;
+    line-height: 1.4em;
+    .o-wrapper {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+  @include breakpoint(m) {
+    br {
+      display: none;
+    }
+  }
+  a {
+    transition: 0.4s all;
+    &:not(.c-line-animation) {
+      &:hover {
+        color: var(--color-primary);
+        text-decoration: underline;
+      }
+    }
+  }
+  @include breakpoint(m down) {
+    text-align: center;
+  }
+  &__social {
+    display: flex;
+    color: var(--color-primary);
+    @include breakpoint(m down) {
+      margin: 12px 0;
+    }
+    li {
+      margin-right: 8px;
+      a {
+        font-size: 20px;
+        transition: 0.4s all;
+          &:hover {
+            color: var(--color-text);
+          }
+      }
+    }
+  }
+}

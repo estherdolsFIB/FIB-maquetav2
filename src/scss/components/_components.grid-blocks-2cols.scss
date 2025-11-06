@@ -1,0 +1,135 @@
+.c-grid-blocks-2cols {
+  $this:&;
+  .c-box-icg__container {
+    @include breakpoint(xl) {
+      width: calc(var(--wrapper-l) + 240px);
+      margin-left: calc((var(--space-xxxh) + 96px) * -1);
+      margin-right: calc((var(--space-xxxh) + 120px) * -1);
+    }
+    @include breakpoint(m xl) {
+      width: calc(100% + 240px);
+      margin-left: calc((var(--space-xxxh) + 8px) * -1);
+      margin-right: calc((var(--space-xxxh) + 32px) * -1);
+    }
+  }
+  &__item {
+    padding: 23px;
+    color: var(--color-shade-0);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 120px;
+    position: relative;
+    @include breakpoint(s) {
+      min-height: 150px;
+    }
+  }
+  &__item-badge {
+    position: absolute;
+    background-color: var(--color-shade-0);
+    color: var(--color-primary);
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 200px;
+    text-align: center;
+    padding: 8px;
+    transform: rotateZ(45deg);
+    right: -60px;
+    top: 22px;
+    @include breakpoint(s down) {
+      font-size: 18px;
+    }
+  }
+  &__item-title {
+    font-size: 20px;
+    font-weight: bold;
+    @include breakpoint(m xl) {
+      font-size: 24px;
+    }
+    @include breakpoint(xl) {
+      font-size: 28px;
+    }
+  }
+  &__item-subtitle {
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 1.2em;
+    max-width: 231px;
+    @include breakpoint(m xl) {
+      font-size: 14px;
+    }
+    @include breakpoint(xl) {
+      font-size: 16px;
+    }
+  }
+  &__item-icon {
+    position: absolute;
+    bottom: 28px;
+    right: 28px;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    @include breakpoint(s down) {
+      width: 40px;
+      height: 40px;
+      bottom: 16px;
+      right: 16px;
+    }
+  }
+  &__col:nth-child(2n + 1) {
+    #{$this}__item {
+      //background: linear-gradient(90deg, #d57931, #f39200);
+      background: #d57931;
+      &.is-active {
+        &:after {
+          content: '';
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          height: 24px;
+          //background: linear-gradient(90deg, #d57931, #f39200);
+          background: #d57931;
+        }
+      }
+    }
+  }
+  &__col:nth-child(2n + 2) {
+    #{$this}__item {
+      //background: linear-gradient(90deg, #ebba43, #dc911b);
+      background: #ebba43;
+      &.is-active {
+        &:after {
+          content: '';
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          height: 24px;
+          //background: linear-gradient(90deg, #ebba43, #dc911b);
+          background: #ebba43;
+        }
+      }
+    }
+    @include breakpoint(s down) {
+      order: 3;
+    }
+  }
+  &--big {
+    #{$this}__item {
+      min-height: 150px;
+      @include breakpoint(s) {
+        min-height: 200px;
+      }
+    }
+  }
+  .c-box-icg__container {
+    &:nth-of-type(1) {
+      order: 2;
+    }
+    &:nth-of-type(2) {
+      order: 4;
+    }
+  }
+}

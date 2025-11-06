@@ -1,0 +1,75 @@
+.c-banner-register {
+  &__button {
+    font-size: 18px !important;
+  }
+  &__container {
+    color: var(--color-shade-0);
+    // background-color: rgba(0, 0, 0, 0.7);
+  }
+  &__title {
+    font-size: 54px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 1.2em;
+    @include breakpoint(xl down) {
+      font-size: 30px;
+    }
+  }
+  &__description {
+    letter-spacing: 0.5px;
+    font-size: 21px;
+    line-height: 1.4em;
+    @include breakpoint(xl down) {
+      font-size: 16px;
+    }
+  }
+  &__table {
+    background-color: var(--color-shade-0);
+    padding: 25px 25px 50px 25px;
+    color: var(--color-text);
+  }
+  &__table-title {
+    text-align: center;
+    font-size: 21px;
+    line-height: 1.2em;
+    font-weight: bold;
+  }
+  &__table-list {
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 1.2em;
+    li {
+      padding-right: 1.5em;
+      position: relative;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      border-top: 1px solid var(--color-shade-300);
+      &:last-of-type {
+        border-bottom: 1px solid var(--color-shade-300);
+      }
+      &:after {
+        content: '';
+        display: inline-block;
+        transform: rotate(45deg) translateY(-50%);
+        height:12px;
+        width: 8px;
+        position: absolute;
+        right: 8px;
+        top: 35%;
+        border-bottom: 1px solid #009949;
+        border-right: 1px solid #009949;
+      }
+    }
+  }
+  &__table-btn {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0;
+    transition: 0.6s all;
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+}

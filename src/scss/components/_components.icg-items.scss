@@ -1,0 +1,66 @@
+.c-icg-legend {
+    border-radius: 50px; 
+    width: 15px; 
+    height: 15px;
+    &__orange {
+        background-color: var(--color-primary);
+    }
+    &__black {
+        background-color: var(--color-text);
+    }
+    &__grey {
+        background-color: var(--color-shade-400);
+    }
+}
+
+
+.c-icg-filters{
+    margin: 4px;
+    overflow: hidden;
+    float: left;
+    border-radius: 25px;
+
+    label {
+        float: left; line-height: 2.0em;
+        width: 8.5em; height: 2em;
+    }
+    label span {
+        text-align: center;
+        display: block;
+    }
+
+    label input {
+        position: absolute;
+        display: none;
+        color: #fff !important;
+    }
+
+    label input + span{
+        color: #fff;
+    }
+
+    &__orange{
+        background-color: #EEC98F;
+        cursor: pointer;
+        input:checked + span{
+            background-color: var(--color-primary);
+        }
+    }
+
+    &__secondary{
+        background-color: #E6AD8D;
+        cursor: pointer;
+        input:checked + span{
+            background-color: var(--color-secondary);
+        }
+    }
+
+    &__black{
+        background-color: #A1A1A1;
+        cursor: pointer;
+        input:checked + span{
+            background-color: var(--color-text);
+        }
+    }
+}
+

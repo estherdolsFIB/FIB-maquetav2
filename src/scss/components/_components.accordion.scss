@@ -1,0 +1,114 @@
+.c-accordion {
+  border-top: 1px solid lightgrey;
+  @include breakpoint(m down) {
+    padding-left: 0;
+  }
+  &:last-child {
+    border-bottom: 1px solid lightgrey;
+  }
+  &__content {
+    display: none;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    @include breakpoint(m down) {
+      padding-left: 0;
+    }
+    p {
+     //line-height: 23px;
+    }
+  }
+  &__item {
+    color: #383A39;
+    font-size: 21px;
+    padding: 20px 10px;
+    font-weight: bold;
+    transition: all .5s ease;
+    line-height: 23px;
+    cursor: pointer;
+    &.active {
+      color: var(--color-primary);
+    }
+    &.open ~ .c-accordion__content {
+      display: block;
+    }
+    @include breakpoint(m down) {
+      padding-left: 0;
+    }
+  }
+  &__controls {
+    font-size: 14px;
+    color: var(--color-primary);
+    margin-top: 30px;
+    a {
+      transition: all .5s ease;
+      &:hover {
+        color: var(--color-secondary);
+      }
+    }
+  }
+  &__floating-controls {
+    position: absolute;
+    bottom: 20px;
+    right: -20px;
+  }
+  &__pagination {
+    .pagination {
+      display: flex;
+      align-items: center;
+      a, span {
+        padding-left: 10px !important;
+        border-right: 1px solid #383A39 !important;
+        @include breakpoint(s down) {
+          padding: 0 8px !important;
+        }
+      }
+      li {
+        &:first-child {
+          display: none;
+        }
+        &:last-child {
+          display: none;
+        }
+        &:nth-child(2) {
+          a, span {
+            padding-left: 0 !important;
+            @include breakpoint(s down) {
+              padding-left: 0 !important;
+            }
+          }
+        }
+        &:nth-last-child(2) {
+          a, span {
+            border-right: none !important;
+          }
+        }
+        &.active {
+          a, span {
+            color: var(--color-primary);
+          }
+        }
+      }
+    }
+    a, span {
+      font-size: 14px !important;
+      color: grey;
+      padding: 0px 10px;
+      border-right: 1px solid #383A39;
+      transition: all .5s ease;
+      line-height: 30px;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        border-right: none;
+      }
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+
+    .active {
+      color: var(--color-primary);
+    }
+  }
+}

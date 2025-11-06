@@ -1,0 +1,115 @@
+.c-prensa {
+  background-color: #f1f0eb;
+  &__video {
+    position: relative;
+    padding-bottom: 56.25%;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__container {
+    height: 50%;
+    @include breakpoint(m down) {
+      height: auto;
+    }
+  }
+  &__item {
+    z-index: 1 !important;
+    height: 100%;
+    background-color: var(--color-shade-0);
+    &--text {
+      color: #131514;
+      font-size: 21px;
+      font-weight: bold;
+      line-height: 27px;
+      @include breakpoint(xl down) {
+        font-size: 16px;
+        line-height: 1.2em;
+      }
+    }
+    &--subtext {
+      color: #131514;
+      font-size: var(--text-size-m);
+      line-height: 27px;
+      /*@include breakpoint(xl down) {
+        font-size: 16px;
+        line-height: 1.2em;
+      }*/
+    }
+    &--date {
+      color: var(--color-shade-400);
+      font-size: 18px;
+      line-height: 27px;
+      @include breakpoint(xl down) {
+        font-size: 15px;
+        line-height: 20px;
+      }
+    }
+    &--link {
+      font-size: 18px;
+      color: var(--color-primary);
+      transition: all 0.5s ease;
+      font-weight: bold;
+      /*&:hover {
+        color: var(--color-secondary);
+      }*/
+    }
+  }
+  &__patron {
+    transform: scale(2);
+    z-index: 0 !important;
+    bottom: 10%;
+  }
+
+  &__patron-up {
+    transform: scale(2.5);
+    z-index: 0 !important;
+    top: 40%;
+    right: -510px;
+    @include breakpoint(xl down) {
+      transform: scale(1.7);
+      top: 30%;
+    }
+  }
+}
+
+.c-newsletter {
+  &__years {
+    @include breakpoint(m down) {
+      line-height: 1em;
+      overflow-x: auto;
+    }
+    a {
+      font-size: 24px;
+      font-weight: 500;
+      color: #8a8d89;
+      border-right: 1px solid lightgrey;
+      padding: 0px 15px;
+      @include breakpoint(m down) {
+        font-size: 18px;
+        padding: 0 8px;
+        margin-bottom: 0 !important;
+      }
+      &:first-child {
+        padding-left: 0px;
+      }
+      &:last-child {
+        border-right: none;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .is-active {
+      color: #3C3E40 !important;
+      &:hover {
+        text-decoration: none !important;
+      }
+    }
+  }
+}

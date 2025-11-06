@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Sala de prensa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+</head>
+
+<body>
+    <div class="c-header c-header-orange">
+        <div class="o-wrapper o-wrapper--l">
+            <div class="o-layout o-layout--gutter-left-s u-flex-middle">
+                <div class="o-layout__item u-2/5 u-1/5@m">
+                    <picture class="c-header__logo">
+                        <img class="svg" src="/assets/images/logo.svg" />
+                    </picture>
+                </div>
+                <div class="o-layout__item u-3/5 u-4/5@m u-flex u-flex-middle u-flex-right u-relative u-pdr-xl u-pdr-none@l">
+                    <div class="c-header__menu js-toggle-nav">
+                        <ul class="c-header__menu-items">
+                            <li class="is-active">
+                                <a href="#">Inicio</a>
+                            </li>
+                            <li>
+                                <a href="#">Nosotros</a>
+                            </li>
+                            <li>
+                                <a href="#">Ser impulso</a>
+                            </li>
+                            <li>
+                                <a href="#">Soluciones</a>
+                            </li>
+                            <li>
+                                <a href="#">Actividades</a>
+                            </li>
+                            <li>
+                                <a href="#">Sala de prensa</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c-header__language" data-toggle-class="is-active" data-toggle-class-item="language-selector">ESP <ul>
+                            <li><a href="#">ENG</a></li>
+                            <li><a href="#">DE</a></li>
+                        </ul>
+                    </div>
+                    <a data-toggle-class="is-active" data-toggle-class-item="login" class="c-header__candado u-mrl-s u-mrl-l@xxl" href="#"><img class="svg" src="/assets/images/candado.svg"></a>
+                    <a class="u-mrl-s u-mrl-l@xxl c-header__search" data-toggle-class="is-active" data-toggle-class-item="searcher"><img class="svg" src="/assets/images/search.svg"></a>
+                    <a href="#" class="c-header__register c-btn--primary u-uppercase" data-toggle-class="is-active" data-toggle-class-item="register">Registrate</a>
+                    <a href="#" class="c-header__ren c-btn--primary">re<sup>N</sup></a>
+                </div>
+            </div>
+            <div class="c-header__menu-mb js-toggle-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <div class="c-modal " data-toggle-class-item="searcher">
+        <div class="c-modal__container c-modal__container--s">
+            <a class="c-modal__close" data-toggle-class="is-active" data-toggle-class-item="searcher" data-toggle-class-not-this href="#">
+                <i class="fal fa-times"></i>
+            </a>
+            <form class="u-mrt-xl">
+                <div class="c-login__input c-modal__group u-pd-none">
+                    <img class='svg' src='/assets/images/search.svg'>
+                    <input name="search" type="text" placeholder="Buscar" />
+                </div>
+            </form>
+            <ul class="c-modal__results u-pdt-xxl">
+                <li><i class="fas fa-chevron-right"></i> Mostrar resultado de lorem ipsum</li>
+                <li><i class="fas fa-chevron-right"></i> Mostrar resultado de lorem ipsum</li>
+                <li><i class="fas fa-chevron-right"></i> Mostrar resultado de lorem ipsum</li>
+                <li><i class="fas fa-chevron-right"></i> Mostrar resultado de lorem ipsum</li>
+                <li><i class="fas fa-chevron-right"></i> Mostrar resultado de lorem ipsum</li>
+            </ul>
+        </div>
+    </div>
+    <div class="c-modal " data-toggle-class-item="login">
+        <div class="c-modal__container c-modal__container--s">
+            <a class="c-modal__close" data-toggle-class="is-active" data-toggle-class-item="login" data-toggle-class-not-this href="#">
+                <i class="fal fa-times"></i>
+            </a>
+            <div class="c-login__title u-align-center">Login de usuario</div>
+            <form class="u-mrt-xl">
+                <input class="c-login__input u-mrb-m" type="text" placeholder="Usuario" />
+                <input class="c-login__input u-mrb-m" type="text" placeholder="Contraseña" />
+                <div class="u-align-center u-mrt-s">
+                    <input class="c-btn--text c-btn--big" type="submit" value="Acceder" />
+                    <div class="c-login__links u-mrt-l">
+                        <a data-toggle-class-item="password" data-toggle-class="is-active" data-toggle-close-all="true" href="#">No recuerdo mi contraseña</a><br>
+                        <a data-toggle-class-item="register" data-toggle-class="is-active" data-toggle-close-all="true" href="#">No tengo cuenta, Regístrame</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="c-modal" data-toggle-class-item="password">
+        <div class="c-modal__container c-modal__container--s">
+            <a class="c-modal__close" data-toggle-class="is-active" data-toggle-class-item="password" data-toggle-class-not-this href="#">
+                <i class="fal fa-times"></i>
+            </a>
+            <div class="c-login__title u-align-center">Restablecer contraseña</div>
+            <form class="u-mrt-xl">
+                <input class="c-login__input u-mrb-m" type="text" placeholder="Correo electrónico" />
+                <div class="u-align-right u-mrb-m">
+                    <img src="/assets/images/captcha.png" />
+                </div>
+                <div class="u-align-center u-mrt-s">
+                    <input class="c-btn--text c-btn--big" type="submit" value="Enviar" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="c-modal " data-toggle-class-item="register">
+        <div class="c-modal__container c-modal__container--m">
+            <a class="c-modal__close" data-toggle-class="is-active" data-toggle-class-item="register" data-toggle-close-all data-toggle-class-not-this href="#">
+                <i class="fal fa-times"></i>
+            </a>
+            <a class="c-login__back" href="#" data-toggle-class="is-active" data-toggle-close-all="true" data-toggle-class-item="login"><img class="svg" src="/assets/images/arrow.svg" /></a>
+            <div class="c-login__title u-align-center">Registro de usuario</div>
+            <form class="u-mrt-xl c-login__container">
+                <div class="c-login__required u-align-right u-mrb-s">* Campos requeridos</div>
+                <div class="o-layout o-layout--gutter-m">
+                    <div class="o-layout__item u-1/2@m">
+                        <input class="c-login__input" type="text" placeholder="Nombre *" />
+                    </div>
+                    <div class="o-layout__item u-1/2@m">
+                        <input class="c-login__input" type="text" placeholder="Apellidos *" />
+                    </div>
+                    <div class="o-layout__item u-1/2@m">
+                        <input class="c-login__input" type="text" placeholder="Empresa *" />
+                    </div>
+                    <div class="o-layout__item u-1/2@m">
+                        <input class="c-login__input" type="text" placeholder="Cargo *" />
+                    </div>
+                    <div class="o-layout__item">
+                        <input class="c-login__input" type="text" placeholder="Teléfono de contacto" />
+                    </div>
+                    <div class="o-layout__item">
+                        <input class="c-login__input" type="text" placeholder="Email *" />
+                    </div>
+                    <div class="o-layout__item">
+                        <input class="c-login__input" type="text" placeholder="Confirmar email *" />
+                    </div>
+                    <div class="o-layout__item">
+                        <input class="c-login__input" type="text" placeholder="Contraseña" />
+                    </div>
+                    <div class="o-layout__item">
+                        <input class="c-login__input" type="text" placeholder="Confirmar contraseña" />
+                    </div>
+                    <div class="o-layout__item u-align-right">
+                        <img src="/assets/images/captcha.png" />
+                    </div>
+                    <div class="o-layout__item u-5/6@m u-mrt-l">
+                        <div class="c-login__subtitle">Selecciona las iniciativas de tu interés y mantente al día de nuestros últimos resultados.</div>
+                        <div class="c-login__section">
+                            <label class="c-login__check c-login__check--big u-mrt-m u-mrb-s">
+                                <input type="checkbox"> <span>Acepto recibir todos los boletines periódicos <a href="#">newsletter</a></span>
+                            </label>
+                        </div>
+                        <div class="c-login__section u-mrt-m">
+                            <label class="c-login__check c-login__check--big">
+                                <input type="checkbox"> Acepto recibir única y exclusivamente los boletines vinculados a los siguientes intereses: </label>
+                            <div class="u-pdl-l u-mrv-s">
+                                <label class="c-login__check c-login__check--big u-mrb-xs">
+                                    <input type="checkbox"> Posicionamiento competitivo y factores críticos </label>
+                                <label class="c-login__check c-login__check--big  u-mrb-xs">
+                                    <input type="checkbox"> Especialización productiva y clusterización </label>
+                                <label class="c-login__check c-login__check--big  u-mrb-xs">
+                                    <input type="checkbox"> Dinámica empresarial </label>
+                                <label class="c-login__check c-login__check--big  u-mrb-xs">
+                                    <input type="checkbox"> Activación de palancas estratégicas </label>
+                            </div>
+                        </div>
+                        <label class="c-login__check c-login__check--big u-mrt-s">
+                            <input type="checkbox"> <b>Recibe invitaciones e información sobre nuestros evento</b>
+                        </label>
+                    </div>
+                </div>
+                <div class="c-login__bottom o-layout u-flex-middle u-mrt-l">
+                    <div class="o-layout__item u-1/2">
+                        <input class="c-btn--text c-btn--mid" type="submit" value="Registrarse" />
+                    </div>
+                    <div class="o-layout__item u-1/2 u-flex u-flex-right">
+                        <label class="c-login__check">
+                            <input type="checkbox"> <span>He leido y acepto la <a href="#">Política de privacidad</a></span>
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="u-position-relative c-banner-heading u-flex u-flex-middle">
+        <picture class="u-images u-images--background">
+            <img src="https://source.unsplash.com/1920x1080/?office" alt="slide1">
+        </picture>
+        <div class="o-wrapper o-wrapper--l u-pdv-xxh">
+            <div class="u-color-shade-0 c-banner-heading__title u-mrb-xl" data-aos="fade-down" data-aos-duration="1000"> Sala de prensa</div>
+            <div class="u-flex u-flex-column u-flex-row@m c-banner-heading__subitems" data-aos="fade-down" data-aos-duration="1000">
+                <div class="u-uppercase c-banner-heading__subitems--border u-pdr-m">NOTICIAS</div>
+                <div class="u-uppercase c-banner-heading__subitems--border u-pdh-m">NEWSLETTERS</div>
+                <div class="u-uppercase c-banner-heading__subitems--border u-pdh-m">EN LOS MEDIOS</div>
+                <div class="u-uppercase c-banner-heading__subitems--border u-pdh-m">RECURSOS</div>
+            </div>
+        </div>
+        <div class="c-grid-items__patron c-grid-items__patron--gray c-grid-items__patron--right">
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="667.567px" height="309.788px" viewBox="0 0 667.567 309.788" style="enable-background:new 0 0 667.567 309.788;" xml:space="preserve">
+                <path style="fill:#C3C2C2;" d="M433.146,9.1c0,5.025,4.074,9.1,9.1,9.1s9.1-4.075,9.1-9.1c0-5.025-4.074-9.1-9.1-9.1
+	S433.146,4.075,433.146,9.1" />
+                <path style="fill:#6F6F6F;" d="M496.612,47.289c5.024,0,9.1-4.075,9.1-9.1c0-5.025-4.075-9.1-9.1-9.1H344.556
+	c-5.024,0-9.1,4.075-9.1,9.1c0,5.025,4.075,9.1,9.1,9.1H496.612" />
+                <path style="fill:#9D9D9C;" d="M471.801,0c-5.025,0-9.101,4.075-9.101,9.1s4.075,9.1,9.101,9.1h83.116
+	c5.027,0,9.103-4.075,9.103-9.1S559.944,0,554.917,0H471.801" />
+                <path style="fill:#6F6F6F;" d="M432.912,58.722c-5.025,0-9.101,4.075-9.101,9.1s4.075,9.1,9.101,9.1h83.116
+	c5.027,0,9.103-4.075,9.103-9.1s-4.075-9.1-9.103-9.1H432.912" />
+                <path style="fill:#6F6F6F;" d="M261.879,87.577c-5.025,0-9.101,4.075-9.101,9.1c0,5.025,4.075,9.101,9.101,9.101h83.116
+	c5.027,0,9.103-4.075,9.103-9.101c0-5.024-4.075-9.1-9.103-9.1H261.879" />
+                <path style="fill:#9D9D9C;" d="M376.912,87.577c-5.025,0-9.101,4.075-9.101,9.1c0,5.025,4.075,9.101,9.101,9.101h200.2
+	c5.025,0,9.1-4.075,9.1-9.101c0-5.024-4.074-9.1-9.1-9.1H376.912" />
+                <path style="fill:#C3C2C2;" d="M205.801,58.722c-5.024,0-9.1,4.075-9.1,9.1s4.075,9.1,9.1,9.1h200.2c5.026,0,9.1-4.075,9.1-9.1
+	s-4.073-9.1-9.1-9.1H205.801" />
+                <path style="fill:#C3C2C2;" d="M249.435,184.021c0-5.024-4.074-9.1-9.101-9.1c-5.024,0-9.1,4.075-9.1,9.1
+	c0,5.025,4.075,9.101,9.1,9.101C245.36,193.122,249.435,189.047,249.435,184.021" />
+                <path style="fill:#C3C2C2;" d="M440.224,213.11c0-5.025-4.075-9.1-9.101-9.1c-5.024,0-9.1,4.074-9.1,9.1s4.075,9.1,9.1,9.1
+	C436.148,222.21,440.224,218.136,440.224,213.11" />
+                <path style="fill:#6F6F6F;" d="M280.157,125.532c0-5.024-4.075-9.1-9.101-9.1c-5.024,0-9.1,4.075-9.1,9.1
+	c0,5.025,4.075,9.101,9.1,9.101C276.082,134.633,280.157,130.558,280.157,125.532" />
+                <path style="fill:#C3C2C2;" d="M322.591,154.388c0,5.025,4.074,9.101,9.1,9.101s9.1-4.075,9.1-9.101c0-5.024-4.074-9.1-9.1-9.1
+	S322.591,149.363,322.591,154.388" />
+                <path style="fill:#6F6F6F;" d="M267.55,174.921c-5.024,0-9.1,4.076-9.1,9.101s4.075,9.101,9.1,9.101h83.117
+	c5.027,0,9.103-4.076,9.103-9.101s-4.075-9.101-9.103-9.101H267.55" />
+                <path style="fill:#6F6F6F;" d="M376.757,174.921c-5.025,0-9.101,4.076-9.101,9.101s4.075,9.101,9.101,9.101h152.056
+	c5.024,0,9.1-4.076,9.1-9.101s-4.075-9.101-9.1-9.101H376.757" />
+                <path style="fill:#9D9D9C;" d="M304.475,163.488c5.024,0,9.1-4.075,9.1-9.1c0-5.025-4.075-9.101-9.1-9.101h-83.117
+	c-5.026,0-9.102,4.075-9.102,9.101c0,5.024,4.075,9.1,9.102,9.1H304.475" />
+                <path style="fill:#9D9D9C;" d="M401.567,222.21c5.025,0,9.101-4.074,9.101-9.1s-4.075-9.1-9.101-9.1H318.45
+	c-5.026,0-9.102,4.074-9.102,9.1s4.075,9.1,9.102,9.1H401.567" />
+                <path style="fill:#6F6F6F;" d="M440.456,163.488c5.025,0,9.101-4.075,9.101-9.1c0-5.025-4.075-9.101-9.101-9.101H357.34
+	c-5.027,0-9.103,4.075-9.103,9.101c0,5.024,4.075,9.1,9.103,9.1H440.456" />
+                <path style="fill:#C3C2C2;" d="M196.856,155.399c0-5.025-4.074-9.1-9.1-9.1s-9.1,4.074-9.1,9.1s4.074,9.1,9.1,9.1
+	S196.856,160.425,196.856,155.399" />
+                <path style="fill:#C3C2C2;" d="M110.335,96.677c0,5.025,4.074,9.101,9.101,9.101c5.024,0,9.1-4.075,9.1-9.101
+	c0-5.024-4.075-9.1-9.1-9.1C114.409,87.577,110.335,91.652,110.335,96.677" />
+                <path style="fill:#6F6F6F;" d="M90.612,117.21c-5.025,0-9.1,4.076-9.1,9.101s4.074,9.101,9.1,9.101h152.056
+	c5.025,0,9.101-4.076,9.101-9.101s-4.075-9.101-9.101-9.101H90.612" />
+                <path style="fill:#9D9D9C;" d="M92.22,105.777c5.024,0,9.1-4.075,9.1-9.1c0-5.025-4.075-9.101-9.1-9.101H9.103
+	C4.075,87.577,0,91.652,0,96.678c0,5.024,4.075,9.1,9.103,9.1H92.22" />
+                <path style="fill:#9D9D9C;" d="M158.201,164.499c5.025,0,9.101-4.074,9.101-9.1s-4.075-9.1-9.101-9.1H75.084
+	c-5.026,0-9.102,4.074-9.102,9.1s4.075,9.1,9.102,9.1H158.201" />
+                <path style="fill:#6F6F6F;" d="M228.201,105.777c5.024,0,9.1-4.075,9.1-9.1c0-5.025-4.075-9.101-9.1-9.101h-83.117
+	c-5.026,0-9.102,4.075-9.102,9.101c0,5.024,4.075,9.1,9.102,9.1H228.201" />
+                <path style="fill:#9D9D9C;" d="M496.456,134.633c5.025,0,9.101-4.075,9.101-9.1c0-5.025-4.075-9.101-9.101-9.101h-200.2
+	c-5.025,0-9.1,4.075-9.1,9.101c0,5.024,4.074,9.1,9.1,9.1H496.456" />
+                <path style="fill:#C3C2C2;" d="M667.567,145.288h-200.2c-5.026,0-9.101,4.075-9.101,9.101c0,5.024,4.074,9.1,9.101,9.1h200.2" />
+                <path style="fill:#6F6F6F;" d="M597.567,251.3c5.025,0,9.1-4.075,9.1-9.1c0-5.025-4.074-9.101-9.1-9.101H514.45
+	c-5.027,0-9.102,4.075-9.102,9.101c0,5.024,4.074,9.1,9.102,9.1H597.567" />
+                <path style="fill:#6F6F6F;" d="M488.361,251.3c5.024,0,9.1-4.075,9.1-9.1c0-5.025-4.075-9.101-9.1-9.101H336.306
+	c-5.025,0-9.101,4.075-9.101,9.101c0,5.024,4.075,9.1,9.101,9.1H488.361" />
+                <path style="fill:#9D9D9C;" d="M463.55,204.011c-5.024,0-9.1,4.074-9.1,9.1s4.075,9.1,9.1,9.1h83.117c5.027,0,9.103-4.074,9.103-9.1
+	s-4.075-9.1-9.103-9.1H463.55" />
+                <path style="fill:#6F6F6F;" d="M424.661,262.732c-5.024,0-9.1,4.075-9.1,9.101c0,5.024,4.075,9.1,9.1,9.1h83.117
+	c5.027,0,9.102-4.075,9.102-9.1c0-5.025-4.074-9.101-9.102-9.101H424.661" />
+                <path style="fill:#9D9D9C;" d="M368.661,291.588c-5.024,0-9.1,4.075-9.1,9.101c0,5.024,4.075,9.1,9.1,9.1h200.2
+	c5.026,0,9.1-4.075,9.1-9.1c0-5.025-4.073-9.101-9.1-9.101H368.661" />
+                <path style="fill:#C3C2C2;" d="M197.551,262.732c-5.025,0-9.101,4.075-9.101,9.101c0,5.024,4.075,9.1,9.101,9.1h200.2
+	c5.025,0,9.1-4.075,9.1-9.1c0-5.025-4.074-9.101-9.1-9.101H197.551" />
+                <path style="fill:#C3C2C2;" d="M139.218,291.588c-5.025,0-9.101,4.075-9.101,9.101c0,5.024,4.075,9.1,9.101,9.1h200.199
+	c5.026,0,9.101-4.075,9.101-9.1c0-5.025-4.074-9.101-9.101-9.101H139.218" />
+            </svg>
+        </div>
+    </div>
+    <div class="c-prensa u-position-relative">
+        <div class="o-wrapper o-wrapper--l">
+            <div class="u-pdv-l">
+                <ul class="c-breadcrumbs" data-aos="fade-right" data-aos-duration="1000">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">Sala de prensa</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="u-pdb-l u-pdt-m">
+        <div class="o-wrapper o-wrapper--l" data-aos="fade-up" data-aos-duration="1000">
+            <div class="c-title--v1 u-mrb-m">Recursos corporativos</div>
+            <div class="c-description--v1 u-mrb-xl">
+                <p> En IMPULSA BALEARS agradecemos las consultas de los medios de comunicación y gabinetes de prensa de las distintas entidades y organismos de nuestro tejido. Ponemos a disposición materiales que puedan ser de su interés para dar a conocer y hacer extensiva nuestra labor </p>
+            </div>
+            <div class="c-grid-case" style="background: linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,.4)), url(https://fib_web.test/storage/app/uploads/public/63e/e37/338/63ee373387c34651020582.jpg); background-size: cover; ">
+                <div class="c-grid-case__item-alternative" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="c-grid-case__item-content" style="background-color:#fff;">
+                        <picture>
+                            <img class="c-grid-case__logo" src="https://impulsabalears.org/storage/app/uploads/public/61b/1ae/cfa/61b1aecfae7eb808511702.svg" alt="GARDEN HOTELS">
+                        </picture>
+                    </div>
+                </div>
+                <div class="c-grid-case__item-alternative" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="c-grid-case__item-content">
+                        <div class="c-grid-case__title-v2">Retos y oportunidades</div>
+                        <div class="c-grid-case__description" data-aos-delay="300">
+                            <p> Que los productos agrícolas ecológicos y de proximidad predominen en la oferta gastronómica de los principales establecimientos de la compañía supone una oportunidad para ofrecer un servicio de restauración diferenciado y, sobre todo, para poner en valor los principios de sostenibilidad y vinculación a la comunidad local que rigen el negocio familiar. Sin embargo, a pesar de que la superficie dedicada a la práctica de la agricultura ecológica en las islas ha incrementado a lo largo de las últimas décadas de manera significativa, el actual volumen de producción no permite garantizar el suministro necesario para satisfacer las necesidades anuales de abastecimiento. En este contexto, las toneladas de biorresiduos que la compañía genera en sus establecimientos se convierten en un activo" que la compañía decide poner a trabajar para cerrar el círculo". </p>
+                        </div>
+                        <div class="
+                            c-grid-case__patron
+                            c-grid-case__patron--gray
+                            c-grid-case__patron--right
+                        "></div>
+                    </div>
+                </div>
+                <div class="c-grid-case__item-alternative" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="c-grid-case__item-content u-bg-color-shade-200">
+                        <div style="background-color: var(--color-secondary); color:#fff; padding:6px; min-width: 120px; text-align: center; font-size: var(--font-size-s); border-radius:25px;">AAAA</div>
+                        <BR />
+                        <div style="background-color: var(--color-secondary); color:#fff; padding:6px; min-width: 120px; text-align: center; font-size: var(--font-size-s); border-radius:25px;">BBBB</div>
+                        <BR />
+                        <div style="background-color: var(--color-shade-600); color:#fff; padding:6px; min-width: 120px; text-align: center; font-size: var(--font-size-s); border-radius:25px;">CCCC</div>
+                    </div>
+                </div>
+                <div class="c-grid-case__item-alternative u-bg-color-text" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="c-grid-case__item-content" style="margin-left:30px;">
+                        <div class="o-layout__item u-4/4@m aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="c-patronato__quote u-flex">
+                                <p class=" c-title__h3" style="font-weight:500 !important;">Esta iniciativa surge para poner en valor los residuos como recurso para el sector primario y producir de forma ecológica alimentos más sostenibles y saludables.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-grid-case__item-alternative">
+                    <div class="c-grid-case__item-content" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="c-grid-case__title-v2"> Líneas de actuación y soluciones </div>
+                        <div class="c-grid-case__description" data-aos-delay="300">
+                            <p> Que los productos agrícolas ecológicos y de proximidad predominen en la oferta gastronómica de los principales establecimientos de la compañía supone una oportunidad para ofrecer un servicio de restauración diferenciado y, sobre todo, para poner en valor los principios de sostenibilidad y vinculación a la comunidad local que rigen el negocio familiar. Sin embargo, a pesar de que la superficie dedicada a la práctica de la agricultura ecológica en las islas ha incrementado a lo largo de las últimas décadas de manera significativa, el actual volumen de producción no permite garantizar el suministro necesario para satisfacer las necesidades anuales de abastecimiento. En este contexto, las toneladas de biorresiduos que la compañía genera en sus establecimientos se convierten en un activo" que la compañía decide poner a trabajar para cerrar el círculo". </p>
+                        </div>
+                        <!--<picture
+                        class="u-images u-images--background u-images--zoom"
+                    >
+                        <img src="/assets/images/FAC322CD.jpg" />
+                    </picture>-->
+                    </div>
+                </div>
+                <div class="c-grid-case__item-alternative u-bg-color-secondary" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="c-grid-case__item-content">
+                        <div class="c-grid-case__title-v2"> Retos y soluciones </div>
+                        <a class="c-grid-case__link-v2" href="#">Ver vídeos</a>
+                        <!--<div
+                        style="
+                            background-image: url('/assets/images/FAC322C5.jpg');
+                        "
+                        class="u-images u-images--background u-images--parallax"
+                    ></div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="c-contact-banner">
+        <div class="u-relative c-contact-banner__container">
+            <div class="c-grid-items__patron"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="389.603px" height="222.263px" viewBox="0 0 389.603 222.263" style="enable-background:new 0 0 389.603 222.263;" xml:space="preserve">
+                    <path style="fill:#FBBC33;" d="M336.857,38.198c0,5.026,4.076,9.102,9.103,9.102s9.103-4.076,9.103-9.102
+	c0-5.027-4.076-9.102-9.103-9.102S336.857,33.171,336.857,38.198" />
+                    <path style="fill:#EF7926;" d="M306.128,96.7c0,5.026,4.076,9.102,9.102,9.102c5.027,0,9.102-4.076,9.102-9.102
+	c0-5.026-4.074-9.102-9.102-9.102C310.205,87.599,306.128,91.674,306.128,96.7" />
+                    <path style="fill:#FBBC33;" d="M263.684,67.838c0-5.027-4.076-9.102-9.103-9.102s-9.102,4.075-9.102,9.102
+	c0,5.026,4.075,9.102,9.102,9.102S263.684,72.864,263.684,67.838" />
+                    <path style="fill:#EF7926;" d="M318.738,47.299c5.026,0,9.102-4.075,9.102-9.102c0-5.026-4.075-9.102-9.102-9.102H235.6
+	c-5.028,0-9.103,4.076-9.103,9.102c0,5.027,4.074,9.102,9.103,9.102H318.738" />
+                    <path style="fill:#EF7926;" d="M209.505,47.299c5.027,0,9.102-4.075,9.102-9.102c0-5.026-4.074-9.102-9.102-9.102H57.414
+	c-5.026,0-9.102,4.076-9.102,9.102c0,5.027,4.076,9.102,9.102,9.102H209.505" />
+                    <path style="fill:#EA5B0C;" d="M281.804,58.736c-5.027,0-9.102,4.075-9.102,9.102c0,5.026,4.074,9.102,9.102,9.102h83.137
+	c5.028,0,9.104-4.076,9.104-9.102c0-5.027-4.075-9.102-9.104-9.102H281.804" />
+                    <path style="fill:#EA5B0C;" d="M184.688,0c-5.027,0-9.102,4.075-9.102,9.102c0,5.026,4.075,9.102,9.102,9.102h83.138
+	c5.027,0,9.103-4.076,9.103-9.102c0-5.027-4.075-9.102-9.103-9.102H184.688" />
+                    <path style="fill:#EF7926;" d="M145.791,58.736c-5.026,0-9.102,4.075-9.102,9.102c0,5.026,4.076,9.102,9.102,9.102h83.137
+	c5.027,0,9.104-4.076,9.104-9.102c0-5.027-4.076-9.102-9.104-9.102H145.791" />
+                    <path style="fill:#EA5B0C;" d="M89.777,87.598c-5.027,0-9.102,4.076-9.102,9.102c0,5.026,4.075,9.102,9.102,9.102h200.248
+	c5.025,0,9.102-4.076,9.102-9.102c0-5.026-4.076-9.102-9.102-9.102H89.777" />
+                    <path style="fill:#EF7926;" d="M89.622,174.963c-5.027,0-9.102,4.076-9.102,9.102c0,5.027,4.075,9.103,9.102,9.103h152.092
+	c5.026,0,9.103-4.075,9.103-9.103c0-5.025-4.076-9.102-9.103-9.102H89.622" />
+                    <path style="fill:#EA5B0C;" d="M209.349,134.664c5.027,0,9.103-4.075,9.103-9.102c0-5.025-4.075-9.102-9.103-9.102H9.102
+	c-5.026,0-9.102,4.076-9.102,9.102c0,5.026,4.076,9.102,9.102,9.102H209.349" />
+                    <path style="fill:#FBBC33;" d="M380.501,163.527c5.025,0,9.102-4.075,9.102-9.102c0-5.027-4.076-9.103-9.102-9.103H180.253
+	c-5.027,0-9.102,4.075-9.102,9.103c0,5.026,4.075,9.102,9.102,9.102H380.501" />
+                    <path style="fill:#EA5B0C;" d="M176.436,204.059c-5.026,0-9.102,4.076-9.102,9.102c0,5.027,4.076,9.103,9.102,9.103h83.137
+	c5.028,0,9.103-4.075,9.103-9.103c0-5.025-4.074-9.102-9.103-9.102H176.436" />
+                </svg></div>
+            <div class="c-grid-items__patron c-grid-items__patron--right"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="389.603px" height="222.263px" viewBox="0 0 389.603 222.263" style="enable-background:new 0 0 389.603 222.263;" xml:space="preserve">
+                    <path style="fill:#FBBC33;" d="M336.857,38.198c0,5.026,4.076,9.102,9.103,9.102s9.103-4.076,9.103-9.102
+	c0-5.027-4.076-9.102-9.103-9.102S336.857,33.171,336.857,38.198" />
+                    <path style="fill:#EF7926;" d="M306.128,96.7c0,5.026,4.076,9.102,9.102,9.102c5.027,0,9.102-4.076,9.102-9.102
+	c0-5.026-4.074-9.102-9.102-9.102C310.205,87.599,306.128,91.674,306.128,96.7" />
+                    <path style="fill:#FBBC33;" d="M263.684,67.838c0-5.027-4.076-9.102-9.103-9.102s-9.102,4.075-9.102,9.102
+	c0,5.026,4.075,9.102,9.102,9.102S263.684,72.864,263.684,67.838" />
+                    <path style="fill:#EF7926;" d="M318.738,47.299c5.026,0,9.102-4.075,9.102-9.102c0-5.026-4.075-9.102-9.102-9.102H235.6
+	c-5.028,0-9.103,4.076-9.103,9.102c0,5.027,4.074,9.102,9.103,9.102H318.738" />
+                    <path style="fill:#EF7926;" d="M209.505,47.299c5.027,0,9.102-4.075,9.102-9.102c0-5.026-4.074-9.102-9.102-9.102H57.414
+	c-5.026,0-9.102,4.076-9.102,9.102c0,5.027,4.076,9.102,9.102,9.102H209.505" />
+                    <path style="fill:#EA5B0C;" d="M281.804,58.736c-5.027,0-9.102,4.075-9.102,9.102c0,5.026,4.074,9.102,9.102,9.102h83.137
+	c5.028,0,9.104-4.076,9.104-9.102c0-5.027-4.075-9.102-9.104-9.102H281.804" />
+                    <path style="fill:#EA5B0C;" d="M184.688,0c-5.027,0-9.102,4.075-9.102,9.102c0,5.026,4.075,9.102,9.102,9.102h83.138
+	c5.027,0,9.103-4.076,9.103-9.102c0-5.027-4.075-9.102-9.103-9.102H184.688" />
+                    <path style="fill:#EF7926;" d="M145.791,58.736c-5.026,0-9.102,4.075-9.102,9.102c0,5.026,4.076,9.102,9.102,9.102h83.137
+	c5.027,0,9.104-4.076,9.104-9.102c0-5.027-4.076-9.102-9.104-9.102H145.791" />
+                    <path style="fill:#EA5B0C;" d="M89.777,87.598c-5.027,0-9.102,4.076-9.102,9.102c0,5.026,4.075,9.102,9.102,9.102h200.248
+	c5.025,0,9.102-4.076,9.102-9.102c0-5.026-4.076-9.102-9.102-9.102H89.777" />
+                    <path style="fill:#EF7926;" d="M89.622,174.963c-5.027,0-9.102,4.076-9.102,9.102c0,5.027,4.075,9.103,9.102,9.103h152.092
+	c5.026,0,9.103-4.075,9.103-9.103c0-5.025-4.076-9.102-9.103-9.102H89.622" />
+                    <path style="fill:#EA5B0C;" d="M209.349,134.664c5.027,0,9.103-4.075,9.103-9.102c0-5.025-4.075-9.102-9.103-9.102H9.102
+	c-5.026,0-9.102,4.076-9.102,9.102c0,5.026,4.076,9.102,9.102,9.102H209.349" />
+                    <path style="fill:#FBBC33;" d="M380.501,163.527c5.025,0,9.102-4.075,9.102-9.102c0-5.027-4.076-9.103-9.102-9.103H180.253
+	c-5.027,0-9.102,4.075-9.102,9.103c0,5.026,4.075,9.102,9.102,9.102H380.501" />
+                    <path style="fill:#EA5B0C;" d="M176.436,204.059c-5.026,0-9.102,4.076-9.102,9.102c0,5.027,4.076,9.103,9.102,9.103h83.137
+	c5.028,0,9.103-4.075,9.103-9.103c0-5.025-4.074-9.102-9.103-9.102H176.436" />
+                </svg></div>
+            <div class="o-wrapper o-wrapper--l u-pdv-l u-pdv-xxxh@m">
+                <div class="o-layout o-layout--gutter-m u-flex-middle" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="o-layout__item u-1/2@m u-3/4@l">
+                        <div class="c-contact-banner__title">¿Tienes preguntas? Contacta con nosotros. Estaremos encantados de atenderte y compartir nuestra experiencia contigo</div>
+                    </div>
+                    <div class="o-layout__item u-1/2@m u-1/4@l u-mrt-l u-mrt-none@m" data-aos="fade-left" data-aos-duration="1000">
+                        <a href="#" class="c-btn--white c-btn c-btn--big u-uppercase">Envíanos tu mensaje</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="c-info-banner u-pdv-xxxl">
+        <div class="o-wrapper o-wrapper--l">
+            <div class="o-layout o-layout--gutter-l o-layout--gutter-h@m">
+                <div class="o-layout__item u-1/2@m" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="c-info-banner__title">Iniciar sesión</div>
+                    <form class="u-mrt-m">
+                        <div class="o-layout o-layout--gutter-l">
+                            <div class="o-layout__item u-3/5">
+                                <input class="c-input u-mrb-s" placeholder="Correo electrónico" type="text">
+                                <input class="c-input u-mrb-xl" placeholder="Contraseña" type="text">
+                            </div>
+                            <div class="o-layout__item u-2/5">
+                                <input class="c-btn--primary c-btn--fw" type="submit" value="Enviar">
+                                <div class="c-info-banner__links u-mrt-l"><a href="#" data-toggle-class="is-active" data-toggle-class-item="register">Crear una cuenta</a><br><a href="#" data-toggle-class="is-active" data-toggle-class-item="password">Recordar contraseña</a></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="o-layout__item u-1/2@m" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="c-info-banner__title">Contacto</div>
+                    <div class="o-layout u-mrt-l">
+                        <div class="o-layout__item u-1/2@m">
+                            <div class="c-info-banner__description"> Edifici Disset, A9<br> Isaac Newton s/n, ParcBit<br> 07121 Palma de Mallorca<br>
+                                <a href="#"> <img class="u-images u-images--svg" src="/assets/images/telefono.svg"> +34 971 43 97 74</a>
+                                <a class="c-info-banner__mail" href="#"> <img class="u-mrr-xs" src="/assets/images/mail.svg"> info@impulsabalears.org</a>
+                            </div>
+                        </div>
+                        <div class="o-layout__item u-1/2@m">
+                            <div class="c-info-banner__description u-mrt-m">
+                                <b>Horari:</b><br> Dilluns a divendres,<br> de 8.00 a 15.00 hores
+                            </div>
+                            <ul class="c-footer__social u-mrt-xs">
+                                <li>
+                                    <a href="https://twitter.com/ImpulsaBalears" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UC83rBNCu34txM6wRUquSLig" target="_blank"><i class="fab fa-youtube"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="c-footer u-pdv-m">
+        <div class="o-wrapper o-wrapper--l u-flex@m u-flex-middle u-flex-between">
+            <div><strong>Federación Impulsa Balears</strong> ©2020.<br> Todos los derechos reservados</div>
+            <div class="u-flex@m u-flex-middle">
+                <div class="u-mrl-xl@m"><a href="#">Política de privacidad</a> | <a href="#">Política de cookies</a> | <a href="#">Aviso legal</a></div>
+            </div>
+        </div>
+    </div>
+    
+  <script type="module" src="/src/js/app.js"></script>`r`n  </body>
+
+</html>
+

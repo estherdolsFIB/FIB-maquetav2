@@ -1,0 +1,56 @@
+.c-signin {
+    height: 80vh;
+    // background-color: #EA5A0BB2;
+    color: white;
+    @include breakpoint(m down) {
+      height: auto;
+    }
+    &__title {
+        font-size: 54px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 67px;
+        @include breakpoint(xl down) {
+          font-size: 35px;
+          line-height: 40px;
+        }
+    }
+    &__description {
+      font-size: 21px;
+      line-height: 25px;
+      font-weight: 300;
+      @include breakpoint(xl down) {
+        font-size: 17px;
+        line-height: 25px;
+      }
+    }
+    &__card {
+      color: black;
+      background-color: white;
+      height: 100%;
+      text-align: center;
+      &--title {
+        font-weight: bold;
+        font-size: 21px;
+      }
+      &--list {
+        text-align: left;
+        li {
+          padding: 10px 0px;
+          border-bottom: 1px solid lightgrey;
+          &:first-child {
+            border-top: 1px solid lightgrey;
+          }
+        }
+      }
+      &--link {
+        color: var(--color-secondary);
+        font-weight: bold;
+        font-size: 18px;
+        transition: all .5s ease;
+        &:hover {
+          color: var(--color-primary);
+        }
+      }
+    }
+}

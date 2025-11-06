@@ -1,0 +1,558 @@
+.c-grid-case {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: #eca570;
+  @include breakpoint(s m) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include breakpoint(s down) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  overflow: hidden;
+  &__item {
+    padding-top: 100%;
+    width: 100%;
+    @include breakpoint(m) {
+      padding-top: 100%;
+      position: relative;
+      width: 100%;
+    }
+    @include breakpoint(s m) {
+      &:nth-of-type(3) {
+        order: 4 !important;
+      }
+      &:nth-of-type(5) {
+        order: 3 !important;
+      }
+    }
+    @include breakpoint(m down) {
+      z-index: 1;
+      &:first-of-type {
+        order: 1;
+      }
+      &:nth-of-type(2) {
+        order: 2;
+      }
+      &:nth-of-type(3) {
+        order: 3;
+      }
+      &:nth-of-type(4) {
+        order: 5;
+        margin-right: auto;
+        margin-left: 0 !important;
+        z-index: 2;
+        @include breakpoint(s m) {
+          order: 6;
+        }
+      }
+      &:nth-of-type(5) {
+        order: 4;
+        margin-left: auto;
+        margin-right: 0 !important;
+      }
+      &:nth-of-type(6) {
+        order: 7;
+        z-index: 4;
+      }
+      &:nth-of-type(7) {
+        order: 6;
+        z-index: 3;
+      }
+    }
+    position: relative;
+    overflow: hidden;
+    &:nth-of-type(even) {
+      @include breakpoint(m down) {
+        margin-left: auto;
+      }
+    }
+    &:nth-of-type(odd) {
+      @include breakpoint(m down) {
+        margin-right: auto;
+      }
+    }
+    &:nth-child(6n + 6) {
+      grid-row: auto/span 2;
+      padding-top: 200% !important;
+      @include breakpoint(s m) {
+        order: 5 !important;
+      }
+      @include breakpoint(m down) {
+        width: 100%;
+        padding-top: 100% !important;
+        margin-bottom: 0;
+      }
+      @include breakpoint(s down) {
+        order: 100;
+      }
+    }
+    &:nth-child(7n + 7) {
+      grid-column: auto/span 2;
+      padding-top: 50% !important;
+      @include breakpoint(s down) {
+        width: 100%;
+        padding-top: 100% !important;
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__item-alternative {
+    padding-top: 100%;
+    width: 100%;
+    @include breakpoint(m) {
+      padding-top: 100%;
+      position: relative;
+      width: 100%;
+    }
+    .c-grid-items__item-content {
+      @include breakpoint(m) {
+        padding: 50px;
+      }
+    }
+    .c-grid-items__patron--right {
+      bottom: 8.5%;
+    }
+    @include breakpoint(m down) {
+      z-index: 1;
+      &:first-of-type {
+        order: 1;
+      }
+      &:nth-of-type(2) {
+        order: 2;
+      }
+      &:nth-of-type(3) {
+        order: 3;
+      }
+      &:nth-of-type(4) {
+        order: 5;
+        margin-right: auto;
+        margin-left: 0 !important;
+        z-index: 2;
+      }
+      &:nth-of-type(5) {
+        order: 4;
+        margin-left: auto;
+        margin-right: 0 !important;
+      }
+      &:nth-of-type(6) {
+        order: 7;
+        z-index: 4;
+      }
+      &:nth-of-type(7) {
+        order: 6;
+        z-index: 3;
+      }
+    }
+    position: relative;
+    overflow: hidden;
+    &:nth-of-type(even) {
+      @include breakpoint(m down) {
+        margin-left: auto;
+      }
+    }
+    &:nth-of-type(odd) {
+      @include breakpoint(m down) {
+        margin-right: auto;
+      }
+    }
+    &:nth-child(3n + 3) {
+      grid-row: auto/span 2;
+      padding-top: 200% !important;
+      @include breakpoint(m down) {
+        width: 100%;
+        order: 100;
+        padding-top: 100% !important;
+        margin-bottom: 0;
+      }
+    }
+    &:nth-child(4n + 4) {
+      grid-column: auto/span 2;
+      padding-top: 50% !important;
+      @include breakpoint(s m) {
+        grid-column: auto;
+      }
+      @include breakpoint(m down) {
+        padding-top: 100% !important;
+        width: 100%;
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__item-content {
+    padding: 16px 32px 24px 32px;
+    @include breakpoint(l) {
+      padding: 72px;
+    }
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--color-shade-0);
+  }
+  &__title {
+    font-size: 20px;
+    line-height: 1.2em;
+    font-weight: bold;
+    letter-spacing: 0;
+    @include breakpoint(l xl) {
+      font-size: 25px;
+    }
+    @include breakpoint(xl) {
+      font-size: 36px;
+      line-height: 1em;
+    }
+
+    &--two-lines {
+      width: 60%;
+      @include breakpoint (m down) {
+        width: 100%;
+      }
+    }
+  }
+  &__link {
+    font-size: 21px;
+    font-weight: bold;
+    position: relative;
+    letter-spacing: 0;
+    display: inline-block;
+    width: fit-content;
+    @include breakpoint(m down) {
+      font-size: 18px;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      height: 2px;
+      width: 0;
+      left: 0;
+      background-color: var(--color-shade-0);
+      transition: 0.6s all;
+    }
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+  &__title-v2 {
+    font-size: 20px;
+    line-height: 1.3em;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 1.3em;
+  }
+  &__link-v2 {
+    font-size: 17px;
+    position: relative;
+    letter-spacing: 0;
+    display: inline-block;
+    width: fit-content;
+    @include breakpoint(m down) {
+      font-size: 18px;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      height: 2px;
+      width: 0;
+      left: 0;
+      background-color: var(--color-shade-0);
+      transition: 0.6s all;
+    }
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+  &__patron {
+    position: absolute;
+    left: -190px;
+    bottom: 17%;
+    z-index: -1;
+    @include breakpoint(s xl) {
+      left: -148px;
+      bottom: 22%;
+      svg {
+        width: 300px;
+      }
+    }
+    @include breakpoint(s down) {
+      left: -90px;
+      width: 165px;
+    }
+    &--center {
+      top: 50%;
+      transform: translateY(-50%);
+      bottom: auto;
+    }
+    &--to-bottom {
+      bottom: 3% !important;
+    }
+    svg {
+      overflow: visible;
+      opacity: 0.7;
+      path {
+        -webkit-animation: linear infinite alternate;
+        -webkit-animation-name: move;
+        &:nth-of-type(7) {
+          -webkit-animation-duration: 10s;
+        }
+        &:nth-of-type(1),
+        &:nth-of-type(4),
+        &:nth-of-type(5) {
+          -webkit-animation-duration: 14s;
+        }
+        &:nth-of-type(3),
+        &:nth-of-type(6),
+        &:nth-of-type(8) {
+          -webkit-animation-duration: 7s;
+        }
+        &:nth-of-type(2),
+        &:nth-of-type(9) {
+          -webkit-animation-duration: 6s;
+        }
+        &:nth-of-type(11) {
+          -webkit-animation-duration: 9s;
+        }
+        &:nth-of-type(12) {
+          -webkit-animation-duration: 7s;
+        }
+        &:nth-of-type(10) {
+          -webkit-animation-duration: 10s;
+        }
+        &:nth-of-type(13) {
+          -webkit-animation-duration: 6s;
+        }
+      }
+    }
+    &--right {
+      left: auto;
+      right: -190px;
+      bottom: 11.5%;
+      @include breakpoint(s xl) {
+        bottom: 17.5% !important;
+        left: auto !important;
+        svg {
+          width: 350px !important;
+        }
+      }
+      @include breakpoint(s down) {
+        right: -90px !important;
+        width: 165px !important;
+        left: auto !important;
+      }
+      svg {
+        path {
+          -webkit-animation: linear infinite alternate;
+          -webkit-animation-name: moveright;
+        }
+      }
+    }
+    &--gray {
+      @include breakpoint(s down) {
+        right: -150px;
+        width: 300px !important;
+        left: auto;
+      }
+      @include breakpoint(s xl) {
+        bottom: 17.5%;
+        left: auto;
+        svg {
+          width: 450px !important;
+        }
+      }
+      svg {
+        path {
+          opacity: 0.7;
+          &:nth-of-type(1),
+          &:nth-of-type(3) {
+            -webkit-animation-duration: 10s;
+          }
+          &:nth-of-type(2) {
+            -webkit-animation-duration: 14s;
+          }
+
+          &:nth-of-type(7),
+          &:nth-of-type(4) {
+            -webkit-animation-duration: 7s;
+          }
+
+          &:nth-of-type(20),
+          &:nth-of-type(18),
+          &:nth-of-type(22),
+          &:nth-of-type(5),
+          &:nth-of-type(6) {
+            -webkit-animation-duration: 6s;
+          }
+
+          &:nth-of-type(19),
+          &:nth-of-type(23),
+          &:nth-of-type(10) {
+            -webkit-animation-duration: 9s;
+          }
+
+          &:nth-of-type(21),
+          &:nth-of-type(17),
+          &:nth-of-type(14),
+          &:nth-of-type(11),
+          &:nth-of-type(24),
+          &:nth-of-type(16) {
+            -webkit-animation-duration: 7s;
+          }
+
+          &:nth-of-type(13),
+          &:nth-of-type(12),
+          &:nth-of-type(8) {
+            -webkit-animation-duration: 10s;
+          }
+
+          &:nth-of-type(15),
+          &:nth-of-type(27),
+          &:nth-of-type(9) {
+            -webkit-animation-duration: 6s;
+          }
+          &:nth-of-type(26) {
+            -webkit-animation-duration: 5s;
+          }
+          &:nth-of-type(28),
+          &:nth-of-type(30) {
+            -webkit-animation-duration: 9s;
+          }
+          &:nth-of-type(29),
+          &:nth-of-type(31) {
+            -webkit-animation-duration: 12s;
+          }
+        }
+      }
+    }
+  }
+  &__info-icon {
+    position: absolute;
+    right: -93px;
+    top: 35px;
+    transform: scale(1.5);
+    @include breakpoint (m down) {
+      right: -75px;
+    }
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+    filter: hue-rotate(0);
+  }
+  25% {
+    transform: translateX(40px);
+    filter: hue-rotate(-20deg);
+  }
+  50% {
+    transform: translateX(80px);
+    filter: hue-rotate(0);
+  }
+  75% {
+    transform: translateX(40px);
+    filter: hue-rotate(-20deg);
+  }
+  100% {
+    transform: translateX(0);
+    filter: hue-rotate(0);
+  }
+}
+
+@keyframes moveright {
+  0% {
+    transform: translateX(0);
+    filter: hue-rotate(0);
+  }
+  25% {
+    transform: translateX(-40px);
+    filter: hue-rotate(-10deg);
+  }
+  50% {
+    transform: translateX(-80px);
+    filter: hue-rotate(0);
+  }
+  75% {
+    transform: translateX(-40px);
+    filter: hue-rotate(-10deg);
+  }
+  100% {
+    transform: translateX(0);
+    filter: hue-rotate(0);
+  }
+}
+
+.c-line-animation {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  text-decoration: none !important;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    height: 2px;
+    width: 0;
+    left: 0;
+    transition: 0.6s all;
+    background-color: var(--color-shade-0);
+  }
+  &:hover {
+    &:after {
+      width: 100%;
+    }
+  }
+
+  &.c-btn--link-arrow {
+    &:after {
+      background-color: var(--color-primary);
+    }
+    //&:hover {
+    //  &:after {
+    //    background-color: var(--color-text);
+    //  }
+    //}
+  }
+
+  &.u-color-text {
+    &:after {
+      background-color: var(--color-text);
+    }
+    //&:hover {
+    //  &:after {
+    //    background-color: var(--color-text);
+    //  }
+    //}
+  }
+  &--primary {
+    &:after {
+      background-color: var(--color-primary);
+    }
+  }
+  &--white {
+    &:after {
+      background-color: var(--color-shade-0);
+    }
+  }
+  &--secondary {
+    &:after {
+      background-color: var(--color-secondary) !important;
+    }
+  }
+  &--text {
+    &:after {
+      background-color: var(--color-shade-900) !important;
+    }
+  }
+}

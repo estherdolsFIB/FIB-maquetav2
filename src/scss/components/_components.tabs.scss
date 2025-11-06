@@ -1,0 +1,50 @@
+
+.c-tabs {
+  $this:&;
+  &__list {
+    line-height: 38px;
+    a {
+      color: #939598;
+      font-weight: bold;
+      font-size: 21px;
+      @include breakpoint(m down) {
+        line-height: 1.2em;
+        display: inline-block;
+      }
+      &.is-active {
+        color: var(--color-primary);
+      }
+    }
+    li {
+      border-right: 1px solid #757678;
+      padding-right: 16px;
+      &:last-child {
+        border-right: none;
+        padding-right: 0;
+      }
+      &a {
+        &:focus-visible {
+          outline: none;
+        }
+      }
+    }
+  }
+  &__container {
+    display: flex;
+  }
+ &__item {
+   display: none;
+   transition: .3s all;
+   width: 100%;
+   &.is-active {
+     display: block;
+   }
+   .c-tabs__item--thumb img {
+     width: 80px;
+     height: auto;
+     @include breakpoint(s down) {
+       margin-top: 4px;
+     }
+   }
+ }
+}

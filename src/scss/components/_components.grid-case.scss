@@ -1,0 +1,209 @@
+.c-grid-case {
+  display: grid;
+  grid-template-columns: repeat(2, 0.25fr) repeat(2, 1fr) 0.25fr;
+  grid-template-rows: 150px 1fr auto auto auto auto auto auto auto 200px; // 100px para el logo, el resto se adapta
+  grid-auto-flow: dense; // Rellena huecos automáticamente
+  align-items: stretch; // Estira los items para que los bordes cuadren
+
+  &__item,
+  &__item-alternative {
+    padding-top: 0;
+    width: 100%;
+    position: relative;
+    overflow: visible;
+    min-height: 0;
+    height: auto;
+    display: block;
+  }
+  &__item-content {
+    border: 5px solid #fff;
+    padding: 16px 32px 24px 32px;
+    display: flex;
+    flex-direction: column;
+    color: var(--color-shade-0);
+    height: 100%; // Estira el contenido al alto de la celda
+    min-height: 0;
+    overflow: visible;
+    flex: 1 1 auto;
+  }
+  &__title-v2 {
+    font-size: 20px;
+    line-height: 1.3em;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 1.3em;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  &__description {
+    font-size: 18px;
+    line-height: 1.733em;
+    margin-bottom: 10px;
+    color:#fff;
+  }
+  &__description p {
+    margin-bottom: 15px;
+  }
+  &__description ul li:before {
+    content: "\2022";
+    color: #fff;
+    font-weight: 700;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+  &__description ul {
+    margin-left:15px;
+  }
+  &__logo {
+    width:100%;
+  }
+  }
+
+  .c-grid-case2 {
+    display: grid;
+    grid-template-columns: repeat(2, 0.25fr) repeat(2, 1fr) 0.25fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr 0.5fr 1fr 1fr 2fr 1fr 2fr 1fr;
+    //grid-column-gap: 10px;
+    //grid-row-gap: 10px;
+  
+    &__item {
+      padding-top: 100%;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    &__item-alternative {
+      padding-top: 100%;
+      width: 100%;
+      .c-grid-items__patron--right {
+        bottom: 8.5%;
+      }
+      position: relative;
+      overflow: hidden;
+    }
+    &__item-content {
+      border: 5px solid #fff;
+      padding: 16px 32px 24px 32px;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      color: var(--color-shade-0);
+    }
+    &__title-v2 {
+      font-size: 20px;
+      line-height: 1.3em;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 1.3em;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    &__description {
+      font-size: 18px;
+      line-height: 1.733em;
+      margin-bottom: 10px;
+      color:#fff;
+    }
+    &__description p {
+      margin-bottom: 15px;
+    }
+    &__description ul li:before {
+      content: "\2022";
+      color: #fff;
+      font-weight: 700;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    &__description ul {
+      margin-left:15px;
+    }
+    &__logo {
+      width:100%;
+    }
+    }
+
+    .c-grid-case3 {
+      display: grid;
+      grid-template-columns: repeat(2, 0.25fr) repeat(2, 1fr) 0.25fr;
+      grid-template-rows: 0.5fr 1fr 0.5fr 0.5fr 1fr 1fr 1fr 1fr 2fr 1fr;
+      //grid-column-gap: 10px;
+      //grid-row-gap: 10px;
+    
+      &__item {
+        padding-top: 100%;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+      &__item-alternative {
+        padding-top: 100%;
+        width: 100%;
+        .c-grid-items__patron--right {
+          bottom: 8.5%;
+        }
+        position: relative;
+        overflow: hidden;
+      }
+      &__item-content {
+        border: 5px solid #fff;
+        padding: 16px 32px 24px 32px;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        color: var(--color-shade-0);
+      }
+      &__title-v2 {
+        font-size: 20px;
+        line-height: 1.3em;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 1.3em;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+      &__description {
+        font-size: 18px;
+        line-height: 1.733em;
+        margin-bottom: 10px;
+        color:#fff;
+      }
+      &__description p {
+        margin-bottom: 15px;
+      }
+      &__description ul li:before {
+        content: "\2022";
+        color: #fff;
+        font-weight: 700;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+      &__description ul {
+        margin-left:15px;
+      }
+      &__logo {
+        width:100%;
+      }
+      }
+  
+  .div-logo { grid-area: 1 / 1 / 2 / 3; display: flex; align-items: center;  }
+  //div-web { grid-area: 3 / 1 / 4 / 3; }
+  .div-clasi { grid-area: 2 / 1 / 4 / 3;}
+  .div-reptes { grid-area: 1 / 3 / 4 / 5; }
+  .div-frase { grid-area: 4 / 1 / 5 / 6; display: flex; align-items: center;}
+  .div-icon { grid-area: 5 / 4 / 7 / 5; display: flex; align-items: center;}
+  .div-linees { grid-area: 7 / 3 / 9 / 5; }
+  //.div8 { grid-area: 7 / 4 / 9 / 5; }
+  .div-img2 { grid-area: 7 / 1 / 9 / 3;}
+  //.div10 { grid-area: 9 / 3 / 11 / 4; }
+  .div-solucions { grid-area: 9 / 1 / 10 / 5; }
+  .div12 { grid-area: 1 / 5 / 4 / 6; }
+  .div13 { grid-area: 5 / 5 / 10 / 6; }
+  .div14 { grid-area: 5 / 1 / 7 / 4; }
+  .div15 { grid-area: 10 / 1 / 10 / 3; }
+  .div-img-final { grid-area: 10 / 3 / 10 / 5; }
+  .div16 { grid-area: 10 / 5 / 10 / 6; }

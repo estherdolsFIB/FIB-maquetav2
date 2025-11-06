@@ -1,0 +1,65 @@
+/* -----------------------------------------------------------------------------
+ * POSITION
+ */
+
+
+// Variables
+// -----------------------------------------------------------------------------
+
+// Toggling
+
+$u-position-enabled: true !default;
+
+// Clases
+
+$u-position-classes: (
+  null: (position: initial),
+  relative: (position: relative),
+  absolute: (position: absolute),
+  fixed: (position: fixed),
+  sticky: (position: sticky),
+
+) !default;
+
+// Breakpoints
+
+$u-position-breakpoints-enabled: false !default;
+$u-position-breakpoints: $s-mq-breakpoints !default;
+
+
+// Mixin
+// -----------------------------------------------------------------------------
+
+@mixin u-position($_bp-separator: null, $_bp-name: null) {
+  @each $_properties, $_values in $u-position-classes {
+    .u-position#{if($_properties, "-", "")}#{$_properties}#{$_bp-separator}#{$_bp-name} {
+      @each $_property, $_value in $_values {
+        #{$_property}: $_value !important;
+      }
+    }
+  }
+}
+
+
+// Output
+// -----------------------------------------------------------------------------
+
+@if $u-position-enabled {
+  @include u-position;
+}
+
+
+// Breakpoints output
+// -----------------------------------------------------------------------------
+@if $u-position-enabled and $u-position-breakpoints-enabled {
+  @each $_bp-name, $_bp-value in $u-position-breakpoints {
+    @include breakpoint($_bp-value) {
+      @include u-position($s-config-breakpoint-separator, $_bp-name);
+    }
+
+    @include breakpoint($_bp-value down) {
+      @include u-position($s-config-breakpoint-down-separator, $_bp-name);
+    }
+
+  }
+}

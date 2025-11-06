@@ -1,0 +1,192 @@
+.c-map {
+  &__wrapper {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    height: 120vh;
+  }
+
+  &__canvas {
+    width: 100%;
+    height: 100% !important;
+    background-color: white !important;
+    z-index: 0;
+  }
+
+  &__tooltip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(10px, 10px);
+    z-index: 9999;
+    background-color: rgba(40, 40, 40, 0.7);
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    color: #fff;
+    line-height: var(--line-height-m);
+    pointer-events: none;
+    display: none;
+  }
+
+  &__tooltip-click {
+    position: fixed;
+    width: 400px;
+    top: 0;
+    left: 0;
+    transform: translate(10px, 10px);
+    z-index: 3;
+    background-color: #fff;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    color: #444;
+    line-height: var(--line-height-m);
+    display: none;
+    border: 1px solid #999;
+  }
+
+  &__close-btn {
+    color: var(--color-primary);
+    font-size: 13px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0 4px;
+
+    &::after {
+      content: '✖';
+      font-weight: bold;
+    }
+  }
+
+  &__legend {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 280px;
+    min-height: 100px;
+    background: white;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+
+    .c-map__title {
+      margin: 20px 0 15px;
+      font-weight: 500;
+    }
+
+    .c-map__controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .c-map__symbol {
+        font-size: 15px;
+        font-weight: bold;
+        color: #666;
+      }
+
+      .c-map__bar {
+        display: flex;
+        flex: 1;
+        margin: 10px 20px;
+        height: 25px;
+        border-radius: 3px;
+        overflow: hidden;
+
+        .c-map__segment {
+          flex: 1;
+
+          &--1 { background-color: var(--color-text); }
+          &--2 { background-color: var(--color-grey); }
+          &--3 { background-color: var(--color-primary-light); }
+          &--4 { background-color: var(--color-primary); }
+          &--5 { background-color: var(--color-secondary); }
+        }
+      }
+    }
+  }
+
+  &__mini-maps {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 5;
+  }
+
+  &__mini-map {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #ccc;
+    background: white;
+    position: relative;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+
+    tr {
+      border-bottom: none; // Evita bordes per defecte
+    }
+
+    td {
+      padding: 10px 5px;
+      vertical-align: top;
+    }
+  }
+
+  &__table-header {
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    background-color: var(--color-primary); // taronja
+    padding: 5px;
+    border-radius: 2px 2px 0 0;
+  }
+
+  // Només la primera fila (ICG)
+  &__row-title {
+    font-weight: 600;
+    border-bottom: 1px solid #ccc !important;
+
+    .c-map__label,
+    .c-map__value {
+      font-weight: 600;
+    }
+  }
+
+  // Totes les altres files
+  &__row {
+    .c-map__label,
+    .c-map__value {
+      font-weight: 400;
+      border-bottom: none;
+    }
+  }
+
+  &__label {
+    color: #444;
+  }
+
+  &__value {
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  &__unit {
+    font-size: var(--font-size-xxs);
+    color: #999;
+    margin-left: 2px;
+  }
+}

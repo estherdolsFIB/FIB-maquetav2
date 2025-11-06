@@ -1,0 +1,411 @@
+.c-box-icg {
+  $this:&;
+  width: 100%;
+  padding: 24px 16px 24px 16px;
+  position: relative;
+  @include breakpoint(m) {
+    padding: 40px 50px 50px 40px;
+  }
+  color: var(--color-shade-0);
+  &--v2 {
+    @include breakpoint(m) {
+      padding: 40px 50px 30px 40px;
+    }
+  }
+  &--grey {
+    background: linear-gradient(90deg, #383A39 0%, #5f6360 100%);
+    #{$this}__description {
+      a {
+        color: var(--color-primary);
+      }
+    }
+  }
+  &--light-grey {
+    background: var(--color-light-grey);
+    //color: var(--color-text);
+    #{$this}__description {
+      a {
+        color: var(--color-primary);
+      }
+    }
+  }
+  &--light-grey-gradient {
+    background: linear-gradient(45deg, #c1c1c1 0%, #9b9b9a 100%);
+    #{$this}__description {
+      a {
+        color: var(--color-primary);
+      }
+    }
+  }
+  &--primary {
+    background: linear-gradient(32.49deg, #cd5b1c 0%, #d57931 100%);
+    #{$this}__description {
+      a {
+        color: #383A39;
+      }
+    }
+  }
+  &--primary-gradient {
+    background: linear-gradient(90deg, #d57931 0%, #F39200 100%);
+    #{$this}__description {
+      a {
+        color: #383A39;
+      }
+    }
+  }
+  &--light-primary {
+    background: linear-gradient(45deg, #ebba43 0%, #dc911b 100%);
+    #{$this}__description {
+      a {
+        color: #383A39;
+      }
+    }
+  }
+  &--primary-primary {
+    background: linear-gradient(45deg, #dc911b 0%, #dc911b 100%);
+    #{$this}__description {
+      a {
+        color: #383A39;
+      }
+    }
+  }
+
+  &--containers {
+    &.is-active {
+      margin-bottom: -32px;
+    }
+    &#{$this}--grey {
+      //background: linear-gradient(90deg, #383A39 0%, #5f6360 100%);
+      background: #383A39;
+
+    }
+    &#{$this}--light-grey {
+      background: var(--color-light-grey);
+
+    }
+    &#{$this}--light-grey-gradient {
+      //background: linear-gradient(45deg, #c1c1c1 0%, #9b9b9a 100%);
+      background: #c1c1c1;
+
+    }
+    &#{$this}--primary {
+      //background: linear-gradient(32.49deg, #cd5b1c 0%, #d57931 100%);
+      background: #cd5b1c;
+
+    }
+    &#{$this}--primary-gradient {
+      //background: linear-gradient(90deg, #d57931 0%, #F39200 100%);
+      background: #d57931;
+
+    }
+    &#{$this}--light-primary {
+      //background: linear-gradient(45deg, #ebba43 0%, #dc911b 100%);
+      background: #ebba43;
+    }
+  }
+  &__column {
+    max-width: 778px;
+  }
+  &__title {
+    font-size: 20px;
+    font-weight: bold;
+    @include breakpoint(m xl) {
+      font-size: 26px;
+    }
+    @include breakpoint(xl) {
+      font-size: 36px;
+    }
+  }
+  &__subtitle {
+    font-size: 14px;
+    font-weight: normal;
+    @include breakpoint(m xl) {
+      font-size: 18px;
+    }
+    @include breakpoint(xl) {
+      font-size: 25px;
+    }
+  }
+  &__description {
+    font-size: 12px;
+    line-height: 1.5em;
+    p {
+      margin-bottom: 4px;
+    }
+    @include breakpoint(m xl) {
+      font-size: 13px;
+    }
+    @include breakpoint(xl) {
+      font-size: 16px;
+    }
+  }
+  &__sub-description {
+    font-size: 10px;
+    line-height: 1.5em;
+    p {
+      margin-bottom: 8px;
+    }
+    @include breakpoint(m xl) {
+      font-size: 12px;
+    }
+    @include breakpoint(xl) {
+      font-size: 14px;
+    }
+  }
+  &__container {
+    padding: 32px;
+    margin-bottom: 32px;
+    /*width: calc(100% - 32px);
+    margin-left: 32px;*/
+    @include breakpoint(xl) {
+      width: calc(100% + 240px);
+      margin-left: -88px;
+      margin-right: -120px;
+      /*width: calc(100% - 33px);
+      margin-left: 32px;
+      margin-right: 1px;*/
+    }
+    @include breakpoint(xl down) {
+      width: calc(100% + 32px);
+      margin-right: -32px;
+    }
+    img, iframe {
+      width: 100%;
+    }
+
+    &#{$this}--grey {
+      //background: linear-gradient(90deg, #383A39 0%, #5f6360 100%);
+      background: #383A39;
+
+    }
+    &#{$this}--light-grey {
+      background: var(--color-light-grey);
+
+    }
+    &#{$this}--light-grey-gradient {
+      //background: linear-gradient(45deg, #c1c1c1 0%, #9b9b9a 100%);
+      background: #c1c1c1;
+
+    }
+    &#{$this}--primary {
+      //background: linear-gradient(32.49deg, #cd5b1c 0%, #d57931 100%);
+      background: #cd5b1c;
+
+    }
+    &#{$this}--primary-gradient {
+      //background: linear-gradient(90deg, #d57931 0%, #F39200 100%);
+      background: #d57931;
+
+    }
+    &#{$this}--light-primary {
+      //background: linear-gradient(45deg, #ebba43 0%, #dc911b 100%);
+      background: #ebba43;
+    }
+
+
+  }
+  &__tabs {
+    @include breakpoint(s down) {
+      .o-layout__item {
+        &:nth-of-type(2) {
+          order: 3;
+        }
+        &:nth-of-type(3) {
+          order: 5;
+        }
+        &:nth-of-type(4) {
+          order: 7;
+        }
+        &:nth-of-type(5) {
+          order: 9;
+        }
+      }
+      .c-tabs__item {
+        &:nth-of-type(1) {
+          order: 2;
+        }
+        &:nth-of-type(2) {
+          order: 4;
+        }
+        &:nth-of-type(3) {
+          order: 6;
+        }
+        &:nth-of-type(4) {
+          order: 8;
+        }
+        &:nth-of-type(5) {
+          order: 10;
+        }
+      }
+    }
+    &--2cols {
+      .c-box-icg {
+        padding: 23px;
+        min-height: 150px;
+        @include breakpoint(s) {
+          min-height: 200px;
+        }
+      }
+      .c-box-icg__container {
+        @include breakpoint(xl) {
+          width: calc(var(--wrapper-l) + 240px);
+          margin-left: calc((var(--space-xxxh) + 96px) * -1);
+          margin-right: calc((var(--space-xxxh) + 120px) * -1);
+        }
+        @include breakpoint(m xl) {
+          width: calc(100% + 240px);
+          margin-left: calc((var(--space-xxxh) + 8px) * -1);
+          margin-right: calc((var(--space-xxxh) + 32px) * -1);
+        }
+      }
+
+      #{$this}__title {
+        font-weight: 600;
+        line-height: 1.2em;
+      }
+      #{$this}--containers {
+        &.is-active {
+          margin-bottom: -24px
+        }
+      }
+      @include breakpoint(s down) {
+        .o-layout__item {
+          &:nth-of-type(2) {
+            order: 3;
+          }
+          &:nth-of-type(3) {
+            order: 5;
+          }
+          &:nth-of-type(4) {
+            order: 7;
+          }
+          &:nth-of-type(5) {
+            order: 9;
+          }
+          &:nth-of-type(6) {
+            order: 11;
+          }
+          &:nth-of-type(7) {
+            order: 12;
+          }
+          &:nth-of-type(8) {
+            order: 13;
+          }
+        }
+        .c-tabs__item {
+          &:nth-of-type(1) {
+            order: 2;
+          }
+          &:nth-of-type(2) {
+            order: 4;
+          }
+          &:nth-of-type(3) {
+            order: 6;
+          }
+          &:nth-of-type(4) {
+            order: 8;
+          }
+          &:nth-of-type(5) {
+            order: 10;
+          }
+          &:nth-of-type(6) {
+            order: 12;
+          }
+          &:nth-of-type(7) {
+            order: 14;
+          }
+          &:nth-of-type(8) {
+            order: 16;
+          }
+        }
+      }
+      .o-layout__item {
+        &:nth-of-type(4n + 1) {
+          .c-box-icg {
+            //background: linear-gradient(90deg,#f39200,#d57931);
+            background: #d57931;
+          }
+        }
+        &:nth-of-type(4n + 2) {
+          .c-box-icg {
+            //background: linear-gradient(45deg,#c1c1c1,#9b9b9a);
+            background: #c1c1c1;
+          }
+        }
+        &:nth-of-type(4n + 3) {
+          .c-box-icg {
+            //background: linear-gradient(45deg, #464646, #9b9b9a);
+            background: #464646;
+          }
+        }
+        &:nth-of-type(4n + 4) {
+          .c-box-icg {
+            //background: linear-gradient(45deg,#cd5b1c,#d57931);
+            background: #cd5b1c;
+          }
+        }
+      }
+      #{$this}__container {
+        &:nth-of-type(4n + 1) {
+            //background: linear-gradient(90deg,#f39200,#d57931);
+            background: #d57931;
+        }
+        &:nth-of-type(4n + 2) {
+           //background: linear-gradient(45deg,#c1c1c1,#9b9b9a);
+          background: #c1c1c1;
+        }
+        &:nth-of-type(4n + 3) {
+            //background: linear-gradient(45deg, #464646, #9b9b9a);
+          background: #464646;
+        }
+        &:nth-of-type(4n + 4) {
+            //background: linear-gradient(45deg,#cd5b1c,#d57931);
+          background: #cd5b1c;
+        }
+      }
+    }
+  }
+  &__list {
+    font-size: 36px;
+    font-weight: bold;
+    @include breakpoint(m xxl) {
+      font-size: 28px;
+    }
+    @include breakpoint(m down) {
+      font-size: 16px;
+    }
+    a {
+      line-height: 1.4em;
+      color: var(--color-soft-grey);
+      transition: 0.4s all;
+      &:hover {
+        color: var(--color-text);
+      }
+      &.is-active {
+        font-size: 42px;
+        color: var(--color-text);
+        @include breakpoint(m xxl) {
+          font-size: 33px;
+        }
+        @include breakpoint(m down) {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  &__item-icon {
+    position: absolute;
+    bottom: 19px;
+    right: 19px;
+    width: 75px;
+    height: 50px;
+    object-fit: contain;
+    object-position: bottom right;
+    @include breakpoint(s down) {
+      width: 50px;
+      height: 40px;
+      bottom: 16px;
+      right: 16px;
+    }
+  }
+}

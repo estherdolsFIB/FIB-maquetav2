@@ -1,0 +1,187 @@
+
+.c-btn {
+  $this:&;
+  font-size: 18px;
+  border: 1px solid;
+  padding: 0 25px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-align: center;
+  height: 40px;
+  white-space: nowrap;
+  border-radius: 20px;
+  transition: all .1s ease-out;
+  outline: none;
+  -webkit-appearance: none;
+  @include breakpoint(m down) {
+    font-size: 12px;
+  }
+  &:hover {
+    color: var(--color-shade-0);
+  }
+  &--primary {
+    @extend .c-btn;
+    color: var(--color-shade-0);
+    background: var(--color-primary);
+    background: var(--color-primary-gradient);
+    border-color: var(--color-primary);
+
+    &:hover {
+      background: var(--color-shade-0) !important;
+      color: var(--color-primary);
+    }
+  }
+  &--transparent {
+    @extend .c-btn;
+    color: white !important;
+    border-color: white !important;
+    background: transparent !important;
+    &:hover {
+      color: var(--color-primary) !important;
+      border-color: var(--color-primary) !important;
+      background: white !important;
+    }
+  }
+  &--disabled {
+    @extend .c-btn;
+    color: white !important;
+    border-color: white !important;
+    background: var(--color-light-grey)
+  }
+  &--text {
+    @extend .c-btn;
+    color: var(--color-shade-0);
+    background: var(--color-text);
+    border-color: var(--color-text);
+
+    &:hover {
+      background: var(--color-shade-0);
+      color: var(--color);
+    }
+  }
+  &--grey {
+    @extend .c-btn;
+    color: var(--color-shade-0);
+    background: #90928E;
+    border-color: #90928E;
+
+    &:hover {
+      background: var(--color-shade-0);
+      color: var(--color);
+    }
+  }
+  &--white {
+    @extend .c-btn;
+    color: var(--color-primary);
+    background: var(--color-shade-0);
+    border-color: var(--color-shade-0);
+    &:hover {
+      background: var(--color-primary);
+      color: var(--color-shade-0) !important;
+    }
+  }
+  &--white--border {
+    @extend .c-btn;
+    color: var(--color-primary);
+    background: var(--color-shade-0);
+    border-color: var(--color-primary);
+    &:hover {
+      background: var(--color-primary);
+      color: var(--color-shade-0) !important;
+    }
+  }
+  &--big {
+    @extend .c-btn;
+    min-width: none;
+    min-height: none;
+    padding: 2px 20px;
+    @include breakpoint(xl) {
+      min-height: 69px;
+      min-width: 275px;
+      border-radius: 50px;
+    }
+  }
+  &--huge {
+    @extend .c-btn;
+    width: 100%;
+    border-radius: 50px;
+    font-size: 24px;
+    height: 100px;
+    white-space: normal;
+    @include breakpoint (m xl) {
+      margin: auto !important;
+      font-size: 18px;
+      height: 70px;
+    }
+    @include breakpoint (m down) {
+      margin: auto !important;
+      height: 50px;
+    }
+  }
+  &--mid {
+    @extend .c-btn;
+    min-width: none;
+    min-height: none;
+    @include breakpoint(xl) {
+      min-height: 60px;
+      min-width: 200px;
+      border-radius: 50px;
+    }
+  }
+  &--fw {
+    @extend .c-btn;
+    width: 100%;
+  }
+  &--fw-mb {
+    @include breakpoint(s down) {
+      width: 100%;
+    }
+  }
+  &--link-arrow {
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    color: var(--color-secondary);
+    transition: 0.4s all;
+    @include breakpoint(xl down) {
+      font-size: 15px;
+    }
+    svg {
+      width: 18px;
+      margin-right: 6px;
+      path, g {
+        transition: 0.4s all;
+        fill: var(--color-secondary);
+      }
+    }
+    //&:hover {
+    //  color: var(--color-text);
+    //  svg {
+    //    path, g {
+    //      fill: var(--color-text);
+    //    }
+    //  }
+    //}
+  }
+  &--register-modal {
+    font-size: 12px;
+    &:hover {
+      text-decoration: none !important;
+      color: var(--color-primary) !important;
+    }
+  }
+  &--register-modal-text {
+    font-size: 16px;
+    &:hover {
+      text-decoration: none !important;
+      color: var(--color-primary) !important;
+    }
+  }
+}

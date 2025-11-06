@@ -1,0 +1,15 @@
+/* -----------------------------------------------------------------------------
+ * VENDOR
+ */
+
+
+//@import "vendor.";
+
+@import "slick-carousel/slick/slick.css";
+// Nota: evitamos importar slick-theme.css porque incluye un @charset que
+// entra en conflicto con el @charset autoemitido por Sass. Si necesitas los
+// estilos del tema, podemos copiarlos sin la primera línea.
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import 'aos/dist/aos.css';
+@import 'fullcalendar/main.css';
+@import 'jquery-ui/themes/base/accordion.css';

@@ -1,0 +1,60 @@
+.c-checkbox{
+    margin: 4px;
+    overflow: hidden;
+    float: left;
+    border-radius: 25px;
+
+    label {
+        width: 15em;
+        height: 2em;
+        line-height: 2em;
+        display: block; align-content: center;
+    }
+    label span {
+        text-align: center;
+        display: block;
+    }
+
+    label input {
+        position: absolute;
+        display: none;
+        color: #fff !important;
+    }
+
+    label input + span{
+        color: #fff;
+    }
+
+    &__orange{
+        background-color: #EEC98F;
+        cursor: pointer;
+        input:checked + span{
+            background-color: var(--color-primary);
+        }
+    }
+
+    &__secondary{
+        background-color: #E6AD8D;
+        cursor: pointer;
+        input:checked + span{
+            background-color: var(--color-secondary);
+        }
+    }
+
+    &__black{
+        background-color: #A1A1A1;
+        cursor: pointer;
+        input:checked + span{
+            background-color: var(--color-text);
+        }
+    }
+
+    &__white{
+        background-color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        input:checked + span{
+            background-color: rgba(255, 255, 255, 1);
+            color: var(--color-text);
+        }
+    }
+}

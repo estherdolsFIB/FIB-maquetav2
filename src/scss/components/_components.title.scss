@@ -1,0 +1,408 @@
+.c-title {
+  &--v1 {
+    color: var(--color-primary);
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 1.166em;
+    @include breakpoint(m xl) {
+      font-size: 30px;
+    }
+    @include breakpoint(xl) {
+      font-size: 36px;
+    }
+    @include breakpoint(m down) {
+      line-height: 1.3em;
+    }
+  }
+  &--small {
+    color: var(--color-secondary);
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0;
+    @include breakpoint(m) {
+      font-size: 20px;
+    }
+  }
+  &--small-v2 {
+    color: var(--color-primary);
+    font-size: 25px !important;
+    font-weight: bold;
+    letter-spacing: 0;
+    @include breakpoint(xl down) {
+      font-size: 20px;
+    }
+  }
+  &--mid {
+    color: var(--color-primary);
+    font-size: 21px;
+    font-weight: bold;
+    letter-spacing: 0;
+    @include breakpoint(m down) {
+      font-size: 17px;
+      line-height: 1.4em;
+    }
+  }
+  &--v2 {
+    font-size: 35px;
+    font-weight: bold;
+    @include breakpoint(m) {
+      font-size: 50px;
+    }
+  }
+  &--v3 {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.13em;
+    @include breakpoint(m) {
+      font-size: 45px;
+    }
+  }
+  &--v4 {
+    color: var(--color-primary);
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 1.31em;
+    @include breakpoint(m xl) {
+      font-size: 30px;
+    }
+    @include breakpoint(xl) {
+      font-size: 32px;
+    }
+  }
+  &__initiative {
+    font-size: 28px !important;
+    @include breakpoint(m down) {
+      font-size: 21px !important;
+    }
+  }
+
+  &__h1 {
+    font-size: 36px !important;
+    @include breakpoint (m down) {
+      font-size: 30px !important;
+    }
+  }
+
+  &__h2 {
+    font-size: 30px !important;
+    @include breakpoint (m down) {
+      font-size: 25px !important;
+    }
+  }
+
+  &__h3 {
+    font-size: 24px !important;
+    @include breakpoint (m down) {
+      font-size: 20px !important;
+    }
+  }
+  &--v5 {
+    color: var(--color-dark-grey);
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 1.166em;
+    br {
+      @include breakpoint(m down) {
+        display: none
+      }
+    }
+    span {
+      color: var(--color-primary);
+    }
+    @include breakpoint(m) {
+      font-size: 30px;
+    }
+    @include breakpoint(xl) {
+      font-size: 36px;
+    }
+  }
+  &--v6 {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--color-primary);
+    @include breakpoint(m xl) {
+      font-size: 50px;
+    }
+    @include breakpoint(xl) {
+      font-size: 90px;
+    }
+  }
+  &--v7 {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--color-text);
+    @include breakpoint(m xl) {
+      font-size: 50px;
+    }
+    @include breakpoint(xl) {
+      font-size: 60px;
+    }
+  }
+}
+
+.c-subtitle {
+  font-size: 13px;
+  color: #515452;
+}
+
+.c-description {
+  &--white-grey {
+    p {
+      color: white !important;
+      font-size: 15px !important;
+    }
+    a {
+      color: white !important;
+      @extend .c-btn--grey;
+      font-size: 21px;
+      &:hover {
+        text-decoration: none !important;
+        color: grey !important;
+      }
+    }
+  }
+  &--white-orange {
+    p {
+      color: white !important;
+      font-size: 15px !important;
+    }
+    a {
+      font-size: 21px;
+      &:hover {
+        text-decoration: none !important;
+      }
+    }
+  }
+  &--v1 {
+    position: relative;
+    z-index: 1;
+    span {
+      margin: 0 !important;
+    }
+    p {
+      color: var(--color-text);
+      font-size: 18px;
+      //line-height: 26px;
+      line-height: 1.733em;
+      margin-bottom: 10px;
+      @include breakpoint(m down) {
+        font-size: 15px;
+      }
+    }
+    a {
+      color: var(--color-secondary);
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &.bold {
+        font-weight: bold;
+      }
+    }
+
+    ul {
+      line-height: 1.733em;
+      list-style-type: disc;
+      color: #4A4B4A;
+      font-size: 18px;
+      margin-left: 40px;
+      list-style: none;
+      @include breakpoint(m down) {
+        font-size: 15px;
+        margin-left: 15px;
+      }
+      li {
+        margin-bottom: 10px;
+        &::before {
+          content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+          color: var(--color-primary); /* Change the color */
+          font-weight: bold; /* If you want it to be bold */
+          display: inline-block; /* Needed to add space between the bullet and the text */
+          width: 1em; /* Also needed for space (tweak if needed) */
+          margin-left: -1em; /* Also needed for space (tweak if needed) */
+        }
+      }
+    }
+    &-bold {
+      font-weight: bold;
+    }
+    &-height-equal {
+      line-height: 0.9 !important;
+    }
+  }
+  &--v3 {
+    p {
+      font-size: 19px;
+      font-family: var(--font-family-secondary);
+      color: var(--color-text);
+      margin-bottom: 15px;
+      line-height: 26px;
+      letter-spacing: 0;
+      @include breakpoint(m down) {
+        font-size: 15px;
+      }
+    }
+    a {
+      color: var(--color-primary);
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        height: 2px;
+        width: 0;
+        left: 0;
+        transition: 0.6s all;
+        background-color: var(--color-primary);
+      }
+      &:hover {
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+    table, td {
+      border: 1px solid var(--color-primary);
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 10px;
+      font-family: var(--font-family-secondary);
+      font-size: 17px;
+      color: var(--color-text);
+      line-height: 22px;
+      @include breakpoint(m down) {
+        font-size: 15px;
+      }
+    }
+
+    tr {
+      td {
+        &:first-child {
+          width: 25%;
+        }
+      }
+    }
+    ul {
+      list-style-type: none;
+      font-size: 19px;
+      font-family: var(--font-family-secondary);
+      color: var(--color-text);
+      line-height: 26px;
+      letter-spacing: 0;
+      padding-left: 20px;
+      @include breakpoint(m down) {
+        font-size: 15px;
+      }
+      li {
+        margin-bottom: 10px;
+        &::before {
+          content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+          color: var(--color-primary); /* Change the color */
+          font-weight: bold; /* If you want it to be bold */
+          display: inline-block; /* Needed to add space between the bullet and the text */
+          width: 1em; /* Also needed for space (tweak if needed) */
+          margin-left: -1em; /* Also needed for space (tweak if needed) */
+        }
+      }
+    }
+  }
+  &--v4 {
+    p {
+      font-size: 18px;
+      font-family: var(--font-family-secondary);
+      color: var(--color-text);
+      margin-bottom: 15px;
+      line-height: 26px;
+      letter-spacing: 0;
+      @include breakpoint(m down) {
+        font-size: 15px;
+      }
+    }
+    a {
+      color: var(--color-primary);
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        height: 2px;
+        width: 0;
+        left: 0;
+        transition: 0.6s all;
+        background-color: var(--color-primary);
+      }
+      &:hover {
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+    table, td {
+      border: 1px solid var(--color-primary);
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 10px;
+      font-family: var(--font-family-secondary);
+      font-size: 18px;
+      color: var(--color-text);
+      line-height: 22px;
+      @include breakpoint(m down) {
+        font-size: 15px;
+      }
+    }
+
+    tr {
+      td {
+        &:first-child {
+          width: 25%;
+        }
+      }
+    }
+  }
+  &--underlined-links {
+    a {
+      position: relative;
+      display: inline-block;
+      width: fit-content;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        height: 2px;
+        width: 0;
+        left: 0;
+        transition: 0.6s all;
+        background-color: var(--color-primary);
+      }
+      &:hover {
+        text-decoration: none;
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+    .c-accordion__pagination {
+      a  {
+        &:after {
+          content: unset;
+        }
+      }
+    }
+  }
+  &--underlined-links-secondary {
+    a {
+      &:after {
+        background-color: var(--color-secondary);
+      }
+    }
+  }
+}
+
+

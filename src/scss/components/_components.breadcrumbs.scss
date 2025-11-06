@@ -1,0 +1,28 @@
+.c-breadcrumbs {
+
+    li {
+        display: inline-block;
+        font-size: 14px;
+        color: var(--color-secondary);
+        text-transform: uppercase;
+        @include breakpoint(m down) {
+          line-height: 1.5em;
+        }
+        &:not(:first-of-type)::before {
+            content: ">";
+            padding: 0 5px;
+            color: #ccc;
+        }
+
+        a {
+            font-size: 14px;
+            color: var(--color-secondary);
+        }
+
+        &.active {
+            color: #383A39;
+        }
+
+    }
+
+}

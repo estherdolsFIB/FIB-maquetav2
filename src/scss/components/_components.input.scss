@@ -1,0 +1,21 @@
+.c-input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-text);
+  font-family: var(--font-family-primary);
+  height: 40px;
+  font-size: 14px;
+  letter-spacing: 0;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  &::placeholder {
+    font-family: var(--font-family-primary);
+    color: var(--color-text);
+    font-size: 14px;
+  }
+  &:focus-visible {
+    outline: none;
+  }
+}

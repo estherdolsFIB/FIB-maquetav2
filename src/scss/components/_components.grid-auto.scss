@@ -1,0 +1,45 @@
+.c-grid-auto {
+  display: flex;
+  column-gap: 20px;
+  row-gap: 20px;
+  flex-wrap: wrap;
+  &__item {
+    overflow: hidden;
+    padding: 23px;
+    color: var(--color-shade-0);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 150px;
+    position: relative;
+    flex: 1;
+    min-width: calc(33% - 40px);
+    @include breakpoint(s down) {
+      width: 100%;
+      flex: auto;
+    }
+    @include breakpoint(s) {
+      min-height: 200px;
+      max-width: 50%;
+    }
+    &:nth-child(3n + 1) {
+      background: linear-gradient(45deg, #ebba43 0%, #dc911b 100%);
+    }
+   &:nth-child(3n + 2) {
+      background: linear-gradient(45deg, #464646 0%, #c1c1c1 100%);
+    }
+    &:nth-child(3n + 3) {
+      background: linear-gradient(45deg, #cd5b1c 0%, #d57931 100%);
+    }
+  }
+  &__item-title {
+    font-size: 20px;
+    font-weight: bold;
+    @include breakpoint(m xl) {
+      font-size: 24px;
+    }
+    @include breakpoint(xl) {
+      font-size: 28px;
+    }
+  }
+}

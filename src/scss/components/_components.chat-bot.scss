@@ -1,0 +1,50 @@
+.c-chat-bot {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 10;
+  transform-origin: bottom right;
+  @include breakpoint(m xl) {
+    bottom: 16px;
+    right: 16px;
+  }
+  @include breakpoint(m down) {
+    bottom: 10px;
+    right: 10px;
+  }
+  @include breakpoint(m xl) {
+    transform: scale(0.6);
+  }
+  @include breakpoint(m down) {
+    transform: scale(0.5);
+  }
+  svg {
+
+    filter: drop-shadow(1px 3px 3px rgba(0, 0, 0, 0.4));
+    linearGradient {
+      stop {
+        transition: 0.4s all;
+        &:nth-of-type(2) {
+          transition-delay: 0.2s;
+        }
+      }
+    }
+    polygon {
+
+    }
+  }
+  &:hover {
+    svg {
+      linearGradient {
+        stop {
+          &:nth-of-type(1) {
+            stop-color: #c1c1c1 !important;
+          }
+          &:nth-of-type(2) {
+            stop-color: #9b9b9a !important;
+          }
+        }
+      }
+    }
+  }
+}

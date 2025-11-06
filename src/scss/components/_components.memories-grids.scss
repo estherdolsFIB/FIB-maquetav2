@@ -1,0 +1,66 @@
+.c-memories-grid-cifras{
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 2px 4px; 
+    padding: 20px;
+}
+
+.c-memories-grid-titol{ 
+    font-size:25px !important;   
+    line-height: var(--line-height-m);
+    text-align: right;
+    padding-right: 20px !important;
+    font-weight: 600;
+    color:var(--color-text);
+    border-right:  5px solid var(--color-primary);
+    min-height: 170px;
+}
+.c-memories-grid-contiguts { 
+    text-align: center;
+    line-height: var(--line-height-m);
+}
+
+.c-memories-grid-xifra{
+    font-size:var(--font-size-xxxl); 
+    color:var(--color-primary); 
+    font-weight: bold;
+}
+
+.c-memories-grid-destacat{
+    font-size: var(--font-size-l);
+    color: var(--color-primary);
+}
+
+.c-memories-grid-STC {  
+    display: grid;
+    border:1px solid #444;
+    color: var(--color-shade-0);
+    grid-template-columns: 1fr 0.75fr 1.25fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "actuacion principal principal"
+      "actuacion secundairo tercero";
+
+    &__content{
+        padding: 50px;
+    }
+  }
+  
+
+  .actuacion { grid-area: actuacion; 
+    background-color: var(--color-shade-600);}
+  
+  .principal { grid-area: principal;  
+    min-height: 300px;
+    background-color: aqua;}
+  
+  .secundario { grid-area: secundairo; 
+    min-height: 300px;
+    background-color: blue;}
+  
+  .tercero { grid-area: tercero; 
+    min-height: 300px; }
+  

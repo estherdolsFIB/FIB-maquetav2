@@ -1,0 +1,47 @@
+.c-description {
+  &--v1 {
+    color: var(--color-text);
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    line-height: 1.2em;
+    @include breakpoint(m) {
+      font-size: 24px;
+    }
+    span {
+      margin: 0 4px;
+      color: var(--color-primary);
+    }
+    a {
+      line-height: initial;
+    }
+  }
+
+  &--v2 {
+    color: var(--color-text);
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    line-height: 1.2em;
+    span {
+      margin: 0 4px;
+      color: var(--color-primary);
+    }
+    a {
+      line-height: initial;
+    }
+  }
+  &--v1-height-equal {
+    line-height: 0.9;
+    @include breakpoint(m down) {
+      line-height: 1.2em !important;
+    }
+  }
+  &--patronos-title {
+    text-decoration: none !important;
+    a {
+      text-decoration: none !important;
+      &:hover {
+        text-decoration: none !important;
+      }
+    }
+  }
+}

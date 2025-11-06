@@ -1,0 +1,27 @@
+.c-pagination {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    li {
+        display: inline-block;
+        text-align: center;
+
+        &:not(:last-of-type) {
+            margin-right: 13px;
+        }
+
+        a {
+            display: block;
+            font-size: 15px;
+            color: var(--color-primary);
+            opacity: .5;
+
+            &.active {
+                font-weight: bold;
+                opacity: 1;
+            }
+        }
+
+    }
+
+}

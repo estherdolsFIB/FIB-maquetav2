@@ -1,0 +1,67 @@
+/* -----------------------------------------------------------------------------
+ * COLORS BRAND
+ */
+
+
+@mixin f-colors {
+  --color-primary   : #dc911b;
+  --color-secondary : #cd5b1c;
+  --color-tertiary : #d57931;
+  --color-primary-light : #ebba43;
+  --color-dark-grey : #464646;
+  --color-grey : #6f6f6f;
+  --color-soft-grey : #9b9b9a;
+  --color-light-grey : #c1c1c1;
+  --color-primary-gradient   : linear-gradient(90deg, #F39200 0%, #EF7926 100%);
+  --color-background: #f2f3f4;
+  --color-clear : #fdb940;
+  --color-text : #383A39;
+  --color-text-gradient   : linear-gradient(90deg, #383A39 0%, #5f6360 100%);
+  --color-shade-0   : #FFFFFF;
+  --color-shade-100 : #F8F9F9;
+  --color-shade-200 : #EDEFF0;
+  --color-shade-300 : #E2E4E6;
+  --color-shade-400 : #B2B4B0;
+  --color-shade-500 : #838C91;
+  --color-shade-600 : #6E6F6F;
+  --color-shade-700 : #333333;
+  --color-shade-800 : #222222;
+  --color-shade-900 : #000000;
+  --color-banner    : #a7aaa6;
+  --color-iniciativa-1  : #80837f;
+  --color-iniciativa-2  : #979a96;
+  --color-iniciativa-3  : #454846;
+}
+
+
+// Map
+
+$f-colors: (
+  'primary'   : var(--color-primary),
+  'primary-light'   : var(--color-primary-light),
+  'primary-gradient'   : var(--color-primary-gradient),
+  'text-gradient'   : var(--color-text-gradient),
+  'secondary' : var(--color-secondary),
+  'tertiary' : var(--color-tertiary),
+  'dark-grey' : var(--color-dark-grey),
+  'grey' : var(--color-grey),
+  'soft-grey' : var(--color-soft-grey),
+  'light-grey' : var(--color-light-grey),
+  'background' : var(--color-background),
+  'text' : var(--color-text),
+  'clear' : var(--color-clear),
+  'shade-0'   : var(--color-shade-0),
+  'shade-100' : var(--color-shade-100),
+  'shade-200' : var(--color-shade-200),
+  'shade-300' : var(--color-shade-300),
+  'shade-400' : var(--color-shade-400),
+  'shade-500' : var(--color-shade-500),
+  'shade-600' : var(--color-shade-600),
+  'shade-700' : var(--color-shade-700),
+  'shade-800' : var(--color-shade-800),
+  'shade-900' : var(--color-shade-900),
+  'banner'    : var(--color-banner),
+  'iniciativa-1'    : var(--color-iniciativa-1),
+  'iniciativa-2'    : var(--color-iniciativa-2),
+  'iniciativa-3'    : var(--color-iniciativa-3),
+) !default;

@@ -1,0 +1,115 @@
+.c-tooltip-info {
+  $this:&;
+  font-size: 14px;
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  position: relative;
+  cursor: pointer;
+  @include breakpoint(s down) {
+    font-size: 12px;
+  }
+  img {
+    margin-left: 4px;
+    cursor: pointer;
+  }
+  &__container {
+    /*position: absolute;
+    left: calc(100% + (100vw - var(--wrapper-l))/5);
+    top: -135px;*/
+    z-index: 20;
+    transition: 0.4s all;
+    /*@include breakpoint(xl xxl) {
+      left: calc(100% + 16px);
+    }
+    @include breakpoint(m xl) {
+      left: 28px;
+    }
+    @include breakpoint(xl down) {
+      top: auto;
+      bottom: 36px;
+    }
+    @include breakpoint(m down) {
+      right: 0;
+      left: auto;
+    }*/
+    &:not(.is-active) {
+      max-height: 0;
+      opacity: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+  }
+  &__content {
+    text-transform: none;
+    text-align: left;
+    //background: linear-gradient(45deg, rgba(251,185,52,1) 0%, rgba(243,146,0,1) 100%);
+    background: linear-gradient(45deg,#E9B742,#DC911B);
+    border-radius: 8px;
+    padding: 18px;
+    color: var(--color-shade-0);
+    width: 250px;
+    font-weight: 400;
+  }
+  &__title {
+    font-size: 18px;
+    line-height: 1.6em;
+    font-weight: 500;
+  }
+  &__description {
+    font-size: 14px;
+    line-height: 1.4em;
+  }
+  &:not(.is-active) {
+    #{$this}__container {
+      opacity: 0;
+      pointer-events: none;
+      z-index: -10;
+    }
+  }
+}
+
+.c-tooltip-icg{
+  padding: 24px;
+  height: auto;
+  /*@include breakpoint(l) {
+    height: 300px;
+  }*/
+  color: var(--color-shade-0);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position:absolute;
+  display:none; 
+  width: 25%;
+
+  &--condensed{
+    padding: 5px 15px 10px;
+    width: 20%;
+  }
+
+  &__title {
+    font-size: var(--font-size-m);
+    line-height: 1.6em;
+    font-weight: 500;
+  }
+  &__description {
+    font-size: var(--font-size-s);
+    line-height: 1.4em;
+  }
+
+  &__primary{
+    background-color: var(--color-primary-light);
+  }
+
+  &__grey{
+    background-color: var(--color-shade-500);
+  }
+
+  &__secondary{
+    background-color: #DC8A5D;
+  }
+}

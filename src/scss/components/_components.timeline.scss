@@ -1,0 +1,223 @@
+
+.c-main-header {
+  height: var(200px);
+  background: var(--color-primary);
+  color: var(--color-shade-0);
+ 
+  h1 {
+    font-family: var(--font-secondary);
+    color: inherit;
+  }
+}
+
+.c-timeline {
+  overflow: hidden;
+  padding: var(--space-l) 0;
+  color: var(--color-grey);
+ /* background-color: lightness(var(--color-secondary), 1.05);*/
+
+}
+
+.c-timeline__container {
+  position: relative;
+
+  &::before { // this is the timeline vertical line
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 18px;
+    height: 100%;
+    width: 4px;
+    background: var(--color-secondary);
+  }
+
+  @include breakpoint(m) {
+    &::before {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+  }
+}
+
+.c-timeline__block {
+  display: flex;
+  position: relative;
+  z-index: 1; // make sure content is above the timeline vertical line
+  margin-bottom: var(--space-l);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include breakpoint(m) {
+    &:nth-child(even) {
+      flex-direction: row-reverse; // for even blocks -> lay out content from right to left
+    }
+  }
+}
+
+.c-timeline__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  /*box-shadow: 0 0 0 4px var(--color-shade-200), inset 0 2px 0 rgba(#000, 0.08), 0 3px 0 4px rgba(#000, 0.05);*/
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+
+  @include breakpoint(m) {
+    width: 30px;
+    height: 30px;
+    order: 1; // flex order -> place the image after cd-timeline__content
+    margin-left: calc(5% - 15px);
+    will-change: transform;
+    background-color: var(--color-secondary);
+
+    .c-timeline__block:nth-child(even) & {
+      margin-right: calc(5% - 15px);
+    }
+  }
+}
+
+.c-timeline__img--picture {
+  background-color: var(--color-dark-grey);
+}
+
+.c-timeline__img--movie {
+  background-color: var(--color-soft-grey);
+}
+
+.c-timeline__img--location {
+  background-color: var(--color-soft-grey);
+}
+
+.c-timeline__content {
+  flex-grow: 1; // expand element so that it takes up all the available space inside its parent
+  position: relative;
+  margin-left: var(--space-m);
+  background: var(--color-background);
+  padding: var(--space-m);
+  box-shadow: 0 3px 6px var(--color-shade-400); 
+
+  &::before { // triangle next to content block
+    content: '';
+    position: absolute;
+    top: 16px;
+    right: 100%;
+    /*@include triangle(left, 7px, var(--color-shade-0));*/
+  }
+
+  h2 {
+    color: var(--color-primary);
+    font-weight: 600;
+    padding-bottom: var(--space-s);
+    font-size: var(--font-size-l);
+  }
+
+  @include breakpoint(m) {
+    width: 45%;
+    flex-grow: 0; // prevent element from growing inside its parent
+    will-change: transform;
+    margin: 0;
+    line-height: var(--line-height-l);
+
+    &::before { // triangle
+      top: 24px;
+    }
+
+    .c-timeline__block:nth-child(odd) &::before { // change triangle direction
+      right: auto;
+      left: 100%;
+      /*@include triangle(right, 7px, var(--color-shade-0)); */
+    }
+  }
+}
+
+.c-timeline__date {
+ /*color: alpha(var(--color-grey), 0.7);*/
+  font-weight: bold;
+  @include breakpoint(m) {
+    position: absolute;
+    width: 100%;
+    left: 116%;
+    top: 2px;
+
+    .c-timeline__block:nth-child(even) & {
+      left: auto;
+      right: 116%;
+      text-align: right;
+    }
+  }
+}
+
+@include breakpoint(m) { // animations
+  .c-timeline__img--hidden, .c-timeline__content--hidden {
+    visibility: hidden;
+  }
+
+  .c-timeline__img--bounce-in {
+    animation: cd-bounce-1 0.6s;
+  }
+
+  .c-timeline__content--bounce-in {
+    animation: cd-bounce-2 0.6s;       
+  }
+
+  .c-timeline__block:nth-child(even) .c-timeline__content--bounce-in {
+    animation-name: cd-bounce-2-inverse; 
+  }
+}
+
+
+@keyframes cd-bounce-1 {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);    
+  }
+}
+
+@keyframes cd-bounce-2 {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);   
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateX(20px);       
+  }
+
+  100% {
+    transform: translateX(0);       
+  }
+}
+
+@keyframes cd-bounce-2-inverse {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);   
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateX(-20px);
+  }
+
+  100% {
+    transform: translateX(0);    
+  }
+}

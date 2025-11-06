@@ -1,0 +1,145 @@
+//Para una imagen se debe usar siempre un <picture> con esta clase, acompañada de su modificador, y dentro la <img> sin ninguna clase.
+// Por ejemplo si queremos una imagen cuadrada: <picture class='u-images u-images--100 '><img src='dummy.jpg' alt='dummy' title='dummy'/></picture>
+.u-images {
+  $this: &;
+  display: block;
+  width: 100%;
+  position: relative;
+  img, video, svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    object-fit: cover;
+  }
+  // Para definir la relación de aspecto, se añade al picture la clase u-images con el modificador de un numero, que indica el % de alto respecto al ancho
+  // Por ejemplo u-images--100 daría una imagen cuadrada, al ser el alto el 100% del ancho.
+  @for $i from 1 through 200 {
+    $percent: percentage($i/100);
+    &--#{$i} {
+      padding-top: $percent;
+    }
+  }
+  &--background {
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  &--background-video {
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -1;
+  }
+  &--parallax {
+    @include breakpoint(m) {
+      background-attachment: fixed;
+    }
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &--square {
+    padding-top: 100%;
+  }
+  &--border {
+    border: 1px solid var(--color-shade-0);
+  }
+  &--circle {
+    padding-top: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  &--fullheight {
+    height: 100%;
+  }
+  &--fixed-height {
+    @include breakpoint(m) {
+      max-height: 250px;
+    }
+  }
+  &--svg {
+    width: 19px;
+    height: 19px;
+  }
+  &--contain {
+    img{
+      object-fit: contain;
+    }
+  }
+  &--fw {
+    margin-left: - var(--space-gutter-wrapper);
+    margin-right: - var(--space-gutter-wrapper);
+    width: auto;
+  }
+  &--shadow {
+    box-shadow: 0 2px 11px 0 rgba(0,0,0,0.5);
+  }
+  &--gradient {
+    background: linear-gradient(318deg, rgba(48, 65, 153, 0.7) 0%, rgba(243, 24, 18, .7) 100%);
+  }
+  &--blur {
+    background: linear-gradient(180deg, rgba(48, 65, 153, 0.1) 0%, rgba(48, 65, 153, .6) 100%);
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+  }
+  &--rounded {
+    border-radius: 10%;
+  }
+  &--zoom {
+    overflow: hidden;
+    img{
+      transition: transform 1.2s, filter 1s ease-in-out;
+    }
+    &:hover {
+      img{
+        filter: brightness(110%);
+        transform: scale(1.2);
+      }
+    }
+  }
+  &--gradient-bottom {
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 30%;
+      left: 0;
+      background: rgb(255,255,255);
+      background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%);
+    }
+  }
+
+  &--grey-scale{
+    img{
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
+    &:hover {
+      img{
+        filter: grayscale(100%);
+      }
+    }
+  }
+  &--gradient-orange{
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 30%;
+      left: 0;
+      background: rgb(255,255,255);
+      background: linear-gradient(transparent,var(--color-clear));
+    }
+  }
+
+}

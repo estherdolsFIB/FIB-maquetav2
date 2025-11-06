@@ -1,0 +1,88 @@
+.c-logos-carousel {
+  position: relative;
+  background: var(--color-primary-gradient);
+  .slick-arrow {
+    position: absolute;
+    font-size: 40px;
+    color: var(--color-shade-0);
+    top: 50%;
+    transform: translateY(-50%);
+    .fa {
+      font-weight: 300
+    }
+    @include breakpoint(m down) {
+      font-size: 25px;
+    }
+    &.slick-prev {
+      left: -20px;
+      @include breakpoint(xl) {
+        left: -40px;
+      }
+    }
+    &.slick-next {
+      right: -20px;
+      @include breakpoint(xl) {
+        right: -40px;
+      }
+    }
+  }
+
+  .slick-track {
+    display: flex;
+    align-items: center;
+  }
+  &__item {
+    padding: 0 8px;
+    @include breakpoint(m) {
+      padding: 0 32px;
+    }
+    svg {
+      overflow: visible;
+    }
+    path {
+      filter: drop-shadow(1px 3px 3px rgba(0, 0, 0, 0.4));
+      -webkit-filter: drop-shadow(1px 3px 3px rgba(0, 0, 0, 0.4));
+    }
+    a {
+      transition: 0.4s all;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+.c-logos-carousel-actors {
+  position: relative;
+  background: var(--color-shade-600);
+  margin-top: 4px;
+  .slick-arrow {
+    position: absolute;
+    font-size: 40px;
+    color: var(--color-shade-0);
+    top: 50%;
+    transform: translateY(-50%);
+    .fa {
+      font-weight: 300
+    }
+    @include breakpoint(m down) {
+      font-size: 25px;
+    }
+    &.slick-prev {
+      left: -20px;
+      @include breakpoint(xl) {
+        left: -40px;
+      }
+    }
+    &.slick-next {
+      right: -20px;
+      @include breakpoint(xl) {
+        right: -40px;
+      }
+    }
+  }
+}

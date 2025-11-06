@@ -1,0 +1,27 @@
+/* -----------------------------------------------------------------------------
+ * FONT
+ */
+
+
+// Variables
+// -----------------------------------------------------------------------------
+
+// Toggling
+
+$u-line-height-enabled: true !default;
+
+// Map
+
+$u-line-heights: $f-line-heights !default;
+
+
+// Output
+// -----------------------------------------------------------------------------
+
+@if $u-line-height-enabled {
+  @each $_line-height-name, $_line-height-value in $u-line-heights {
+    .u-line-height-#{$_line-height-name} {
+      line-height: $_line-height-value !important;
+    }
+  }
+}

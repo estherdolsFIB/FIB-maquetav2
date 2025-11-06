@@ -1,0 +1,8 @@
+.c-background-thumb {
+  background-image: var(--bg-image);
+  background-position: top;
+  background-repeat: no-repeat;
+  @include breakpoint(m) {
+    background-size: 100% auto;
+  }
+}

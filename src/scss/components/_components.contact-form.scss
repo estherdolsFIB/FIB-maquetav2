@@ -1,0 +1,115 @@
+.c-contact-form {
+  &__title {
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 0;
+    color: var(--color-primary);
+    @include breakpoint(m down) {
+      font-size: 25px;
+      line-height: 30px;
+    }
+  }
+  &__advise {
+    color: #8B8E8A;
+    font-size: 15.2px;
+  }
+  &__field {
+    position: relative;
+    input[type="text"], input[type="number"], select, textarea {
+      width: 100%;
+      padding: 10px 20px;
+      font-family: var(--font-family-primary);
+      font-size: 24px;
+      border: 1px solid #3c3e40;
+      outline: none;
+      border-radius: 0px;
+      box-shadow: none;
+      @include breakpoint(m down) {
+        font-size: 16px !important;
+      }
+      &::placeholder {
+        font-family: var(--font-family-primary);
+        font-size: 24px;
+        color: #8B8E8A;
+        @include breakpoint(m down) {
+          font-size: 16px !important;
+        }
+      }
+      &:focus-visible {
+        outline: none;
+        border: 2px solid #101010;
+      }
+    }
+    select {
+      cursor: pointer;
+      background: none;
+      -webkit-appearance: none;
+      -moz-appearance:none;
+      appearance:none;
+      color: #8B8E8A;
+      option {
+        cursor: pointer;
+        color: #383A39;
+        padding: 10px 20px;
+        &:nth-child(odd) {
+          background: #f2f1f0;
+        }
+      }
+    }
+    .fa-chevron-down {
+      position: absolute;
+      right: 5px;
+      top: 15px;
+      width: 30px;
+      height: 30px;
+      z-index: -1;
+    }
+    textarea {
+      resize: none;
+    }
+    input[type="file"] {
+      display: none;
+    }
+    &--fl {
+      text-decoration: underline;
+      color: #8B8E8A;
+      font-size: 20px;
+      @include breakpoint(m down) {
+        font-size: 16px !important;
+        line-height: 25px;
+      }
+    }
+    label {
+      cursor: pointer;
+    }
+    &--checkbox {
+      position: relative;
+      a {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      i {
+        display: none;
+        left: 6px;
+        top: 3px;
+        position: absolute;
+      }
+      input[type="checkbox"] {
+        -webkit-appearance: none;
+        -moz-appearance:none;
+        appearance:none;
+        border: 1px solid lightgrey;
+        background: transparent;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        cursor: pointer;
+        outline: none;
+        &:checked ~ i {
+          display: block;
+        }
+      }
+    }
+  }
+}

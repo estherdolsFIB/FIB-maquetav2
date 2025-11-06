@@ -1,0 +1,30 @@
+.c-organigrama {
+  &__item {
+    &--orange, &--grey {
+      border: 1px solid black;
+      border-radius: 25px;
+      font-size: 21px;
+      text-align: center;
+      vertical-align: center;
+      font-weight: bold;
+      padding: 15px 40px;
+      width: fit-content;
+      margin: auto;
+      transition: all .5s ease;
+    }
+    &--orange {
+      color: var(--color-secondary);
+    }
+    &--grey {
+      color: #c1c1c1;
+    }
+  }
+  a:hover > &__item--orange, a:hover > &__item--grey {
+    background-color: #eee;
+  }
+  &__image {
+    @include breakpoint(s down) {
+      max-width: 344px;
+    }
+  }
+}
