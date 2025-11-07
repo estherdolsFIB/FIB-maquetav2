@@ -5,11 +5,20 @@
 // Igual que en la maqueta: usar assets/fonts
 // En dev (Vite) se sirve desde maquetav2/public/assets/fonts
 // En prod, copia a themes/impulsabalears/assets/fonts y mantén la URL /assets/fonts
-$s-config-path-fonts: '/assets/fonts/';
+$s-config-path-fonts_removed: '/assets/fonts/';
 $fa-font-path: '/assets/fonts';
-@import "settings/settings";
-@import "tools/tools";
-@import "foundations/foundations";
+@use "settings/settings" as * with (
+  $s-config-path-fonts: '/assets/fonts/'
+);
+@use "tools/tools" as *;
+@use "foundations/foundations" as *;
+@use "foundations/foundations.wrappers" as *;
+@use "foundations/foundations.spaces" as *;
+@use "foundations/foundations.font-families" as *;
+@use "foundations/foundations.font-sizes" as *;
+@use "foundations/foundations.line-heights" as *;
+@use "foundations/foundations.colors" as *;
+@use "foundations/foundations.shadows" as *;
 
 
 /* -----------------------------------------------------------------------------

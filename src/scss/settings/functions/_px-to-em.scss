@@ -1,16 +1,20 @@
 /* -----------------------------------------------------------------------------
  * PX TO EM
+ * Modernizado a la API de módulos de Sass (math)
  */
 
+@use 'sass:math';
+// Bring in config defaults like $s-config-font-size-base
+@use '../settings.config' as *;
 
 @function px-to-em($_value, $_baseline: $s-config-font-size-base) {
-  @if unit($_value) == 'em' {
+  @if math.unit($_value) == 'em' {
     @return $_value;
   }
   @else {
-     @if unitless($_value){
+    @if math.is-unitless($_value) {
       $_value: $_value + 0px;
     }
-    @return $_value / $_baseline * 1em;
+    @return math.div($_value, $_baseline) * 1em;
   }
 }

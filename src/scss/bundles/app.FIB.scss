@@ -1,0 +1,51 @@
+/* -----------------------------------------------------------------------------
+ * FIB BUNDLE
+ * - CORE layers: settings, tools, foundations, vendor, generic, objects, utilities
+ * - SITE layer: components.FIB (elige qué componentes se incluyen en FIB)
+ */
+
+/* -----------------------------------------------------------------------------
+ * CONFIG
+ */
+
+@use "../settings/settings" as * with (
+  $s-config-path-fonts: '/assets/fonts/'
+);
+// Font Awesome path for vendor fonts
+$fa-font-path: '/assets/fonts';
+@use "../tools/tools" as *;
+@use "../foundations/foundations" as *;
+// Ensure foundation maps are visible to objects (e.g., $f-wrappers)
+@use "../foundations/foundations.wrappers" as *;
+@use "../foundations/foundations.spaces" as *;
+@use "../foundations/foundations.font-families" as *;
+@use "../foundations/foundations.font-sizes" as *;
+@use "../foundations/foundations.line-heights" as *;
+@use "../foundations/foundations.colors" as *;
+@use "../foundations/foundations.shadows" as *;
+
+/* -----------------------------------------------------------------------------
+ * VENDORS
+ */
+@import "../vendor/vendor";
+
+/* -----------------------------------------------------------------------------
+ * BASE
+ */
+@import "../generic/generic";
+
+/* -----------------------------------------------------------------------------
+ * ABSTRACTIONS
+ */
+@import "../objects/objects";
+
+/* -----------------------------------------------------------------------------
+ * CONTENT (FIB specific)
+ * Importa el índice de componentes de FIB. Añade/quita en components/_components.FIB.scss
+ */
+@import "../components/components.FIB";
+
+/* -----------------------------------------------------------------------------
+ * OVERRIDES
+ */
+@import "../utilities/utilities";

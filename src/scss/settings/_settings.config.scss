@@ -14,8 +14,8 @@ $s-config-font-size-base: 16px !default;
  * Paths
  */
 
-$s-config-path-fonts: '../fonts/';
-$s-config-path-images: '../images/';
+$s-config-path-fonts: '../fonts/' !default;
+$s-config-path-images: '../images/' !default;
 
 
 /* -----------------------------------------------------------------------------

@@ -3,5 +3,9 @@
  */
 
 
-@import "settings.config";
-@import "functions/px-to-em";
+// Re-export config and functions for consumers that @use "../settings/settings"
+@forward "settings.config";
+@forward "functions/px-to-em";
+// Also import into this namespace for legacy mixins that expect globals
+@use "settings.config" as *;
+@use "functions/px-to-em" as *;

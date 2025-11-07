@@ -3,16 +3,18 @@
  */
 
 
-@import "foundations.spaces";
-@import "foundations.font-families";
-@import "foundations.font-sizes";
-@import "foundations.line-heights";
-@import "foundations.colors";
-@import "foundations.shadows";
-@import "foundations.wrappers";
+@use "foundations.spaces" as *;
+@use "foundations.font-families" as *;
+@use "foundations.font-sizes" as *;
+@use "foundations.line-heights" as *;
+@use "foundations.colors" as *;
+@use "foundations.shadows" as *;
+@use "foundations.wrappers" as *;
+// Tools mixins (e.g., breakpoint) used by foundations mixins when included here
+@use "../tools/tools" as *;
 
 // Always lastest
-@import "foundations.custom";
+@use "foundations.custom" as *;
 
 :root {
   @include f-spaces;

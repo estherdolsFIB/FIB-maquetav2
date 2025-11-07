@@ -1,6 +1,5 @@
-// Syncs built assets from maquetav2/dist to the OctoberCMS theme,
-// keeping hashed files for caching, and additionally writing stable
-// entry filenames app.js and app.css for simple inclusion in templates.
+// Syncs built assets from maquetav2/dist to the OctoberCMS theme.
+// Copies predictable entry files for app, app.FIB, and app.HUB variants.
 
 const fs = require('fs').promises;
 const path = require('path');
@@ -28,25 +27,40 @@ async function copyRecursive(src, dst) {
   }
 }
 
+async function maybeCopyPair(name) {
+  const jsSrc = path.join(distDir, 'assets', 'js', `${name}.js`);
+  const cssSrc = path.join(distDir, 'assets', 'css', `${name}.css`);
+  try { await fs.access(jsSrc); } catch { return false; }
+  try { await fs.access(cssSrc); } catch { return false; }
+  const jsDst = path.join(themeAssets, 'js', `${name}.js`);
+  const cssDst = path.join(themeAssets, 'css', `${name}.css`);
+  await ensureDir(path.dirname(jsDst));
+  await ensureDir(path.dirname(cssDst));
+  await fs.copyFile(jsSrc, jsDst);
+  await fs.copyFile(cssSrc, cssDst);
+  console.log(`Synced ${name} to theme:`);
+  console.log(' - js:', path.relative(projectRoot, jsDst));
+  console.log(' - css:', path.relative(projectRoot, cssDst));
+  return true;
+}
+
 async function main() {
-  const appJsSrc = path.join(distDir, 'assets', 'js', 'app.js');
-  const appCssSrc = path.join(distDir, 'assets', 'css', 'app.css');
-
-  // Verify build outputs exist
-  try { await fs.access(appJsSrc); } catch { throw new Error('Missing dist/assets/js/app.js. Run npm run build first.'); }
-  try { await fs.access(appCssSrc); } catch { throw new Error('Missing dist/assets/css/app.css. Ensure CSS is imported in app.js.'); }
-
-  // Copy only the two stable files to theme
-  const appJsDst = path.join(themeAssets, 'js', 'app.js');
-  const appCssDst = path.join(themeAssets, 'css', 'app.css');
-  await ensureDir(path.dirname(appJsDst));
-  await ensureDir(path.dirname(appCssDst));
-  await fs.copyFile(appJsSrc, appJsDst);
-  await fs.copyFile(appCssSrc, appCssDst);
-
-  console.log('Synced bundle to theme:');
-  console.log(' - js:', path.relative(projectRoot, appJsDst));
-  console.log(' - css:', path.relative(projectRoot, appCssDst));
+  const variants = ['app', 'app.FIB', 'app.HUB'];
+  let any = false;
+  for (const v of variants) {
+    const ok = await maybeCopyPair(v);
+    any = any || ok;
+  }
+  if (!any) {
+    throw new Error('No expected bundles found. Run npm run build first.');
+  }
+  // Copy static assets (images, fonts) if present
+  const imgSrc = path.join(distDir, 'assets', 'images');
+  const imgDst = path.join(themeAssets, 'images');
+  const fontsSrc = path.join(distDir, 'assets', 'fonts');
+  const fontsDst = path.join(themeAssets, 'fonts');
+  try { await fs.access(imgSrc); await copyRecursive(imgSrc, imgDst); console.log('Synced images/'); } catch {}
+  try { await fs.access(fontsSrc); await copyRecursive(fontsSrc, fontsDst); console.log('Synced fonts/'); } catch {}
 }
 
 main().catch((err) => {

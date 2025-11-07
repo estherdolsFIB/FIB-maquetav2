@@ -1,0 +1,396 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Contacto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+</head>
+
+<body>
+    <div class="c-header c-header-orange">
+        <div class="o-wrapper o-wrapper--l">
+            <div class="o-layout o-layout--gutter-left-s u-flex-middle">
+                <div class="o-layout__item u-2/5 u-1/5@m">
+                    <picture class="c-header__logo">
+                        <img class="svg" src="/assets/images/logo.svg" />
+                    </picture>
+                </div>
+                <div class="o-layout__item u-3/5 u-4/5@m u-flex u-flex-middle u-flex-right u-relative u-pdr-xl u-pdr-none@l">
+                    <div class="c-header__menu js-toggle-nav">
+                        <ul class="c-header__menu-items">
+                            <li class="is-active">
+                                <a href="#">Inicio</a>
+                            </li>
+                            <li>
+                                <a href="#">Nosotros</a>
+                            </li>
+                            <li>
+                                <a href="#">Ser impulso</a>
+                            </li>
+                            <li>
+                                <a href="#">Soluciones</a>
+                            </li>
+                            <li>
+                                <a href="#">Actividades</a>
+                            </li>
+                            <li>
+                                <a href="#">Sala de prensa</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c-header__language" data-toggle-class="is-active" data-toggle-class-item="language-selector">ESP <ul>
+                            <li><a href="#">ENG</a></li>
+                            <li><a href="#">DE</a></li>
+                        </ul>
+                    </div>
+                    <a data-toggle-class="is-active" data-toggle-class-item="login" class="c-header__candado u-mrl-s u-mrl-l@xxl" href="#"><img class="svg" src="/assets/images/candado.svg"></a>
+                    <a class="u-mrl-s u-mrl-l@xxl c-header__search" data-toggle-class="is-active" data-toggle-class-item="searcher"><img class="svg" src="/assets/images/search.svg"></a>
+                    <a href="#" class="c-header__register c-btn--primary u-uppercase" data-toggle-class="is-active" data-toggle-class-item="register">Registrate</a>
+                    <a href="#" class="c-header__ren c-btn--primary">re<sup>N</sup></a>
+                </div>
+            </div>
+            <div class="c-header__menu-mb js-toggle-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <div class="c-modal " data-toggle-class-item="searcher">
+        <div class="c-modal__container c-modal__container--s">
+            <a class="c-modal__close" data-toggle-class="is-active" data-toggle-class-item="searcher" data-toggle-class-not-this href="#">
+                <i class="fal fa-times"></i>
+            </a>
+            <form class="u-mrt-xl">
+                <div class="c-login__input c-modal__group u-pd-none">
+                    <img class='svg' src='/assets/images/search.svg'>
+                    <input name="search" type="text" placeholder="Buscar" />
+                </div>
+            </form>
+            <ul class="c-modal__results u-pdt-xxl">
+                <li><i class="fas fa-chevron-right"></i> Mostrar resultado de lorem ipsum</li>
+                <li><i class="fas fa-chevron-right"></i> Mostrar resultado de lorem ipsum</li>
+                <li><i class="fas fa-chevron-right"></i> Mostrar resultado de lorem ipsum</li>
+                <li><i class="fas fa-chevron-right"></i> Mostrar resultado de lorem ipsum</li>
+                <li><i class="fas fa-chevron-right"></i> Mostrar resultado de lorem ipsum</li>
+            </ul>
+        </div>
+    </div>
+    <div class="c-modal " data-toggle-class-item="login">
+        <div class="c-modal__container c-modal__container--s">
+            <a class="c-modal__close" data-toggle-class="is-active" data-toggle-class-item="login" data-toggle-class-not-this href="#">
+                <i class="fal fa-times"></i>
+            </a>
+            <div class="c-login__title u-align-center">Login de usuario</div>
+            <form class="u-mrt-xl">
+                <input class="c-login__input u-mrb-m" type="text" placeholder="Usuario" />
+                <input class="c-login__input u-mrb-m" type="text" placeholder="Contraseña" />
+                <div class="u-align-center u-mrt-s">
+                    <input class="c-btn--text c-btn--big" type="submit" value="Acceder" />
+                    <div class="c-login__links u-mrt-l">
+                        <a data-toggle-class-item="password" data-toggle-class="is-active" data-toggle-close-all="true" href="#">No recuerdo mi contraseña</a><br>
+                        <a data-toggle-class-item="register" data-toggle-class="is-active" data-toggle-close-all="true" href="#">No tengo cuenta, Regístrame</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="c-modal" data-toggle-class-item="password">
+        <div class="c-modal__container c-modal__container--s">
+            <a class="c-modal__close" data-toggle-class="is-active" data-toggle-class-item="password" data-toggle-class-not-this href="#">
+                <i class="fal fa-times"></i>
+            </a>
+            <div class="c-login__title u-align-center">Restablecer contraseña</div>
+            <form class="u-mrt-xl">
+                <input class="c-login__input u-mrb-m" type="text" placeholder="Correo electrónico" />
+                <div class="u-align-right u-mrb-m">
+                    <img src="/assets/images/captcha.png" />
+                </div>
+                <div class="u-align-center u-mrt-s">
+                    <input class="c-btn--text c-btn--big" type="submit" value="Enviar" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="c-modal " data-toggle-class-item="register">
+        <div class="c-modal__container c-modal__container--m">
+            <a class="c-modal__close" data-toggle-class="is-active" data-toggle-class-item="register" data-toggle-close-all data-toggle-class-not-this href="#">
+                <i class="fal fa-times"></i>
+            </a>
+            <a class="c-login__back" href="#" data-toggle-class="is-active" data-toggle-close-all="true" data-toggle-class-item="login"><img class="svg" src="/assets/images/arrow.svg" /></a>
+            <div class="c-login__title u-align-center">Registro de usuario</div>
+            <form class="u-mrt-xl c-login__container">
+                <div class="c-login__required u-align-right u-mrb-s">* Campos requeridos</div>
+                <div class="o-layout o-layout--gutter-m">
+                    <div class="o-layout__item u-1/2@m">
+                        <input class="c-login__input" type="text" placeholder="Nombre *" />
+                    </div>
+                    <div class="o-layout__item u-1/2@m">
+                        <input class="c-login__input" type="text" placeholder="Apellidos *" />
+                    </div>
+                    <div class="o-layout__item u-1/2@m">
+                        <input class="c-login__input" type="text" placeholder="Empresa *" />
+                    </div>
+                    <div class="o-layout__item u-1/2@m">
+                        <input class="c-login__input" type="text" placeholder="Cargo *" />
+                    </div>
+                    <div class="o-layout__item">
+                        <input class="c-login__input" type="text" placeholder="Teléfono de contacto" />
+                    </div>
+                    <div class="o-layout__item">
+                        <input class="c-login__input" type="text" placeholder="Email *" />
+                    </div>
+                    <div class="o-layout__item">
+                        <input class="c-login__input" type="text" placeholder="Confirmar email *" />
+                    </div>
+                    <div class="o-layout__item">
+                        <input class="c-login__input" type="text" placeholder="Contraseña" />
+                    </div>
+                    <div class="o-layout__item">
+                        <input class="c-login__input" type="text" placeholder="Confirmar contraseña" />
+                    </div>
+                    <div class="o-layout__item u-align-right">
+                        <img src="/assets/images/captcha.png" />
+                    </div>
+                    <div class="o-layout__item u-5/6@m u-mrt-l">
+                        <div class="c-login__subtitle">Selecciona las iniciativas de tu interés y mantente al día de nuestros últimos resultados.</div>
+                        <div class="c-login__section">
+                            <label class="c-login__check c-login__check--big u-mrt-m u-mrb-s">
+                                <input type="checkbox"> <span>Acepto recibir todos los boletines periódicos <a href="#">newsletter</a></span>
+                            </label>
+                        </div>
+                        <div class="c-login__section u-mrt-m">
+                            <label class="c-login__check c-login__check--big">
+                                <input type="checkbox"> Acepto recibir única y exclusivamente los boletines vinculados a los siguientes intereses: </label>
+                            <div class="u-pdl-l u-mrv-s">
+                                <label class="c-login__check c-login__check--big u-mrb-xs">
+                                    <input type="checkbox"> Posicionamiento competitivo y factores críticos </label>
+                                <label class="c-login__check c-login__check--big  u-mrb-xs">
+                                    <input type="checkbox"> Especialización productiva y clusterización </label>
+                                <label class="c-login__check c-login__check--big  u-mrb-xs">
+                                    <input type="checkbox"> Dinámica empresarial </label>
+                                <label class="c-login__check c-login__check--big  u-mrb-xs">
+                                    <input type="checkbox"> Activación de palancas estratégicas </label>
+                            </div>
+                        </div>
+                        <label class="c-login__check c-login__check--big u-mrt-s">
+                            <input type="checkbox"> <b>Recibe invitaciones e información sobre nuestros evento</b>
+                        </label>
+                    </div>
+                </div>
+                <div class="c-login__bottom o-layout u-flex-middle u-mrt-l">
+                    <div class="o-layout__item u-1/2">
+                        <input class="c-btn--text c-btn--mid" type="submit" value="Registrarse" />
+                    </div>
+                    <div class="o-layout__item u-1/2 u-flex u-flex-right">
+                        <label class="c-login__check">
+                            <input type="checkbox"> <span>He leido y acepto la <a href="#">Política de privacidad</a></span>
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="u-position-relative c-banner-heading-small u-flex u-flex-middle">
+        <picture class="u-images u-images--background">
+            <img src="https://source.unsplash.com/1920x1080/?office" alt="slide1">
+        </picture>
+        <div class="o-wrapper o-wrapper--l u-pdv-xxh">
+            <div class="u-color-shade-0 c-banner-heading__title u-mrb-xl" data-aos="fade-down" data-aos-duration="1000">Contacto</div>
+        </div>
+    </div>
+    <div class="o-wrapper o-wrapper--l u-pdv-l">
+        <ul class="c-breadcrumbs" data-aos="fade-right" data-aos-duration="1000">
+            <li><a href="#">Home</a></li>
+            <li class="active">Contacto</li>
+        </ul>
+    </div>
+    <div class="o-wrapper o-wrapper--l u-pdv-l c-contact-form">
+        <div class="c-contact-form__title u-mrb-l" data-aos="fade-up" data-aos-duration="1000"> Información general </div>
+        <form class="o-layout o-layout--gutter-m">
+            <div class="o-layout__item u-align-right c-contact-form__advise" data-aos="fade-up" data-aos-duration="1000"> * Campos requeridos </div>
+            <div class="o-layout__item u-1/2@m c-contact-form__field" data-aos="fade-up" data-aos-duration="1000">
+                <input type="text" name="name" placeholder="Nombre *">
+            </div>
+            <div class="o-layout__item u-1/2@m c-contact-form__field" data-aos="fade-up" data-aos-duration="1000">
+                <input type="text" name="surname" placeholder="Apellidos *">
+            </div>
+            <div class="o-layout__item u-1/2@m c-contact-form__field" data-aos="fade-up" data-aos-duration="1000">
+                <input type="text" name="company" placeholder="Empresa *">
+            </div>
+            <div class="o-layout__item u-1/2@m c-contact-form__field" data-aos="fade-up" data-aos-duration="1000">
+                <input type="text" name="position" placeholder="Cargo *">
+            </div>
+            <div class="o-layout__item u-1/2@m c-contact-form__field" data-aos="fade-up" data-aos-duration="1000">
+                <input type="text" name="email" placeholder="Correo electrónico *">
+            </div>
+            <div class="o-layout__item u-1/2@m c-contact-form__field" data-aos="fade-up" data-aos-duration="1000">
+                <input type="text" name="phone" placeholder="Teléfono">
+            </div>
+            <div class="o-layout__item c-contact-form__field" data-aos="fade-up" data-aos-duration="1000">
+                <i class="fal fa-chevron-down"></i>
+                <select name="subject" onchange="$(this).css('color', '#383A39');">
+                    <option value="0" hidden disabled selected>Asunto *</option>
+                    <option value="¿Cómo adherir mi empresa al Patronato?">¿Cómo adherir mi empresa al Patronato?</option>
+                    <option value="¿Cómo colaborar con la Fundación?">¿Cómo colaborar con la Fundación?</option>
+                    <option value="¿Qué puestos de trabajo y oportunidades laborales hay disponibles">¿Qué puestos de trabajo y oportunidades laborales hay disponibles?</option>
+                    <option value="Busco información sobre Posicionamiento competitivo y factores críticos"">Busco información sobre Posicionamiento competitivo y factores críticos"</option>
+                    <option value="Busco información sobre Estructura productiva y clusterización""> Busco información sobre Estructura productiva y clusterización"</option>
+                    <option value="Busco información sobre 'Dinámica empresarial'"> Busco información sobre 'Dinámica empresarial'</option>
+                    <option value="Busco información sobre Capacidad exportadora""> Busco información sobre Capacidad exportadora"</option>
+                    <option value="Busco información sobre Activación de palancas estratégicas"">Busco información sobre Activación de palancas estratégicas"</option>
+                    <option value="¿Cómo solicitar la participación de la Fundación en mis eventos?">¿Cómo solicitar la participación de la Fundación en mis eventos?</option>
+                    <option value="Participación en medios de comunicación">Participación en medios de comunicación</option>
+                    <option value="Otros">Otros</option>
+                </select>
+            </div>
+            <div class="o-layout__item c-contact-form__field" data-aos="fade-up" data-aos-duration="1000">
+                <textarea name="message" cols="30" rows="10" placeholder="Mensaje *"></textarea>
+            </div>
+            <div class="o-layout__item c-contact-form__field" data-aos="fade-up" data-aos-duration="1000">
+                <label class="c-contact-form__field--fl" for="file-upload"> Adjuntar archivo </label>
+                <input type="file" name="file" id="file-upload">
+            </div>
+            <div class="o-layout__item u-1/2@m c-contact-form__field u-flex-self-end@m u-mrb-s@m" data-aos="fade-up" data-aos-duration="1000">
+                <label class="c-contact-form__field--checkbox" for="legal">
+                    <input type="checkbox" name="legal" id="legal">
+                    <i class="fas fa-check"></i> He leído y acepto la Política de Privacidad y el Aviso Legal </label>
+            </div>
+            <div class="o-layout__item u-1/2@m c-contact-form__field u-align-right" data-aos="fade-up" data-aos-duration="1000">
+                <button class="c-btn c-btn--text c-btn--mid" type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+    <div class="c-contact-banner">
+        <div class="u-relative c-contact-banner__container">
+            <div class="c-grid-items__patron"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="389.603px" height="222.263px" viewBox="0 0 389.603 222.263" style="enable-background:new 0 0 389.603 222.263;" xml:space="preserve">
+                    <path style="fill:#FBBC33;" d="M336.857,38.198c0,5.026,4.076,9.102,9.103,9.102s9.103-4.076,9.103-9.102
+	c0-5.027-4.076-9.102-9.103-9.102S336.857,33.171,336.857,38.198" />
+                    <path style="fill:#EF7926;" d="M306.128,96.7c0,5.026,4.076,9.102,9.102,9.102c5.027,0,9.102-4.076,9.102-9.102
+	c0-5.026-4.074-9.102-9.102-9.102C310.205,87.599,306.128,91.674,306.128,96.7" />
+                    <path style="fill:#FBBC33;" d="M263.684,67.838c0-5.027-4.076-9.102-9.103-9.102s-9.102,4.075-9.102,9.102
+	c0,5.026,4.075,9.102,9.102,9.102S263.684,72.864,263.684,67.838" />
+                    <path style="fill:#EF7926;" d="M318.738,47.299c5.026,0,9.102-4.075,9.102-9.102c0-5.026-4.075-9.102-9.102-9.102H235.6
+	c-5.028,0-9.103,4.076-9.103,9.102c0,5.027,4.074,9.102,9.103,9.102H318.738" />
+                    <path style="fill:#EF7926;" d="M209.505,47.299c5.027,0,9.102-4.075,9.102-9.102c0-5.026-4.074-9.102-9.102-9.102H57.414
+	c-5.026,0-9.102,4.076-9.102,9.102c0,5.027,4.076,9.102,9.102,9.102H209.505" />
+                    <path style="fill:#EA5B0C;" d="M281.804,58.736c-5.027,0-9.102,4.075-9.102,9.102c0,5.026,4.074,9.102,9.102,9.102h83.137
+	c5.028,0,9.104-4.076,9.104-9.102c0-5.027-4.075-9.102-9.104-9.102H281.804" />
+                    <path style="fill:#EA5B0C;" d="M184.688,0c-5.027,0-9.102,4.075-9.102,9.102c0,5.026,4.075,9.102,9.102,9.102h83.138
+	c5.027,0,9.103-4.076,9.103-9.102c0-5.027-4.075-9.102-9.103-9.102H184.688" />
+                    <path style="fill:#EF7926;" d="M145.791,58.736c-5.026,0-9.102,4.075-9.102,9.102c0,5.026,4.076,9.102,9.102,9.102h83.137
+	c5.027,0,9.104-4.076,9.104-9.102c0-5.027-4.076-9.102-9.104-9.102H145.791" />
+                    <path style="fill:#EA5B0C;" d="M89.777,87.598c-5.027,0-9.102,4.076-9.102,9.102c0,5.026,4.075,9.102,9.102,9.102h200.248
+	c5.025,0,9.102-4.076,9.102-9.102c0-5.026-4.076-9.102-9.102-9.102H89.777" />
+                    <path style="fill:#EF7926;" d="M89.622,174.963c-5.027,0-9.102,4.076-9.102,9.102c0,5.027,4.075,9.103,9.102,9.103h152.092
+	c5.026,0,9.103-4.075,9.103-9.103c0-5.025-4.076-9.102-9.103-9.102H89.622" />
+                    <path style="fill:#EA5B0C;" d="M209.349,134.664c5.027,0,9.103-4.075,9.103-9.102c0-5.025-4.075-9.102-9.103-9.102H9.102
+	c-5.026,0-9.102,4.076-9.102,9.102c0,5.026,4.076,9.102,9.102,9.102H209.349" />
+                    <path style="fill:#FBBC33;" d="M380.501,163.527c5.025,0,9.102-4.075,9.102-9.102c0-5.027-4.076-9.103-9.102-9.103H180.253
+	c-5.027,0-9.102,4.075-9.102,9.103c0,5.026,4.075,9.102,9.102,9.102H380.501" />
+                    <path style="fill:#EA5B0C;" d="M176.436,204.059c-5.026,0-9.102,4.076-9.102,9.102c0,5.027,4.076,9.103,9.102,9.103h83.137
+	c5.028,0,9.103-4.075,9.103-9.103c0-5.025-4.074-9.102-9.103-9.102H176.436" />
+                </svg></div>
+            <div class="c-grid-items__patron c-grid-items__patron--right"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="389.603px" height="222.263px" viewBox="0 0 389.603 222.263" style="enable-background:new 0 0 389.603 222.263;" xml:space="preserve">
+                    <path style="fill:#FBBC33;" d="M336.857,38.198c0,5.026,4.076,9.102,9.103,9.102s9.103-4.076,9.103-9.102
+	c0-5.027-4.076-9.102-9.103-9.102S336.857,33.171,336.857,38.198" />
+                    <path style="fill:#EF7926;" d="M306.128,96.7c0,5.026,4.076,9.102,9.102,9.102c5.027,0,9.102-4.076,9.102-9.102
+	c0-5.026-4.074-9.102-9.102-9.102C310.205,87.599,306.128,91.674,306.128,96.7" />
+                    <path style="fill:#FBBC33;" d="M263.684,67.838c0-5.027-4.076-9.102-9.103-9.102s-9.102,4.075-9.102,9.102
+	c0,5.026,4.075,9.102,9.102,9.102S263.684,72.864,263.684,67.838" />
+                    <path style="fill:#EF7926;" d="M318.738,47.299c5.026,0,9.102-4.075,9.102-9.102c0-5.026-4.075-9.102-9.102-9.102H235.6
+	c-5.028,0-9.103,4.076-9.103,9.102c0,5.027,4.074,9.102,9.103,9.102H318.738" />
+                    <path style="fill:#EF7926;" d="M209.505,47.299c5.027,0,9.102-4.075,9.102-9.102c0-5.026-4.074-9.102-9.102-9.102H57.414
+	c-5.026,0-9.102,4.076-9.102,9.102c0,5.027,4.076,9.102,9.102,9.102H209.505" />
+                    <path style="fill:#EA5B0C;" d="M281.804,58.736c-5.027,0-9.102,4.075-9.102,9.102c0,5.026,4.074,9.102,9.102,9.102h83.137
+	c5.028,0,9.104-4.076,9.104-9.102c0-5.027-4.075-9.102-9.104-9.102H281.804" />
+                    <path style="fill:#EA5B0C;" d="M184.688,0c-5.027,0-9.102,4.075-9.102,9.102c0,5.026,4.075,9.102,9.102,9.102h83.138
+	c5.027,0,9.103-4.076,9.103-9.102c0-5.027-4.075-9.102-9.103-9.102H184.688" />
+                    <path style="fill:#EF7926;" d="M145.791,58.736c-5.026,0-9.102,4.075-9.102,9.102c0,5.026,4.076,9.102,9.102,9.102h83.137
+	c5.027,0,9.104-4.076,9.104-9.102c0-5.027-4.076-9.102-9.104-9.102H145.791" />
+                    <path style="fill:#EA5B0C;" d="M89.777,87.598c-5.027,0-9.102,4.076-9.102,9.102c0,5.026,4.075,9.102,9.102,9.102h200.248
+	c5.025,0,9.102-4.076,9.102-9.102c0-5.026-4.076-9.102-9.102-9.102H89.777" />
+                    <path style="fill:#EF7926;" d="M89.622,174.963c-5.027,0-9.102,4.076-9.102,9.102c0,5.027,4.075,9.103,9.102,9.103h152.092
+	c5.026,0,9.103-4.075,9.103-9.103c0-5.025-4.076-9.102-9.103-9.102H89.622" />
+                    <path style="fill:#EA5B0C;" d="M209.349,134.664c5.027,0,9.103-4.075,9.103-9.102c0-5.025-4.075-9.102-9.103-9.102H9.102
+	c-5.026,0-9.102,4.076-9.102,9.102c0,5.026,4.076,9.102,9.102,9.102H209.349" />
+                    <path style="fill:#FBBC33;" d="M380.501,163.527c5.025,0,9.102-4.075,9.102-9.102c0-5.027-4.076-9.103-9.102-9.103H180.253
+	c-5.027,0-9.102,4.075-9.102,9.103c0,5.026,4.075,9.102,9.102,9.102H380.501" />
+                    <path style="fill:#EA5B0C;" d="M176.436,204.059c-5.026,0-9.102,4.076-9.102,9.102c0,5.027,4.076,9.103,9.102,9.103h83.137
+	c5.028,0,9.103-4.075,9.103-9.103c0-5.025-4.074-9.102-9.103-9.102H176.436" />
+                </svg></div>
+            <div class="o-wrapper o-wrapper--l u-pdv-l u-pdv-xxxh@m">
+                <div class="o-layout o-layout--gutter-m u-flex-middle" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="o-layout__item u-1/2@m u-3/4@l">
+                        <div class="c-contact-banner__title">¿Tienes preguntas? Contacta con nosotros. Estaremos encantados de atenderte y compartir nuestra experiencia contigo</div>
+                    </div>
+                    <div class="o-layout__item u-1/2@m u-1/4@l u-mrt-l u-mrt-none@m" data-aos="fade-left" data-aos-duration="1000">
+                        <a href="#" class="c-btn--white c-btn c-btn--big u-uppercase">Envíanos tu mensaje</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="c-info-banner u-pdv-xxxl">
+        <div class="o-wrapper o-wrapper--l">
+            <div class="o-layout o-layout--gutter-l o-layout--gutter-h@m">
+                <div class="o-layout__item u-1/2@m" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="c-info-banner__title">Iniciar sesión</div>
+                    <form class="u-mrt-m">
+                        <div class="o-layout o-layout--gutter-l">
+                            <div class="o-layout__item u-3/5">
+                                <input class="c-input u-mrb-s" placeholder="Correo electrónico" type="text">
+                                <input class="c-input u-mrb-xl" placeholder="Contraseña" type="text">
+                            </div>
+                            <div class="o-layout__item u-2/5">
+                                <input class="c-btn--primary c-btn--fw" type="submit" value="Enviar">
+                                <div class="c-info-banner__links u-mrt-l"><a href="#" data-toggle-class="is-active" data-toggle-class-item="register">Crear una cuenta</a><br><a href="#" data-toggle-class="is-active" data-toggle-class-item="password">Recordar contraseña</a></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="o-layout__item u-1/2@m" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="c-info-banner__title">Contacto</div>
+                    <div class="o-layout u-mrt-l">
+                        <div class="o-layout__item u-1/2@m">
+                            <div class="c-info-banner__description"> Edifici Disset, A9<br> Isaac Newton s/n, ParcBit<br> 07121 Palma de Mallorca<br>
+                                <a href="#"> <img class="u-images u-images--svg" src="/assets/images/telefono.svg"> +34 971 43 97 74</a>
+                                <a class="c-info-banner__mail" href="#"> <img class="u-mrr-xs" src="/assets/images/mail.svg"> info@impulsabalears.org</a>
+                            </div>
+                        </div>
+                        <div class="o-layout__item u-1/2@m">
+                            <div class="c-info-banner__description u-mrt-m">
+                                <b>Horari:</b><br> Dilluns a divendres,<br> de 8.00 a 15.00 hores
+                            </div>
+                            <ul class="c-footer__social u-mrt-xs">
+                                <li>
+                                    <a href="https://twitter.com/ImpulsaBalears" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UC83rBNCu34txM6wRUquSLig" target="_blank"><i class="fab fa-youtube"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="c-footer u-pdv-m">
+        <div class="o-wrapper o-wrapper--l u-flex@m u-flex-middle u-flex-between">
+            <div><strong>Federación Impulsa Balears</strong> ©2020.<br> Todos los derechos reservados</div>
+            <div class="u-flex@m u-flex-middle">
+                <div class="u-mrl-xl@m"><a href="#">Política de privacidad</a> | <a href="#">Política de cookies</a> | <a href="#">Aviso legal</a></div>
+            </div>
+        </div>
+    </div>
+    
+  <script type="module" src="/src/js/app.js"></script>`r`n    <script type="module" src="/src/js/app.FIB.js"></script>
+</body>
+
+</html>
+

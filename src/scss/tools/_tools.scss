@@ -3,4 +3,5 @@
  */
 
 
-@import "tools.mediaqueries";
+// Re-export mediaqueries mixins/functions so other modules can @use "../tools/tools"
+@forward "tools.mediaqueries";
