@@ -9,6 +9,7 @@ async function ensureJqueryUI() {
   if (jq.fn && typeof jq.fn.accordion === 'function') return;
   // Si no está disponible globalmente, intenta cargar dinámicamente (fallback)
   try {
+    await import('jquery-ui/ui/unique-id'); // REQUIRED: uniqueId() method
     await import('jquery-ui/ui/widget');
     await import('jquery-ui/ui/widgets/accordion');
   } catch (_) {
