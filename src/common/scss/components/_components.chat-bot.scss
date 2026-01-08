@@ -1,9 +1,10 @@
 .c-chat-bot {
   position: fixed;
-  bottom: 32px;
-  right: 32px;
+  bottom: 48px;
+  right: 30px;
   z-index: 10;
-  transform-origin: bottom right;
+  pointer-events: none; //  añadido
+  --tooltip-height: 0px; //  añadido 
   @include breakpoint(m xl) {
     bottom: 16px;
     right: 16px;
@@ -21,6 +22,7 @@
   svg {
 
     filter: drop-shadow(1px 3px 3px rgba(0, 0, 0, 0.4));
+
     linearGradient {
       stop {
         transition: 0.4s all;
@@ -46,5 +48,18 @@
         }
       }
     }
+  }
+  &.is-open { // añadido
+    .svg {
+      transform: translateY(calc(var(--tooltip-height) * -1 - 8px)); 
+    }
+  }
+   .c-tooltip-info__container {// añadido
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    padding: 1px;
+    pointer-events: auto;
+    z-index: 1;
   }
 }
