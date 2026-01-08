@@ -5,10 +5,13 @@
 const fs = require('fs').promises;
 const path = require('path');
 
-const root = path.resolve(process.cwd(), 'maquetav2');
+const root = path.resolve(process.cwd());
 const targets = [
   path.join(root, 'index.html'),
-  path.join(root, 'pages'),
+  path.join(root, 'index.FIB.html'),
+  path.join(root, 'index.HUB.html'),
+  path.join(root, 'pages_FIB'),
+  path.join(root, 'pages_HUB'),
 ];
 
 const SUSPECT_RE = /[ÂÃâ€™“”•…]/; // common mojibake glyphs

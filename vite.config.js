@@ -8,13 +8,27 @@ import path from 'node:path';
 export default defineConfig(({ mode, command }) => {
   const isServe = command === 'serve';
   const allInputs = {
-    app: path.resolve(__dirname, 'src/js/app.js'),
-    'app.FIB': path.resolve(__dirname, 'src/js/app.FIB.js'),
-    'app.HUB': path.resolve(__dirname, 'src/js/app.HUB.js'),
+    'app.FIB': path.resolve(__dirname, 'src/FIB/js/app.FIB.js'),
+    'app.HUB': path.resolve(__dirname, 'src/HUB/js/app.HUB.js'),
   };
+  
+  // Entradas HTML para el build
+  const htmlInputs = {
+    FIB: path.resolve(__dirname, 'index.FIB.html'),
+    HUB: path.resolve(__dirname, 'index.HUB.html'),
+  };
+  
   let input = allInputs;
-  if (mode === 'FIB') input = { app: allInputs.app, 'app.FIB': allInputs['app.FIB'] };
-  if (mode === 'HUB') input = { app: allInputs.app, 'app.HUB': allInputs['app.HUB'] };
+  let outDir = 'dist';
+  
+  if (mode === 'FIB') {
+    input = htmlInputs.FIB;
+    outDir = 'dist-FIB';
+  }
+  if (mode === 'HUB') {
+    input = htmlInputs.HUB;
+    outDir = 'dist-HUB';
+  }
 
   return {
     root: '.',
@@ -23,9 +37,13 @@ export default defineConfig(({ mode, command }) => {
       port: 5173,
       open: true,
     },
+    plugins: [],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, 'src'),
+        '@common': path.resolve(__dirname, 'src/common'),
+        '@FIB': path.resolve(__dirname, 'src/FIB'),
+        '@HUB': path.resolve(__dirname, 'src/HUB'),
         '~node_modules': path.resolve(__dirname, 'node_modules'),
       },
     },
@@ -46,7 +64,9 @@ export default defineConfig(({ mode, command }) => {
         scss: {
           additionalData: '',
           includePaths: [
-            path.resolve(__dirname, 'src/scss'),
+            path.resolve(__dirname, 'src/common/scss'),
+            path.resolve(__dirname, 'src/FIB/scss'),
+            path.resolve(__dirname, 'src/HUB/scss'),
             path.resolve(__dirname, '../maqueta/src/assets/scss'),
           ],
           // Silencia deprecations de dependencias (p.ej. FontAwesome 5)
@@ -55,18 +75,33 @@ export default defineConfig(({ mode, command }) => {
       },
     },
     build: {
-      outDir: 'dist',
+      outDir,
       assetsDir: 'assets',
       // Sourcemap solo cuando se hace serve
       sourcemap: isServe,
+      // Forzar extracción de CSS en archivo separado
+      cssCodeSplit: false,
       rollupOptions: {
         input,
         output: {
-          entryFileNames: 'assets/js/[name].js',
+          // Formato IIFE (Immediately Invoked Function Expression) - compatible con Webpack
+          format: 'iife',
+          // Deshabilitar code splitting - todo en un solo archivo
+          inlineDynamicImports: true,
+          entryFileNames: (chunkInfo) => {
+            // Forzar nombre app.js para el JS principal (del HTML)
+            if (chunkInfo.name === 'index.FIB' || chunkInfo.name === 'index.HUB' || chunkInfo.name === 'index') {
+              return 'assets/js/app.js';
+            }
+            return 'assets/js/[name].js';
+          },
           chunkFileNames: 'assets/js/[name]-[hash].js',
           assetFileNames: (info) => {
             const name = info.name || '';
-            if (/\.css$/.test(name)) return 'assets/css/[name][extname]';
+            // Forzar nombre app.css para todos los archivos CSS
+            if (/\.css$/.test(name)) {
+              return 'assets/css/app[extname]';
+            }
             if (/\.(png|jpe?g|gif|svg|webp|ico)$/.test(name)) return 'assets/images/[name][extname]';
             if (/\.(woff2?|ttf|otf|eot)$/.test(name)) return 'assets/fonts/[name][extname]';
             return 'assets/[name][extname]';

@@ -8,44 +8,44 @@
  * CONFIG
  */
 
-@use "../settings/settings" as * with (
+@use "../../common/scss/settings/settings" as * with (
   $s-config-path-fonts: '/assets/fonts/'
 );
 // Font Awesome path for vendor fonts
 $fa-font-path: '/assets/fonts';
-@use "../tools/tools" as *;
-@use "../foundations/foundations" as *;
+@use "../../common/scss/tools/tools" as *;
+@use "../../common/scss/foundations/foundations" as *;
 // Ensure foundation maps are visible to objects (e.g., $f-wrappers)
-@use "../foundations/foundations.wrappers" as *;
-@use "../foundations/foundations.spaces" as *;
-@use "../foundations/foundations.font-families" as *;
-@use "../foundations/foundations.font-sizes" as *;
-@use "../foundations/foundations.line-heights" as *;
-@use "../foundations/foundations.colors" as *;
-@use "../foundations/foundations.shadows" as *;
+@use "../../common/scss/foundations/foundations.wrappers" as *;
+@use "../../common/scss/foundations/foundations.spaces" as *;
+@use "../../common/scss/foundations/foundations.font-families" as *;
+@use "../../common/scss/foundations/foundations.font-sizes" as *;
+@use "../../common/scss/foundations/foundations.line-heights" as *;
+@use "../../common/scss/foundations/foundations.colors" as *;
+@use "../../common/scss/foundations/foundations.shadows" as *;
 
 /* -----------------------------------------------------------------------------
  * VENDORS
  */
-@import "../vendor/vendor";
+@import "../../common/scss/vendor/vendor";
 
 /* -----------------------------------------------------------------------------
  * BASE
  */
-@import "../generic/generic";
+@import "../../common/scss/generic/generic";
 
 /* -----------------------------------------------------------------------------
  * ABSTRACTIONS
  */
-@import "../objects/objects";
+@import "../../common/scss/objects/objects";
 
 /* -----------------------------------------------------------------------------
  * CONTENT (HUB specific)
  * Importa el índice de componentes de HUB. Añade/quita en components/_components.HUB.scss
  */
-@import "../components/components.HUB";
+@import "../../common/scss/components/components.HUB";
 
 /* -----------------------------------------------------------------------------
  * OVERRIDES
  */
-@import "../utilities/utilities";
+@import "../../common/scss/utilities/utilities";

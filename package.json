@@ -10,29 +10,28 @@
     "build": "set SASS_SILENCE_DEPRECATIONS=import,legacy-js-api,global-builtin,slash-div&& vite build",
     "build:FIB": "set SASS_SILENCE_DEPRECATIONS=import,legacy-js-api,global-builtin,slash-div&& vite build --mode FIB",
     "build:HUB": "set SASS_SILENCE_DEPRECATIONS=import,legacy-js-api,global-builtin,slash-div&& vite build --mode HUB",
-    "preview": "vite preview",
-    "sync:theme": "node scripts/sync-theme.js",
-    "build:theme": "npm run build && npm run sync:theme"
+    "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
     "@fullcalendar/core": "^6.1.15",
     "@fullcalendar/daygrid": "^6.1.15",
     "@fullcalendar/list": "^6.1.15",
     "@fullcalendar/moment": "^6.1.15",
     "@fullcalendar/timegrid": "^6.1.15",
-    "fullcalendar": "^5.11.5",
     "aos": "^3.0.0-beta.6",
+    "fullcalendar": "^5.11.5",
     "jquery": "^3.7.1",
     "jquery-ui": "^1.13.3",
     "jquery-ui-bundle": "^1.12.1-migrate",
     "moment": "^2.30.1",
-    "@fortawesome/fontawesome-free": "^5.15.1",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.47",
     "sass": "^1.81.0",
+    "terser": "^5.44.1",
     "vite": "^4.5.5"
   }
 }

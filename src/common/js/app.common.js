@@ -6,11 +6,13 @@
 
 // Ensure jQuery in global scope for UMD plugins (slick, jquery-ui)
 import $ from 'jquery';
-const jq = window.jQuery || window.$ || $;
-window.$ = jq;
-window.jQuery = jq;
 
-// Lightweight local modules we can always load
+// CRITICAL: Exponer jQuery globalmente INMEDIATAMENTE
+// Esto DEBE ejecutarse antes de cualquier otro código
+window.$ = $;
+window.jQuery = $;
+
+// Ahora que jQuery está globalmente disponible, importar módulos
 import {toggleClass} from './modules/toggleClass';
 import {nav} from './modules/nav';
 import {lazy} from './modules/lazyload';
