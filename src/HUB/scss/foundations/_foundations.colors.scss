@@ -1,0 +1,25 @@
+/* -----------------------------------------------------------------------------
+ * COLORS BRAND — HUB
+ * Define los colores propios de HUB aqui.
+ */
+
+
+@mixin f-colors {
+  // TODO: Definir colores de HUB
+  --color-primary   : #000000;
+  --color-secondary : #000000;
+  --color-text : #333333;
+  --color-shade-0   : #FFFFFF;
+  --color-shade-900 : #000000;
+}
+
+
+// Map
+
+$f-colors: (
+  'primary'   : var(--color-primary),
+  'secondary' : var(--color-secondary),
+  'text' : var(--color-text),
+  'shade-0'   : var(--color-shade-0),
+  'shade-900' : var(--color-shade-900),
+) !default;

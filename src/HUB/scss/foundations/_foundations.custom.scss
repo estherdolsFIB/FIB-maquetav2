@@ -1,9 +1,8 @@
 /* -----------------------------------------------------------------------------
- * CUSTOM
+ * CUSTOM — HUB
  */
 
-// Needed for breakpoint() mixin used below
-@use "../tools/tools" as *;
+@use "tools/tools" as *;
 
 
 @mixin f-custom {

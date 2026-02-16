@@ -11,7 +11,7 @@
 @use "foundations.shadows" as *;
 @use "foundations.wrappers" as *;
 // Tools mixins (e.g., breakpoint) used by foundations mixins when included here
-@use "../tools/tools" as *;
+@use "tools/tools" as *;
 
 // Always lastest
 @use "foundations.custom" as *;

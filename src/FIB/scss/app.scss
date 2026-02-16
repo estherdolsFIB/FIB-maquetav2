@@ -1,7 +1,7 @@
 /* -----------------------------------------------------------------------------
  * FIB BUNDLE
- * - CORE layers: settings, tools, foundations, vendor, generic, objects, utilities
- * - SITE layer: components.FIB (elige qué componentes se incluyen en FIB)
+ * - COMMON layers: settings, tools, generic (reset), objects, utilities
+ * - FIB layers: foundations, vendor, fonts, components
  */
 
 /* -----------------------------------------------------------------------------
@@ -14,25 +14,26 @@
 // Font Awesome path for vendor fonts
 $fa-font-path: '/assets/fonts';
 @use "../../common/scss/tools/tools" as *;
-@use "../../common/scss/foundations/foundations" as *;
+@use "foundations/foundations" as *;
 // Ensure foundation maps are visible to objects (e.g., $f-wrappers)
-@use "../../common/scss/foundations/foundations.wrappers" as *;
-@use "../../common/scss/foundations/foundations.spaces" as *;
-@use "../../common/scss/foundations/foundations.font-families" as *;
-@use "../../common/scss/foundations/foundations.font-sizes" as *;
-@use "../../common/scss/foundations/foundations.line-heights" as *;
-@use "../../common/scss/foundations/foundations.colors" as *;
-@use "../../common/scss/foundations/foundations.shadows" as *;
+@use "foundations/foundations.wrappers" as *;
+@use "foundations/foundations.spaces" as *;
+@use "foundations/foundations.font-families" as *;
+@use "foundations/foundations.font-sizes" as *;
+@use "foundations/foundations.line-heights" as *;
+@use "foundations/foundations.colors" as *;
+@use "foundations/foundations.shadows" as *;
 
 /* -----------------------------------------------------------------------------
  * VENDORS
  */
-@import "../../common/scss/vendor/vendor";
+@import "vendor/vendor";
 
 /* -----------------------------------------------------------------------------
  * BASE
  */
 @import "../../common/scss/generic/generic";
+@import "generic/generic.fonts";
 
 /* -----------------------------------------------------------------------------
  * ABSTRACTIONS
@@ -41,9 +42,8 @@ $fa-font-path: '/assets/fonts';
 
 /* -----------------------------------------------------------------------------
  * CONTENT (FIB specific)
- * Importa el índice de componentes de FIB. Añade/quita en components/_components.FIB.scss
  */
-@import "../../common/scss/components/components.FIB";
+@import "components/components.FIB";
 
 /* -----------------------------------------------------------------------------
  * OVERRIDES

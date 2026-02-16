@@ -1,0 +1,22 @@
+/* -----------------------------------------------------------------------------
+ * FONT FAMILIES — HUB
+ * Define las fuentes propias de HUB aqui.
+ */
+
+
+// TODO: Importar fuentes de HUB
+// @import url("https://fonts.googleapis.com/css2?family=...");
+
+@mixin f-font-families {
+  // TODO: Definir fuentes de HUB
+  --font-family-primary: sans-serif;
+  --font-family-secondary: sans-serif;
+}
+
+
+// Map
+
+$f-font-families: (
+  "primary": var(--font-family-primary),
+  "secondary": var(--font-family-secondary),
+) !default;

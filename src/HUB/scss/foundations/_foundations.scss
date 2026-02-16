@@ -1,0 +1,27 @@
+/* -----------------------------------------------------------------------------
+ * FOUNDATIONS — HUB
+ */
+
+
+@use "foundations.spaces" as *;
+@use "foundations.font-families" as *;
+@use "foundations.font-sizes" as *;
+@use "foundations.line-heights" as *;
+@use "foundations.colors" as *;
+@use "foundations.shadows" as *;
+@use "foundations.wrappers" as *;
+@use "tools/tools" as *;
+
+// Always lastest
+@use "foundations.custom" as *;
+
+:root {
+  @include f-spaces;
+  @include f-font-families;
+  @include f-font-sizes;
+  @include f-line-heights;
+  @include f-colors;
+  @include f-shadows;
+  @include f-wrappers;
+  @include f-custom;
+}
