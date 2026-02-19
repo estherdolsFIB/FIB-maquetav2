@@ -13,61 +13,68 @@ Frontend maquetation project for **Fundació Impulsa Balears** (FIB) and **HUB**
 - **Node**: 18+ required.
 
 ## Commands
-
-pnpm run dev:FIB    # Opens index.FIB.html (jQuery dev environment)
-pnpm run dev:HUB    # Opens index.HUB.html (Vue 3 dev environment)
-pnpm run build:FIB  # Production build → dist-FIB/ (Legacy assets)
-pnpm run build:HUB  # Production build → dist-HUB/ (Modern Vue assets)
-pnpm run build      # Build all variants
+- `pnpm run dev:FIB`     # Opens index.FIB.html (jQuery dev environment)
+- `pnpm run dev:HUB`     # Opens index.HUB.html (Vue 3 dev environment)
+- `pnpm run build:FIB`   # Production build → dist-FIB/ (Legacy assets)
+- `pnpm run build:HUB`   # Production build → dist-HUB/ (Modern Vue assets)
+- `pnpm run build`       # Build all variants
 
 ## Package Manager
 - **pnpm** is the required package manager (no npm/yarn).
 - `.npmrc` hoists jQuery-related packages for FIB legacy compatibility.
-- Build scripts approved via `pnpm.onlyBuiltDependencies` in `package.json`.
 
 ## Architecture & Framework Split
 
 ### Global Shared (`src/common/`)
-Contains **Technical Infrastructure** only. No design tokens or business logic.
-* **scss/**: Breakpoints, mixins, reset, layout objects (grid/wrapper), and utility generators.
-* **js/modules/**: Vanilla JS helper functions (independent of jQuery/Vue).
+Contiene infraestructura técnica compartida.
+* **scss/**: Breakpoints, mixins, reset, layout objects (grid/wrapper).
+* **js/modules/**: Vanilla JS helper functions.
 
 ### FIB (Legacy Environment)
 * **EntryPoint**: `src/FIB/js/app.FIB.js`.
-* **Dependencies**: jQuery (Global `window.$`), Slick, AOS, FullCalendar.
-* **Logic**: Uses `app.common.js` for legacy module initialization.
+* **Logic**: jQuery-heavy, compatible con plugins legacy.
 
-### HUB (Modern Environment)
+### HUB (Modern Environment - Balear Circular Hub)
 * **EntryPoint**: `src/HUB/js/app.HUB.js`.
-* **Dependencies**: **Vue 3**, Vanilla JS. **Strictly NO jQuery allowed**.
-* **Logic**: Initializes a Vue instance mounted on `#app-hub`.
-* **Components**: Located in `src/HUB/js/components/` as `.vue` files (SFC).
+* **Logic**: Vue 3 para interactividad compleja (filtros, mapas).
+* **Hybrid Strategy**: Se prioriza la creación de componentes SCSS globales en `src/HUB/scss/components/` para que el CSS resultante (`app.css`) pueda usarse en OctoberCMS mediante partials HTML/Twig estándar.
 
 ---
 
 ## SCSS Layer Order (ITCSS)
-Both projects **MUST** follow this import order in their respective `app.scss`:
+Ambos proyectos siguen este orden en su `app.scss`:
 
-1.  **Settings (common)**: Config, Functions, Breakpoints.
-2.  **Tools (common)**: Mixins & Helpers.
-3.  **Foundations (per variant)**: Design Tokens (CSS Variables & Sass Maps).
-4.  **Vendor (per variant)**: Third-party CSS (AOS, Slick, etc.).
-5.  **Generic (common reset + per variant fonts)**.
-6.  **Objects (common)**: Layout abstractions (depends on Foundations).
-7.  **Components (per variant)**: UI Components.
-8.  **Utilities (common)**: Helper classes (depends on Foundations).
+1. **Settings**: Config, Functions, Breakpoints.
+2. **Tools**: Mixins & Helpers.
+3. **Foundations**: Design Tokens (Variables de color, tipografía).
+4. **Vendor**: CSS de terceros.
+5. **Generic**: Reset + Webfonts (Montserrat & Lato para HUB).
+6. **Objects**: Estructuras de layout (wrappers, grids).
+7. **Components**: UI Components (Header, Hero, Buttons).
+8. **Utilities**: Clases de ayuda.
 
 ---
 
-## Key Conventions
+## Key Conventions (HUB Specific)
 
-### 1. Developing for HUB (Vue 3)
-* **SFC**: Use Single File Components (`.vue`).
-* **Styles**: Component styles should be inside `<style scoped>` or in `src/HUB/scss/components/`.
-* **Naming**: PascalCase for Vue components (e.g., `ResourceCard.vue`) and BEM for SCSS.
-* **No jQuery**: Avoid any `$` or `jQuery` calls in the HUB directory.
+### 1. Typography & Colors (Balear Circular Hub)
+* **Montserrat**: Usar para titulares y navegación (`.text-display`).
+* **Lato**: Usar para cuerpo de texto y metadatos (`.text-body`).
+* **Primary**: `#041E42` (Azul).
+* **Accent**: `#C4D600` (Verde Lima).
+* **Support**: `#00A94F` (Verde Hoja).
 
-### 2. Design Tokens
-Each variant defines its own identity in its `foundations/` folder:
-* **_foundations.colors.scss**: Defines `--color-primary` and `$f-colors` map.
-* **_foundations.spaces.
+### 2. Header & Navigation (Estilo Imagen Referencia)
+* **Clase**: `.hub-header`.
+* **Diseño**: Fondo blanco, logo a la izquierda, menú central con tipografía Montserrat negrita.
+* **Activo**: Los enlaces activos llevan un borde inferior de 3px color Accent (`#C4D600`).
+* **Multiidioma**: El selector de idiomas usa Lato y se posiciona a la derecha.
+
+### 3. Integración con OctoberCMS
+* El build genera un `app.css` y un `app.js`.
+* Los partials en OctoberCMS usarán clases CSS del HUB. 
+* Los componentes Vue se montarán mediante IDs específicos (ej: `#hub-menu-root`) si requieren lógica JS.
+
+### 4. Naming
+* **SCSS**: Metodología BEM obligatoria (ej: `.hub-header__nav-item--active`).
+* **Vue**: PascalCase para archivos `.vue`.

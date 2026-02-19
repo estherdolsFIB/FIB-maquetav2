@@ -1,0 +1,226 @@
+/* -----------------------------------------------------------------------------
+ * MEGA MENU — HUB
+ * Desplegable a tres columnas con categorías, items y descripciones.
+ * Se activa con hover/focus en desktop y toggle en mobile.
+ */
+
+/* Nav item wrapper (link + dropdown) --------------------------------------- */
+.hub-header__nav-item {
+  position: static; /* dropdown se posiciona respecto al header */
+}
+
+/* Dropdown panel ----------------------------------------------------------- */
+.hub-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--color-light-grey);
+  border-bottom: 2px solid var(--color-light-grey);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  z-index: 200;
+}
+
+/* Show on hover or when .is-open is toggled */
+.hub-header__nav-item:hover > .hub-dropdown,
+.hub-header__nav-item:focus-within > .hub-dropdown,
+.hub-dropdown.is-open {
+  display: block;
+}
+
+/* Chevron rotation when dropdown is visible */
+.hub-header__nav-item:hover > .hub-header__link--has-sub::after,
+.hub-header__nav-item:focus-within > .hub-header__link--has-sub::after {
+  transform: rotate(180deg);
+}
+
+/* Inner container ---------------------------------------------------------- */
+.hub-dropdown__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: var(--wrapper-xl, 1400px);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-gutter-wrapper);
+  gap: 0;
+}
+
+/* Column ------------------------------------------------------------------- */
+.hub-dropdown__col {
+  padding: 0 var(--space-xl);
+}
+
+.hub-dropdown__col:first-child {
+  padding-left: 0;
+}
+
+.hub-dropdown__col:last-child {
+  padding-right: 0;
+}
+
+.hub-dropdown__col + .hub-dropdown__col {
+  border-left: 1px solid var(--color-light-grey);
+}
+
+/* Category heading --------------------------------------------------------- */
+.hub-dropdown__heading {
+  font-family: var(--font-highlight);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-grey);
+  margin: 0 0 var(--space-m);
+}
+
+/* Subheading within a column */
+.hub-dropdown__subheading {
+  font-family: var(--font-highlight);
+  font-weight: 600;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-soft-grey);
+  margin: var(--space-l) 0 var(--space-s);
+}
+
+/* Item list ---------------------------------------------------------------- */
+.hub-dropdown__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* For "OUR MISSIONS" column with 2-col grid inside */
+.hub-dropdown__items--grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 var(--space-l);
+}
+
+/* Individual item ---------------------------------------------------------- */
+.hub-dropdown__item {
+  margin-bottom: var(--space-m);
+}
+
+.hub-dropdown__item:last-child {
+  margin-bottom: 0;
+}
+
+.hub-dropdown__item-link {
+  text-decoration: none;
+  display: block;
+}
+
+.hub-dropdown__item-link:hover .hub-dropdown__item-title {
+  color: var(--color-accent);
+}
+
+.hub-dropdown__item-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--font-size-m);
+  color: var(--color-primary);
+  margin: 0 0 4px;
+  transition: color 0.2s ease;
+  line-height: var(--line-height-m);
+}
+
+.hub-dropdown__item-desc {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--font-size-s);
+  color: var(--color-grey);
+  line-height: var(--line-height-l);
+  margin: 0;
+}
+
+/* "Explore all" link ------------------------------------------------------- */
+.hub-dropdown__explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--font-size-s);
+  color: var(--color-primary);
+  text-decoration: none;
+  margin-top: var(--space-l);
+  transition: color 0.2s ease;
+}
+
+.hub-dropdown__explore:hover {
+  color: var(--color-accent);
+}
+
+.hub-dropdown__explore::after {
+  content: "\2192"; /* → */
+  font-size: 1.1em;
+}
+
+/* Mobile ------------------------------------------------------------------- */
+@media (max-width: 899px) {
+  /* Disable hover/focus opening — specificity must match 0,3,0 */
+  .hub-header__nav-item:hover > .hub-dropdown,
+  .hub-header__nav-item:focus-within > .hub-dropdown {
+    display: none;
+  }
+
+  /* Override with equal specificity (0,3,0) — declared after, so it wins */
+  .hub-header__nav-item > .hub-dropdown.is-open {
+    display: block;
+  }
+
+  .hub-dropdown {
+    position: static;
+    border-top: none;
+    border-bottom: none;
+    box-shadow: none;
+    background-color: #f8f8f8;
+  }
+
+  .hub-dropdown__inner {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-s) var(--space-gutter-wrapper) var(--space-m);
+    gap: var(--space-m);
+  }
+
+  .hub-dropdown__col {
+    padding: 0;
+    border-left: none !important;
+  }
+
+  .hub-dropdown__col + .hub-dropdown__col {
+    border-left: none;
+    border-top: 1px solid var(--color-light-grey);
+    padding-top: var(--space-m);
+  }
+
+  .hub-dropdown__heading {
+    font-size: 10px;
+    margin-bottom: var(--space-s);
+  }
+
+  .hub-dropdown__item {
+    margin-bottom: var(--space-s);
+  }
+
+  .hub-dropdown__item-title {
+    font-size: var(--font-size-s);
+  }
+
+  .hub-dropdown__item-desc {
+    font-size: var(--font-size-xs);
+  }
+
+  .hub-dropdown__items--grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hub-dropdown__explore {
+    margin-top: var(--space-s);
+    font-size: var(--font-size-xs);
+  }
+}

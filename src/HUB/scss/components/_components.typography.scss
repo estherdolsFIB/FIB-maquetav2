@@ -1,0 +1,68 @@
+/* -----------------------------------------------------------------------------
+ * TYPOGRAPHY — HUB
+ * Clases de utilidad tipográfica basadas en foundations.
+ */
+
+/* Display — Montserrat para títulos destacados */
+.text-display {
+  font-family: var(--font-highlight);
+  font-weight: 700;
+  line-height: var(--line-height-s);
+}
+
+.text-display--xl {
+  font-size: var(--font-size-h);
+}
+
+.text-display--l {
+  font-size: var(--font-size-xxxl);
+}
+
+.text-display--m {
+  font-size: var(--font-size-xxl);
+}
+
+.text-display--s {
+  font-size: var(--font-size-xl);
+}
+
+/* Body — Lato para texto de lectura */
+.text-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: var(--line-height-l);
+}
+
+.text-body--l {
+  font-size: var(--font-size-l);
+}
+
+.text-body--m {
+  font-size: var(--font-size-m);
+}
+
+.text-body--s {
+  font-size: var(--font-size-s);
+}
+
+/* Helpers */
+.text-semibold {
+  font-weight: 600;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.text-white {
+  color: #FFFFFF;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}

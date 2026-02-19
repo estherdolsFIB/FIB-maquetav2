@@ -3,6 +3,14 @@
  * Importar aqui los componentes propios de HUB.
  */
 
+@import "components.layout";
+@import "components.typography";
+@import "components.buttons";
+@import "components.header";
+@import "components.megamenu";
+@import "components.hero";
+@import "components.footer";
+
 /* Gradient utilities (HUB-specific tokens) */
 .u-bg-gradient-green {
   background: var(--gradient-green) !important;

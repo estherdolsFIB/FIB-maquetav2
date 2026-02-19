@@ -1,0 +1,63 @@
+/* -----------------------------------------------------------------------------
+ * BUTTONS — HUB
+ * Estilos base y variantes de botón.
+ */
+
+.btn-hub {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 12px 28px;
+  font-family: var(--font-highlight);
+  font-weight: 600;
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-s);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-hub:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Primary — fondo azul oscuro */
+.btn-hub--primary {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border-color: var(--color-primary);
+}
+
+.btn-hub--primary:hover {
+  background-color: #072d5a;
+  border-color: #072d5a;
+}
+
+/* Accent — fondo verde lima */
+.btn-hub--accent {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  border-color: var(--color-accent);
+}
+
+.btn-hub--accent:hover {
+  background-color: #b0c200;
+  border-color: #b0c200;
+}
+
+/* Outline — borde sin fondo */
+.btn-hub--outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-hub--outline:hover {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}

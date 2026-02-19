@@ -1,0 +1,23 @@
+/* -----------------------------------------------------------------------------
+ * LAYOUT — HUB
+ * Contenedores y secciones de página.
+ */
+
+.hub-container {
+  width: 100%;
+  max-width: var(--wrapper-xl, 1400px);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--space-gutter-wrapper);
+  padding-left: var(--space-gutter-wrapper);
+}
+
+.hub-section {
+  padding-top: var(--space-between-sections);
+  padding-bottom: var(--space-between-sections);
+}
+
+.hub-section--compact {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}

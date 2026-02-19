@@ -1,0 +1,341 @@
+/* -----------------------------------------------------------------------------
+ * HEADER — HUB
+ * Barra de navegación principal (reutilizable en HTML plano y Vue).
+ * Referencia: fondo blanco, links uppercase oscuros, chevrons dropdown.
+ */
+
+.hub-header {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--color-light-grey);
+  position: relative;
+  z-index: 100;
+}
+
+.hub-header__inner {
+  display: flex;
+  align-items: stretch; /* nav & links fill full height for bottom indicator */
+  height: 80px;
+}
+
+/* Logo -------------------------------------------------------------------- */
+.hub-header__logo {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.hub-header__logo-img {
+  height: 100px;
+  width: auto;
+}
+
+/* Navigation --------------------------------------------------------------- */
+.hub-header__nav {
+  display: flex;
+  align-items: stretch; /* children fill full header height */
+  gap: 0;
+  height: 100%;
+}
+
+.hub-header__nav-item {
+  position: static;
+  display: flex;
+  align-items: stretch;
+}
+
+.hub-header__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-highlight);
+  font-weight: 600;
+  font-size: 11px;
+  color: var(--color-primary);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0 14px;
+  transition: color 0.2s ease;
+}
+
+/* Bottom indicator — matches text + chevron width exactly */
+.hub-header__link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 14px;   /* align with content start (skip padding) */
+  right: 14px;  /* align with content end (skip padding) */
+  height: 3px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.hub-header__link:hover,
+.hub-header__link:focus-visible {
+  color: var(--color-accent);
+}
+
+.hub-header__link:hover::before,
+.hub-header__link:focus-visible::before {
+  transform: scaleX(1);
+}
+
+/* Active state when submenu is open (hover or JS-expanded) */
+.hub-header__nav-item:hover > .hub-header__link,
+.hub-header__nav-item.is-expanded > .hub-header__link {
+  color: var(--color-accent);
+}
+
+.hub-header__nav-item:hover > .hub-header__link::before,
+.hub-header__nav-item.is-expanded > .hub-header__link::before {
+  transform: scaleX(1);
+}
+
+/* Chevron indicator for dropdown links */
+.hub-header__link--has-sub::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 3.5px solid transparent;
+  border-right: 3.5px solid transparent;
+  border-top: 4px solid currentColor;
+  margin-left: 2px;
+  transition: transform 0.2s ease;
+}
+
+/* Right-side actions (lang + search) --------------------------------------- */
+.hub-header__actions {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  gap: 4px;
+  margin-left: 8px;
+  padding-left: 12px;
+  border-left: 1px solid var(--color-light-grey);
+}
+
+.hub-header__lang {
+  font-family: var(--font-highlight);
+  font-weight: 600;
+  font-size: 11px;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  padding: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hub-header__lang::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 3.5px solid transparent;
+  border-right: 3.5px solid transparent;
+  border-top: 4px solid currentColor;
+}
+
+.hub-header__search {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-primary);
+  transition: color 0.2s ease;
+}
+
+.hub-header__search:hover {
+  color: var(--color-accent);
+}
+
+.hub-header__search-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Mobile hamburger --------------------------------------------------------- */
+.hub-header__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-xs);
+  margin-left: auto;
+}
+
+.hub-header__toggle-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* ==========================================================================
+ * VARIANT: Negative (transparent, overlays hero) — use on home
+ * Usage: <header class="hub-header hub-header--negative">
+ * ========================================================================== */
+
+.hub-header--negative {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+.hub-header--negative .hub-header__link {
+  color: #FFFFFF;
+}
+
+.hub-header--negative .hub-header__link:hover,
+.hub-header--negative .hub-header__link:focus-visible,
+.hub-header--negative .hub-header__nav-item:hover > .hub-header__link,
+.hub-header--negative .hub-header__nav-item.is-expanded > .hub-header__link {
+  color: var(--color-accent);
+}
+
+.hub-header--negative .hub-header__actions {
+  border-left-color: rgba(255, 255, 255, 0.25);
+}
+
+.hub-header--negative .hub-header__lang {
+  color: #FFFFFF;
+}
+
+.hub-header--negative .hub-header__search {
+  color: #FFFFFF;
+}
+
+.hub-header--negative .hub-header__search:hover {
+  color: var(--color-accent);
+}
+
+.hub-header--negative .hub-header__toggle-bar {
+  background-color: #FFFFFF;
+}
+
+/* ========================================================================== */
+
+@media (max-width: 899px) {
+  /* Logo no longer pushes toggle — toggle goes right via margin-left: auto */
+  .hub-header__logo {
+    margin-right: 0;
+  }
+
+  .hub-header__toggle {
+    display: flex;
+  }
+
+  .hub-header__nav {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid var(--color-light-grey);
+    box-shadow: var(--shadow-distant);
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hub-header__nav.is-open {
+    display: flex;
+  }
+
+  .hub-header__nav-item {
+    width: 100%;
+  }
+
+  .hub-header__link::before {
+    display: none; /* no bottom indicator in mobile */
+  }
+
+  .hub-header__link {
+    padding: 14px var(--space-gutter-wrapper);
+    font-size: 13px;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    justify-content: space-between;
+  }
+
+  .hub-header__nav-item:last-child > .hub-header__link {
+    border-bottom: none;
+  }
+
+  /* Chevron rotates when accordion is expanded */
+  .hub-header__nav-item.is-expanded > .hub-header__link--has-sub::after {
+    transform: rotate(180deg);
+  }
+
+  /* Actions row inside nav — full width, top border, horizontal layout */
+  .hub-header__actions {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid var(--color-light-grey);
+    margin-left: 0;
+    padding: 12px var(--space-gutter-wrapper);
+    justify-content: flex-start;
+    gap: var(--space-s);
+  }
+
+  /* Hamburger X animation */
+  .hub-header__toggle[aria-expanded="true"] .hub-header__toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .hub-header__toggle[aria-expanded="true"] .hub-header__toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hub-header__toggle[aria-expanded="true"] .hub-header__toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Negative variant — mobile nav reverts to white bg + dark text */
+  .hub-header--negative .hub-header__nav {
+    background-color: #FFFFFF;
+  }
+
+  .hub-header--negative .hub-header__nav .hub-header__link {
+    color: var(--color-primary);
+  }
+
+  .hub-header--negative .hub-header__nav .hub-header__actions {
+    border-left-color: transparent;
+  }
+
+  .hub-header--negative .hub-header__nav .hub-header__lang {
+    color: var(--color-primary);
+  }
+
+  .hub-header--negative .hub-header__nav .hub-header__search {
+    color: var(--color-primary);
+  }
+}

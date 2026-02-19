@@ -1,0 +1,90 @@
+/* -----------------------------------------------------------------------------
+ * HERO — HUB
+ * Sección protagonista de portada.
+ * Imagen de fondo con overlay + texto centrado.
+ */
+
+.hub-hero {
+  position: relative;
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-primary); /* fallback while image loads */
+  background-image: var(--hero-bg, none);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+/* Gradient overlay: transparent at top → primary at bottom */
+.hub-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(4, 30, 66, 0.15) 0%,
+    rgba(4, 30, 66, 0.55) 50%,
+    rgba(4, 30, 66, 0.9) 100%
+  );
+  z-index: 0;
+}
+
+.hub-hero__inner {
+  position: relative;
+  z-index: 1;
+  /* 80px header + spacing so content clears the transparent navbar */
+  padding-top: calc(80px + var(--space-xl));
+  padding-bottom: var(--space-4xh);
+}
+
+.hub-hero__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  color: var(--color-shade-0);
+  line-height: var(--line-height-xs);
+  /*background-color: rgba(255, 255, 255, 0.85);*/
+  display: inline;
+  padding: 4px 12px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.hub-hero__title sup {
+  font-size: 0.55em;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.hub-hero__title span {
+  font-size: clamp(3rem, 6vw, 4.25rem);
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.hub-hero__subtitle {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: #FFFFFF;
+  margin-top: var(--space-s);
+}
+
+.hub-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  margin-top: var(--space-xl);
+}
+
+/* Outline button over dark bg */
+.hub-hero__btn-outline {
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+.hub-hero__btn-outline:hover {
+  background-color: #FFFFFF;
+  color: var(--color-primary);
+}

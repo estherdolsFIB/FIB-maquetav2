@@ -1,7 +1,12 @@
 // HUB entry: Vue 3 + SCSS (sin jQuery)
 import '../scss/app.scss';
-import { createApp } from 'vue';
+import { createApp, h } from 'vue';
+import HubLayout from './components/HubLayout.vue';
 import App from './components/App.vue';
 
-const app = createApp(App);
+const app = createApp({
+  render() {
+    return h(HubLayout, null, { default: () => h(App) });
+  },
+});
 app.mount('#app-hub');
