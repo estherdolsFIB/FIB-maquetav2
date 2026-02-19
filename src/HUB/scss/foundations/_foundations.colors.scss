@@ -1,25 +1,42 @@
 /* -----------------------------------------------------------------------------
  * COLORS BRAND — HUB
- * Define los colores propios de HUB aqui.
+ * Paleta cromática de la Economia Circular / HUB Impulsa.
+ * Jerarquía: Azul (primary) → Verde Lima (accent) → Verde Medio (support)
  */
 
 
 @mixin f-colors {
-  // TODO: Definir colores de HUB
-  --color-primary   : #000000;
-  --color-secondary : #000000;
-  --color-text : #333333;
+  // Brand
+  --color-primary   : #041E42;  // Azul Oscuro — Pantone 282C (protagonista)
+  --color-accent    : #C4D600;  // Verde Lima  — Pantone 375C / 382C (acción)
+  --color-support   : #00A94F;  // Verde Medio — Pantone 362C (apoyo)
+
+  // Degradados por gama
+  --gradient-green : linear-gradient(135deg, #C4D600 0%, #00A94F 100%);
+  --gradient-blue  : linear-gradient(135deg, #00ADEF 0%, #041E42 100%);
+
+  // Escala de grises (sincronizada con FIB)
+  --color-text       : #333333;
+  --color-dark-grey  : #464646;
+  --color-grey       : #6f6f6f;
+  --color-soft-grey  : #9b9b9a;
+  --color-light-grey : #c1c1c1;
   --color-shade-0   : #FFFFFF;
   --color-shade-900 : #000000;
 }
 
 
-// Map
+// Map — nombres descriptivos para utilidades comunes (u-color-*, u-bg-color-*)
 
 $f-colors: (
-  'primary'   : var(--color-primary),
-  'secondary' : var(--color-secondary),
-  'text' : var(--color-text),
-  'shade-0'   : var(--color-shade-0),
-  'shade-900' : var(--color-shade-900),
+  'primary'    : var(--color-primary),
+  'accent'     : var(--color-accent),
+  'support'    : var(--color-support),
+  'dark-grey'  : var(--color-dark-grey),
+  'grey'       : var(--color-grey),
+  'soft-grey'  : var(--color-soft-grey),
+  'light-grey' : var(--color-light-grey),
+  'text'       : var(--color-text),
+  'shade-0'    : var(--color-shade-0),
+  'shade-900'  : var(--color-shade-900),
 ) !default;

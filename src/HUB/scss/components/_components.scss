@@ -2,3 +2,12 @@
  * COMPONENTS — HUB
  * Importar aqui los componentes propios de HUB.
  */
+
+/* Gradient utilities (HUB-specific tokens) */
+.u-bg-gradient-green {
+  background: var(--gradient-green) !important;
+}
+
+.u-bg-gradient-blue {
+  background: var(--gradient-blue) !important;
+}

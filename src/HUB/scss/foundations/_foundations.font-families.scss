@@ -1,22 +1,23 @@
 /* -----------------------------------------------------------------------------
  * FONT FAMILIES — HUB
- * Define las fuentes propias de HUB aqui.
+ * Tipografía híbrida: Montserrat (display) + Lato (body).
  */
 
 
-// TODO: Importar fuentes de HUB
-// @import url("https://fonts.googleapis.com/css2?family=...");
-
 @mixin f-font-families {
-  // TODO: Definir fuentes de HUB
-  --font-family-primary: sans-serif;
-  --font-family-secondary: sans-serif;
+  --font-highlight : 'Montserrat', sans-serif;
+  --font-body      : 'Lato', Arial, sans-serif;
+  // Alias genérico para componentes comunes
+  --font-family-primary   : var(--font-highlight);
+  --font-family-secondary : var(--font-body);
 }
 
 
 // Map
 
 $f-font-families: (
-  "primary": var(--font-family-primary),
-  "secondary": var(--font-family-secondary),
+  "primary"   : var(--font-family-primary),
+  "secondary" : var(--font-family-secondary),
+  "highlight" : var(--font-highlight),
+  "body"      : var(--font-body),
 ) !default;
