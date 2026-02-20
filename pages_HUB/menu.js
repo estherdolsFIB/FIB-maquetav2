@@ -61,16 +61,22 @@ function initMobileMenu() {
     }
   });
 
-  // --- Close on click outside header --------------------------------------
+  // --- Close on click outside header or nav --------------------------------
   document.addEventListener('click', (e) => {
     if (window.innerWidth > MOBILE_BP) return;
     const header = document.querySelector('.hub-header');
-    if (!header.contains(e.target)) {
+    if (!header.contains(e.target) && !nav.contains(e.target)) {
       nav.classList.remove('is-open');
       toggle.setAttribute('aria-expanded', 'false');
       closeAllDropdowns(nav);
     }
   });
+
+  // --- Lock body scroll when mobile nav is open ----------------------------
+  const observer = new MutationObserver(() => {
+    document.body.style.overflow = nav.classList.contains('is-open') ? 'hidden' : '';
+  });
+  observer.observe(nav, { attributes: true, attributeFilter: ['class'] });
 }
 
 function closeAllDropdowns(nav) {

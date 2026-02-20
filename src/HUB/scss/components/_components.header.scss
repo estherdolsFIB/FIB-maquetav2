@@ -240,29 +240,36 @@
 /* ========================================================================== */
 
 @media (max-width: 899px) {
-  /* Logo no longer pushes toggle — toggle goes right via margin-left: auto */
+  .hub-header__inner {
+    height: 60px;
+  }
+
   .hub-header__logo {
     margin-right: 0;
+  }
+
+  .hub-header__logo-img {
+    height: 56px;
   }
 
   .hub-header__toggle {
     display: flex;
   }
 
+  /* Full-screen slide panel ------------------------------------------------ */
   .hub-header__nav {
     display: none;
-    position: absolute;
-    top: 80px;
+    position: fixed;
+    top: 60px;
     left: 0;
     right: 0;
+    bottom: 0;
     flex-direction: column;
     align-items: stretch;
     background-color: #FFFFFF;
-    border-bottom: 1px solid var(--color-light-grey);
-    box-shadow: var(--shadow-distant);
-    max-height: calc(100vh - 80px);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    z-index: 200;
   }
 
   .hub-header__nav.is-open {
@@ -271,10 +278,12 @@
 
   .hub-header__nav-item {
     width: 100%;
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .hub-header__link::before {
-    display: none; /* no bottom indicator in mobile */
+    display: none;
   }
 
   .hub-header__link {
@@ -294,13 +303,14 @@
     transform: rotate(180deg);
   }
 
-  /* Actions row inside nav — full width, top border, horizontal layout */
+  /* Actions row — sits at the bottom of the panel */
   .hub-header__actions {
     width: 100%;
     border-left: none;
     border-top: 1px solid var(--color-light-grey);
     margin-left: 0;
-    padding: 12px var(--space-gutter-wrapper);
+    margin-top: auto; /* push to bottom */
+    padding: 16px var(--space-gutter-wrapper);
     justify-content: flex-start;
     gap: var(--space-s);
   }
