@@ -3,9 +3,11 @@
  * - Hamburger toggle for main nav
  * - Accordion sub-menus for nav items with dropdowns
  * - Auto-close when resizing to desktop
+ * - Scroll detection for sticky header (transparent → white)
  */
 
 const MOBILE_BP = 899;
+const SCROLL_THRESHOLD = 50; // pixels scrolled before header changes
 
 function initMobileMenu() {
   const toggle = document.querySelector('.hub-header__toggle');
@@ -87,9 +89,57 @@ function closeAllDropdowns(nav) {
   });
 }
 
+/**
+ * Sticky header scroll behavior
+ * When scrolling down, adds .is-scrolled to change transparent header to white
+ * Also swaps logo from negative (white) to positive (color) version
+ */
+function initStickyHeader() {
+  const header = document.querySelector('.hub-header');
+  if (!header) return;
+
+  const isNegativeHeader = header.classList.contains('hub-header--negative');
+  const logoImg = header.querySelector('.hub-header__logo-img');
+
+  // Store original logo src if it's a negative header
+  const logoNegSrc = isNegativeHeader && logoImg ? logoImg.src : null;
+  const logoPosSrc = logoNegSrc ? logoNegSrc.replace('logo_neg.svg', 'logo_pos.svg') : null;
+
+  let lastScroll = 0;
+
+  function handleScroll() {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > SCROLL_THRESHOLD) {
+      header.classList.add('is-scrolled');
+      // Change logo to positive version when scrolled (only for negative header)
+      if (isNegativeHeader && logoImg && logoPosSrc) {
+        logoImg.src = logoPosSrc;
+      }
+    } else {
+      header.classList.remove('is-scrolled');
+      // Restore negative logo when at top
+      if (isNegativeHeader && logoImg && logoNegSrc) {
+        logoImg.src = logoNegSrc;
+      }
+    }
+
+    lastScroll = currentScroll;
+  }
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+
+  // Check initial state
+  handleScroll();
+}
+
 // Init on DOM ready
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initMobileMenu);
+  document.addEventListener('DOMContentLoaded', () => {
+    initMobileMenu();
+    initStickyHeader();
+  });
 } else {
   initMobileMenu();
+  initStickyHeader();
 }
