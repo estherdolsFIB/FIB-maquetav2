@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 255.12 170.08">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clippath-4);
+      }
+
+      .cls-2 {
+        mask: url(#mask-1);
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        mask: url(#mask);
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-6 {
+        fill: url(#Degradado_sin_nombre_2);
+      }
+
+      .cls-7 {
+        clip-path: url(#clippath-5);
+      }
+
+      .cls-8 {
+        clip-path: url(#clippath-3);
+      }
+
+      .cls-9 {
+        fill: url(#Degradado_sin_nombre);
+      }
+
+      .cls-10 {
+        opacity: .8;
+      }
+
+      .cls-11 {
+        clip-path: url(#clippath-2);
+      }
+
+      .cls-12 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <polygon class="cls-3" points="37.67 56.16 37.67 125.37 52.18 125.37 52.18 70.4 84.57 70.4 84.57 56.16 37.67 56.16"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <rect class="cls-3" x="-32.21" y="43.57" width="159.68" height="159.69"/>
+    </clipPath>
+    <radialGradient id="Degradado_sin_nombre" data-name="Degradado sin nombre" cx="0" cy="170.08" fx="0" fy="170.08" r="1" gradientTransform="translate(47.63 13532.87) scale(78.84 -78.84)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e3e3e3"/>
+      <stop offset=".12" stop-color="#e3e3e3"/>
+      <stop offset=".13" stop-color="#e3e3e3"/>
+      <stop offset=".27" stop-color="#dfdfdf"/>
+      <stop offset=".37" stop-color="#d6d6d6"/>
+      <stop offset=".47" stop-color="#c5c5c5"/>
+      <stop offset=".56" stop-color="#aeaeae"/>
+      <stop offset=".64" stop-color="#909090"/>
+      <stop offset=".72" stop-color="#6b6b6b"/>
+      <stop offset=".8" stop-color="#3f3f3f"/>
+      <stop offset=".88" stop-color="#0d0d0d"/>
+      <stop offset=".9" stop-color="#000"/>
+      <stop offset=".99" stop-color="#000"/>
+      <stop offset="1" stop-color="#000"/>
+    </radialGradient>
+    <mask id="mask" x="-32.21" y="43.57" width="159.68" height="159.69" maskUnits="userSpaceOnUse">
+      <rect class="cls-9" x="-32.21" y="43.57" width="159.68" height="159.68"/>
+    </mask>
+    <clipPath id="clippath-2">
+      <rect class="cls-3" x="-32.21" y="43.57" width="159.68" height="159.69"/>
+    </clipPath>
+    <clipPath id="clippath-3">
+      <path class="cls-3" d="M132.96,68.55c9.71,0,17.97,6.39,21,14.96.14.4.23.82.34,1.22h-42.7c2.64-9.32,11.21-16.18,21.36-16.18M96.22,90.77c0,20.25,16.48,36.73,36.74,36.73,10.86,0,21.1-4.77,28.1-13.08l-11.1-9.35c-4.24,5.03-10.43,7.91-17,7.91-10,0-18.48-6.65-21.25-15.75h57.37c.39-2.1.62-4.25.62-6.46h0c0-20.26-16.48-36.74-36.73-36.74s-36.74,16.48-36.74,36.73"/>
+    </clipPath>
+    <clipPath id="clippath-4">
+      <rect class="cls-3" x="49.64" y="24.09" width="139.84" height="139.84"/>
+    </clipPath>
+    <radialGradient id="Degradado_sin_nombre_2" data-name="Degradado sin nombre 2" cx="0" cy="170.08" fx="0" fy="170.08" r="1" gradientTransform="translate(119.56 11815.99) scale(68.92 -68.92)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e3e3e3"/>
+      <stop offset=".14" stop-color="#e3e3e3"/>
+      <stop offset=".16" stop-color="#e3e3e3"/>
+      <stop offset=".31" stop-color="#dfdfdf"/>
+      <stop offset=".42" stop-color="#d6d6d6"/>
+      <stop offset=".53" stop-color="#c5c5c5"/>
+      <stop offset=".63" stop-color="#aeaeae"/>
+      <stop offset=".72" stop-color="#909090"/>
+      <stop offset=".81" stop-color="#6b6b6b"/>
+      <stop offset=".9" stop-color="#3f3f3f"/>
+      <stop offset=".98" stop-color="#0d0d0d"/>
+      <stop offset="1" stop-color="#000"/>
+    </radialGradient>
+    <mask id="mask-1" x="49.64" y="24.09" width="139.84" height="139.84" maskUnits="userSpaceOnUse">
+      <rect class="cls-6" x="49.64" y="24.09" width="139.84" height="139.84"/>
+    </mask>
+    <clipPath id="clippath-5">
+      <rect class="cls-3" x="49.64" y="24.09" width="139.84" height="139.84"/>
+    </clipPath>
+  </defs>
+  <polygon class="cls-3" points="209.87 44.54 209.87 71.69 208.68 71.69 199.39 44.54 186.17 44.54 186.17 78.42 193.75 78.42 193.75 51.26 194.83 51.26 204.12 78.42 217.45 78.42 217.45 44.54 209.87 44.54"/>
+  <polygon class="cls-3" points="37.67 56.16 37.67 125.38 52.18 125.38 52.18 70.4 84.57 70.4 84.57 56.16 37.67 56.16"/>
+  <g>
+    <polygon class="cls-3" points="37.67 56.16 37.67 125.37 52.18 125.37 52.18 70.4 84.57 70.4 84.57 56.16 37.67 56.16"/>
+    <g class="cls-12">
+      <g class="cls-10">
+        <g>
+          <rect class="cls-3" x="-32.21" y="43.57" width="159.68" height="159.69"/>
+          <g class="cls-5">
+            <g class="cls-4">
+              <g>
+                <rect class="cls-3" x="-32.21" y="43.57" width="159.68" height="159.69"/>
+                <g class="cls-11">
+                  <path class="cls-3" d="M47.63,202.25c43.54,0,78.84-35.3,78.84-78.84S91.17,44.57,47.63,44.57-31.21,79.87-31.21,123.41,4.08,202.25,47.63,202.25"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <path class="cls-3" d="M153.96,83.51c.14.4.23.82.34,1.23h-42.7c2.64-9.32,11.21-16.18,21.36-16.18s17.97,6.39,21,14.96M169.69,90.77h0c0-20.26-16.48-36.74-36.73-36.74s-36.74,16.48-36.74,36.73,16.48,36.73,36.74,36.73c10.86,0,21.1-4.76,28.1-13.08l-11.1-9.35c-4.24,5.03-10.43,7.91-17,7.91-10,0-18.48-6.65-21.25-15.75h57.37c.39-2.1.62-4.25.62-6.46"/>
+  <g>
+    <path class="cls-3" d="M132.96,68.55c9.71,0,17.97,6.39,21,14.96.14.4.23.82.34,1.22h-42.7c2.64-9.32,11.21-16.18,21.36-16.18M96.22,90.77c0,20.25,16.48,36.73,36.74,36.73,10.86,0,21.1-4.77,28.1-13.08l-11.1-9.35c-4.24,5.03-10.43,7.91-17,7.91-10,0-18.48-6.65-21.25-15.75h57.37c.39-2.1.62-4.25.62-6.46h0c0-20.26-16.48-36.74-36.73-36.74s-36.74,16.48-36.74,36.73"/>
+    <g class="cls-8">
+      <g class="cls-10">
+        <g>
+          <rect class="cls-3" x="49.64" y="24.09" width="139.84" height="139.84"/>
+          <g class="cls-1">
+            <g class="cls-2">
+              <g>
+                <rect class="cls-3" x="49.64" y="24.09" width="139.84" height="139.84"/>
+                <g class="cls-7">
+                  <path class="cls-3" d="M119.56,162.93c38.06,0,68.92-30.86,68.92-68.92S157.63,25.09,119.56,25.09,50.64,55.95,50.64,94.01s30.86,68.92,68.92,68.92"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

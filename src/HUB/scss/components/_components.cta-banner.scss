@@ -1,0 +1,90 @@
+/* -----------------------------------------------------------------------------
+ * CTA BANNER — HUB
+ * Banner de llamada a la acción (contacto, suscripción, etc.)
+ * Fondo color primario con degradado sutil, texto blanco y botón accent.
+ */
+
+.hub-cta-banner {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 60%,
+    #2f6cb3 100%
+  );
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+}
+
+/* Watermark logo ----------------------------------------------------------- */
+.hub-cta-banner::before {
+  content: "";
+  position: absolute;
+  bottom: -105%;
+  left: -45%;
+  width: 1500px;
+  height: 800px;
+  background-image: url('/src/HUB/assets/img/reN_blanc.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  opacity: 0.05;
+  filter: brightness(0) invert(1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hub-cta-banner__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-xl);
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+}
+
+/* Message ------------------------------------------------------------------ */
+.hub-cta-banner__message {
+  font-family: var(--font-highlight);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  line-height: var(--line-height-m);
+  color: #FFFFFF;
+  margin: 0;
+  flex: 0 1 auto;
+  max-width: 850px;
+}
+
+/* Button ------------------------------------------------------------------- */
+.hub-cta-banner__button {
+  flex-shrink: 0;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Mobile ------------------------------------------------------------------- */
+@media (max-width: 899px) {
+  .hub-cta-banner__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-l);
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+  }
+
+  .hub-cta-banner__message {
+    font-size: var(--font-size-l);
+    text-align: left;
+  }
+
+  .hub-cta-banner__button {
+    align-self: stretch;
+    justify-content: center;
+  }
+}

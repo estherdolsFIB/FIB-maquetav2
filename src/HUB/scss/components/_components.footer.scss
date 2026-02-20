@@ -1,16 +1,115 @@
 /* -----------------------------------------------------------------------------
  * FOOTER — HUB
- * Pie de página mínimo con copyright y enlaces legales.
+ * Footer de dos niveles: superior (contacto, redes, iniciativa) e inferior (legal).
  */
 
 .hub-footer {
-  background-color: var(--color-primary);
-  color: rgba(255, 255, 255, 0.7);
-  font-size: var(--font-size-xs);
   font-family: var(--font-body);
 }
 
-.hub-footer__inner {
+/* ========================================================================== */
+/* FOOTER TOP — Fondo gris claro con contacto, redes sociales e iniciativa  */
+/* ========================================================================== */
+
+.hub-footer__top {
+  background-color: #F5F6F7;
+  color: var(--color-primary);
+}
+
+.hub-footer__top-inner {
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr 1fr;
+  gap: var(--space-xl);
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+/* Headings ----------------------------------------------------------------- */
+.hub-footer__heading {
+  font-family: var(--font-highlight);
+  font-weight: 600;
+  font-size: var(--font-size-s);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-primary);
+  margin: 0 0 var(--space-s);
+}
+
+/* Contact section ---------------------------------------------------------- */
+.hub-footer__text {
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-l);
+  color: var(--color-grey);
+  margin: 0;
+}
+
+.hub-footer__text a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.hub-footer__text a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* Social links ------------------------------------------------------------- */
+.hub-footer__social-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+}
+
+.hub-footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--color-primary);
+  background-color: transparent;
+  border: 1px solid var(--color-light-grey);
+  border-radius: 50%;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.hub-footer__social-link:hover {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+/* Initiative section ------------------------------------------------------- */
+.hub-footer__initiative {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-xs);
+}
+
+.hub-footer__initiative-text {
+  font-size: var(--font-size-xs);
+  color: var(--color-grey);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hub-footer__initiative-logo {
+  height: 48px;
+  width: auto;
+}
+
+/* ========================================================================== */
+/* FOOTER BOTTOM — Fondo azul oscuro con copyright y enlaces legales        */
+/* ========================================================================== */
+
+.hub-footer__bottom {
+  background-color: var(--color-primary);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--font-size-xs);
+}
+
+.hub-footer__bottom-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -42,9 +141,25 @@
   color: #FFFFFF;
 }
 
-/* Mobile ------------------------------------------------------------------- */
+/* ========================================================================== */
+/* MOBILE                                                                     */
+/* ========================================================================== */
+
 @media (max-width: 899px) {
-  .hub-footer__inner {
+  /* Footer top mobile */
+  .hub-footer__top-inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-l);
+    padding-top: var(--space-l);
+    padding-bottom: var(--space-l);
+  }
+
+  .hub-footer__initiative {
+    align-items: flex-start;
+  }
+
+  /* Footer bottom mobile */
+  .hub-footer__bottom-inner {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-xs);
